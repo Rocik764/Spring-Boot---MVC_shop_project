@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="unnamed" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/susersmvc_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/susersmvc_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_69.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_3_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_25_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_27_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_1_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_6_28.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_28.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_test_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_springsecurity5_3_0_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bootstrap_4_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_popper_js_1_14_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_webjars_locator_core_0_46.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/AppController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/CustomUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/SusersmvcApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/.idea/img.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/fox_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/edit_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/new_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/signup_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/users_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/wlasne.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/local/umg/susersmvc/SusersmvcApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ROOT.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/AppController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/CustomUserDetails.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/CustomUserDetailsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/SusersmvcApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/WebSecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/repository/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/.idea/img.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/fox_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/phone-call.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/edit_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/new_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/register_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/signup_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/users_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/wlasne.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-local.umg.susersmvc.SusersmvcApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/surefire-reports/local.umg.susersmvc.SusersmvcApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT.war.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/AppController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/SusersmvcApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/repository/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/edit_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/new_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/users_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/wlasne.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/HikariCP-3.4.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/antlr-2.7.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.9.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/attoparser-2.0.5.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/byte-buddy-1.10.18.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/checker-qual-3.5.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/classmate-1.5.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/dom4j-2.1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-commons-annotations-5.1.2.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/hibernate-core-5.4.25.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/istack-commons-runtime-3.0.11.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jdk8-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-datatype-jsr310-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jackson-module-parameter-names-2.11.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.activation-1.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.activation-api-1.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.annotation-api-1.3.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.el-3.0.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.persistence-api-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.transaction-api-1.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jakarta.xml.bind-api-2.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jandex-2.1.3.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/javassist-3.27.0-GA.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jaxb-runtime-2.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jboss-logging-3.4.1.Final.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/jul-to-slf4j-1.7.30.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-api-2.13.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/log4j-to-slf4j-2.13.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/logback-classic-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/logback-core-1.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/postgresql-42.2.18.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.30.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/snakeyaml-1.27.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aop-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-aspects-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-beans-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-autoconfigure-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-aop-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-data-jpa-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-jdbc-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-json-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-logging-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-thymeleaf-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-tomcat-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-boot-starter-web-2.4.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-context-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-core-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-commons-2.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-data-jpa-2.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-expression-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jcl-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-jdbc-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-orm-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-tx-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-web-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/thymeleaf-3.0.11.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/thymeleaf-extras-java8time-3.0.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/thymeleaf-spring5-3.0.11.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-embed-core-9.0.41.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/tomcat-embed-websocket-9.0.41.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/txw2-2.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/lib/unbescape-1.1.6.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/local/umg/susersmvc/SusersmvcApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/zoologiczny.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\oem\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1leAhqZwRkrBWanTf8o8oeYxXdU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\img" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\susersmvc\src\main\resources\templates" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\susersmvc\src\main\resources\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="local.umg.susersmvc.model" />
+      <recent name="local.umg.susersmvc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/susersmvc/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="users_list.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/susersmvc/templates/users_list.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="SusersmvcApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="zoologiczny" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="local.umg.susersmvc.SusersmvcApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="" />
+      <created>1607947305820</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607947305820</updated>
+      <workItem from="1607947307550" duration="1407000" />
+      <workItem from="1607961565260" duration="809000" />
+      <workItem from="1607962398034" duration="2968000" />
+      <workItem from="1608021736736" duration="26647000" />
+      <workItem from="1608062441699" duration="2043000" />
+      <workItem from="1608064790656" duration="1194000" />
+      <workItem from="1608112132974" duration="366000" />
+      <workItem from="1608467817685" duration="4000" />
+      <workItem from="1608547042516" duration="65000" />
+      <workItem from="1608547578326" duration="60000" />
+      <workItem from="1608650814100" duration="671000" />
+      <workItem from="1608658765037" duration="347000" />
+      <workItem from="1608672748623" duration="3846000" />
+      <workItem from="1608717731919" duration="25771000" />
+      <workItem from="1608758927576" duration="1020000" />
+      <workItem from="1608760036949" duration="1526000" />
+    </task>
+    <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
+      <created>1608112313606</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608112313606</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="First Spring Boot app" />
+    <MESSAGE value="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="711" y="349" key="#Notifications" timestamp="1608760432669">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="711" y="349" key="#Notifications/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760432669" />
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608051236078">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608051236078" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1608721398581">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608721398581" />
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1608750591679">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608750591679" />
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1608758884381">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884381" />
+    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1608758884381">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884381" />
+    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1608758884381">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884381" />
+    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1608758884381">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884381" />
+    <state width="1877" height="293" key="GridCell.Tab.1.bottom" timestamp="1608758884382">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884382" />
+    <state width="1877" height="293" key="GridCell.Tab.1.center" timestamp="1608758884382">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884382" />
+    <state width="1877" height="293" key="GridCell.Tab.1.left" timestamp="1608758884382">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884382" />
+    <state width="1877" height="293" key="GridCell.Tab.1.right" timestamp="1608758884382">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="293" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608758884382" />
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1608052358672">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608052358672" />
+    <state width="1877" height="352" key="GridCell.Tab.2.center" timestamp="1608052358672">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608052358672" />
+    <state width="1877" height="352" key="GridCell.Tab.2.left" timestamp="1608052358671">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608052358671" />
+    <state width="1877" height="352" key="GridCell.Tab.2.right" timestamp="1608052358672">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608052358672" />
+    <state x="440" y="99" key="SettingsEditor" timestamp="1608760891611">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760891611" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1608760704013">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760704013" />
+    <state x="761" y="431" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1608760649649">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="761" y="431" key="git4idea.remote.GitConfigureRemotesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760649649" />
+    <state x="702" y="424" key="git4idea.ui.GitStashDialog" timestamp="1608760472689">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="702" y="424" key="git4idea.ui.GitStashDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760472689" />
+    <state x="752" y="384" key="scopes" timestamp="1608756116366">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="752" y="384" key="scopes/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608756116366" />
+  </component>
+</project>

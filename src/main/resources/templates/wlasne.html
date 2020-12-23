@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:insert="menu :: myMenu"></div>
+    <h1>Tabela posortowana: <th:block th:text="*{sort}"></th:block></h1>
+    <table>
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>First name</th>
+            <th>Last Name</th>
+            <th>E-mail</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="user : ${listUsers}">
+            <td th:text="${user.id}">User ID</td>
+            <td th:text="${user.first_name}">First name</td>
+            <td th:text="${user.last_name}">Last name</td>
+            <td th:text="${user.email}">E-mail</td>
+            <td th:text="${user.password}">Password</td>
+            <td>
+                <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+<div class="wrapper">
+    <div class="dropdown">
+        <button class="dropbtn">Posortuj tabelę</button>
+        <div class="dropdown-content">
+            <a th:href="@{'/wlasne?choice=0'}">Nie posortowana</a>
+            <a th:href="@{'/wlasne?choice=1'}">Posortowana ASC</a>
+            <a th:href="@{'/wlasne?choice=2'}">Posortowana DESC</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

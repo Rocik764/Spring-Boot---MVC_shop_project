@@ -1,0 +1,42 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(#37FDFC, #8FD8D8, #66CCCC);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 400;
+    color: #C0D06F;
+    margin: 20px;
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+    display: block;
+}
+
+.navbar {
+    min-height: 57px;
+}
+
+.bg-head {
+    background: #008080;
+}
+
+.navbar li:hover > a {
+    color:#FFFFFF;
+    background-color:#1D8B94;
+    border-color:rgba(0,0,0,.6);
+}
+
+.test {
+    margin-right: 70px;
+}
+
+
+
+

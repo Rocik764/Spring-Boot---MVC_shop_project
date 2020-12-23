@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <div id="logo" class="fl_left">
+            <h1>Własne</h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+            <ul class="clear">
+                <li><a href="/">Index</a></li>
+                <li><a href="/listUsers">Show all users</a></li>
+                <li><a href="/new">Create New User</a></li>
+                <li><a href="/wlasne">Własne</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+    <h1>Tabela posortowana: <th:block th:text="*{sort}"></th:block></h1>
+    <table>
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>First name</th>
+            <th>Last Name</th>
+            <th>E-mail</th>
+            <th>UPN</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="user : ${listUsers}">
+            <td th:text="${user.id}">User ID</td>
+            <td th:text="${user.first_name}">First name</td>
+            <td th:text="${user.last_name}">Last name</td>
+            <td th:text="${user.email}">E-mail</td>
+            <td th:text="${user.unique_person_number}">UPN</td>
+            <td th:text="${user.country}">Country</td>
+            <td>
+                <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+<div class="wrapper">
+    <div class="dropdown">
+        <button class="dropbtn">Posortuj tabelę</button>
+        <div class="dropdown-content">
+            <a th:href="@{'/wlasne?choice=0'}">Nie posortowana</a>
+            <a th:href="@{'/wlasne?choice=1'}">Posortowana ASC</a>
+            <a th:href="@{'/wlasne?choice=2'}">Posortowana DESC</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

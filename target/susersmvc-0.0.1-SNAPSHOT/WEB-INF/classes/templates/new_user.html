@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>New User</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="wrapper row1">
+    <header id="header" class="hoc clear">
+        <div id="logo" class="fl_left">
+            <h1>Add user</h1>
+        </div>
+        <nav id="mainav" class="fl_right">
+            <ul class="clear">
+                <li><a href="/">Index</a></li>
+                <li><a href="/listUsers">Show all users</a></li>
+                <li><a href="/new">Create New User</a></li>
+                <li><a href="/wlasne">Własne</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+    <h1>Create New User</h1>
+    <form action="#" th:action="@{/save}" th:object="${user}" method="post">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" th:field="*{first_name}" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" th:field="*{last_name}" /></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="text" th:field="*{email}" /></td>
+            </tr>
+            <tr>
+                <td>UPN:</td>
+                <td><input type="text" th:field="*{unique_person_number}" /></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td><input type="text" th:field="*{country}" /></td>
+            </tr>
+        </table>
+        <div class="wrapper"><button class="example_a" type="submit">Save</button></div>
+    </form>
+</body>
+</html>
