@@ -11,7 +11,7 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div th:insert="menu :: myMenu"></div>
+<div th:insert="/fragments/menu :: myMenu"></div>
 <div class="container">
     <div sec:authorize="isAuthenticated()">
         Welcome <b><span sec:authentication="name">Username</span></b>

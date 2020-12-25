@@ -10,7 +10,7 @@
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div th:insert="menu :: myMenu"></div>
+<div th:insert="/fragments/menu :: myMenu"></div>
     <h1>Tabela posortowana: <th:block th:text="*{sort}"></th:block></h1>
     <table>
         <thead>

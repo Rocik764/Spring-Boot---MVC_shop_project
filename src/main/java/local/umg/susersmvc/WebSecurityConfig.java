@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource dataSource;
-	
+
 	@Bean
 	public UserDetailsService userDetailsService() {
 		return new CustomUserDetailsService();
@@ -46,16 +46,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/new").hasAnyAuthority("ADMIN")
-				.antMatchers("/edit/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/delete/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/listUsers").hasAnyAuthority("USER", "ADMIN")
+				.antMatchers("/admin_pages/new").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin_pages/edit/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin_pages/delete/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin_pages/listUsers").hasAnyAuthority("ADMIN")
 				.antMatchers("/wlasne").hasAnyAuthority("USER", "ADMIN")
-				.antMatchers("/register").permitAll()
+				.antMatchers("/login_pages/register").permitAll()
+				.antMatchers("/shop_pages/schronisko").permitAll()
+				.antMatchers("/shop_pages/show_products").permitAll()
 				.and()
-				.formLogin().permitAll()
+				.formLogin()
+					.loginPage("/login")
+					.usernameParameter("email")
+					.passwordParameter("password")
+					.defaultSuccessUrl("/")
+					.permitAll()
 				.and()
-				.logout().permitAll();
+				.logout()
+					.clearAuthentication(true)
+					.logoutSuccessUrl("/")
+					.deleteCookies("JSESSIONID")
+					.invalidateHttpSession(true)
+					.permitAll();
 
 //		http.authorizeRequests()
 //			.antMatchers("/users").authenticated()
@@ -68,6 +80,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //			.and()
 //			.logout().logoutSuccessUrl("/").permitAll();
 	}
-	
-	
+
+
 }

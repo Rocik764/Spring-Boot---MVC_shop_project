@@ -20,7 +20,7 @@ public class AppController {
 
     @GetMapping("")
     public String viewHomePage() {
-        return "index";
+        return "/shop_pages/index";
     }
 
     @RequestMapping("/listUsers")
@@ -28,14 +28,14 @@ public class AppController {
 
         List<User> listUsers = service.listAll();
         model.addAttribute("listUsers", listUsers);
-        return "users_list";
+        return "/admin_pages/users_list";
     }
 
     @RequestMapping("/new")
     public String showNewFormUser(Model model) {
         User nuser = new User();
         model.addAttribute("user", nuser);
-        return "new_user";
+        return "/admin_pages/new_user";
     }
 
     // akcja zapisu danych
@@ -46,13 +46,13 @@ public class AppController {
         user.setPassword(encodedPassword);
         service.save(user);
 
-        return "register_success";
+        return "/login_pages/register_success";
     }
 
     // akcja edycji danych dla wskazanego id użytkownika
     @RequestMapping("/edit/{id}")
     public ModelAndView showEditFormUser(@PathVariable(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView("edit_user");
+        ModelAndView mav = new ModelAndView("admin_pages/edit_user");
         User euser = service.get(id);
         mav.addObject("user", euser);
         return mav;
@@ -89,6 +89,63 @@ public class AppController {
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
 
-        return "signup_form";
+        return "/login_pages/signup_form";
+    }
+
+    @RequestMapping(value = "/show_products", method = RequestMethod.GET)
+    public String showProducts(@RequestParam(value = "kategoria", defaultValue = "pies-karma") String category, Model model) {
+        //List<User> listUsers = null;
+
+        if(category.equals("pies-karma")) {
+            model.addAttribute("kategoria", "Pies-karma");
+        }
+        else if(category.equals("pies-zabawki")) {
+            model.addAttribute("kategoria", "Pies-zabawki");
+        }
+        else if(category.equals("pies-akcesoria")) {
+            model.addAttribute("kategoria", "Pies-akcesoria");
+        }
+        else if(category.equals("kot-karma")) {
+            model.addAttribute("kategoria", "Kot-karma");
+        }
+        else if(category.equals("kot-zabawki")) {
+            model.addAttribute("kategoria", "Kot-zabawki");
+        }
+        else if(category.equals("kot-akcesoria")) {
+            model.addAttribute("kategoria", "Kot-akcesoria");
+        }
+        else if(category.equals("ryby-karma")) {
+            model.addAttribute("kategoria", "Ryby-karma");
+        }
+        else if(category.equals("ryby-zabawki")) {
+            model.addAttribute("kategoria", "Ryby-zabawki");
+        }
+        else if(category.equals("ryby-akcesoria")) {
+            model.addAttribute("kategoria", "Ryby-akcesoria");
+        }
+
+        return "/shop_pages/show_products";
+    }
+
+    @RequestMapping("/schronisko")
+    public String viewSchronisko(Model model) {
+
+        return "/shop_pages/schronisko";
+    }
+
+    @RequestMapping("/contact")
+    public String viewContact(Model model) {
+
+        return "/shop_pages/contact";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "/login_pages/login_form";
+    }
+
+    @RequestMapping("/logout")
+    public String logout() {
+        return "/login_pages/login_form";
     }
 }

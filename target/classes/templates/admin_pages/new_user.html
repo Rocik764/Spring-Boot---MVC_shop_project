@@ -3,21 +3,17 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>Edit User</title>
+    <title>New User</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/style.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div th:insert="menu :: myMenu"></div>
-    <h1>Edit user with ID: <th:block th:text="*{id}"></th:block></h1>
+<div th:insert="/fragments/menu :: myMenu"></div>
+    <h1>Create New User</h1>
     <form action="#" th:action="@{/save}" th:object="${user}" method="post">
         <table>
-            <tr>
-                <td>User Id:</td>
-                <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
-            </tr>
             <tr>
                 <td>First Name:</td>
                 <td><input type="text" th:field="*{first_name}" /></td>
