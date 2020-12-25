@@ -46,14 +46,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/admin_pages/new").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin_pages/edit/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin_pages/delete/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin_pages/listUsers").hasAnyAuthority("ADMIN")
+				.antMatchers("/listUsers").hasAnyAuthority("ADMIN")
+				.antMatchers("/new").hasAnyAuthority("ADMIN")
+				.antMatchers("/edit/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/delete/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/listUsers").hasAnyAuthority("ADMIN")
 				.antMatchers("/wlasne").hasAnyAuthority("USER", "ADMIN")
-				.antMatchers("/login_pages/register").permitAll()
-				.antMatchers("/shop_pages/schronisko").permitAll()
-				.antMatchers("/shop_pages/show_products").permitAll()
+				.antMatchers("/profile").authenticated()
+				.antMatchers("/contact").permitAll()
+				.antMatchers("/register").permitAll()
+				.antMatchers("/schronisko").permitAll()
+				.antMatchers("/show_products").permitAll()
 				.and()
 				.formLogin()
 					.loginPage("/login")
@@ -68,17 +71,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 					.deleteCookies("JSESSIONID")
 					.invalidateHttpSession(true)
 					.permitAll();
-
-//		http.authorizeRequests()
-//			.antMatchers("/users").authenticated()
-//			.anyRequest().permitAll()
-//			.and()
-//			.formLogin()
-//				.usernameParameter("email")
-//				.defaultSuccessUrl("/users")
-//				.permitAll()
-//			.and()
-//			.logout().logoutSuccessUrl("/").permitAll();
 	}
 
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="utf-8" />
     <title>New User</title>
@@ -11,6 +12,7 @@
 </head>
 <body>
 <div th:insert="/fragments/menu :: myMenu"></div>
+<div class="container text-center">
     <h1>Create New User</h1>
     <form action="#" th:action="@{/save}" th:object="${user}" method="post">
         <table>
@@ -33,5 +35,6 @@
         </table>
         <div class="wrapper"><button class="example_a" type="submit">Save</button></div>
     </form>
+</div>
 </body>
 </html>

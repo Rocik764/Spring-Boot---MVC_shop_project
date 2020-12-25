@@ -3,6 +3,7 @@ package local.umg.susersmvc;
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -49,13 +50,25 @@ public class AppController {
         return "/login_pages/register_success";
     }
 
+    // akcja zapisu danych
+    @RequestMapping(value = "/editUser", method = RequestMethod.POST)
+    public String editUser(@ModelAttribute("user") User user, Model model) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        service.save(user);
+        List<User> listUsers = service.listAll();
+        model.addAttribute("listUsers", listUsers);
+        return "/admin_pages/users_list";
+    }
+
     // akcja edycji danych dla wskazanego id użytkownika
     @RequestMapping("/edit/{id}")
-    public ModelAndView showEditFormUser(@PathVariable(name = "id") Long id) {
-        ModelAndView mav = new ModelAndView("admin_pages/edit_user");
+    public String showEditFormUser(@PathVariable(name = "id") Long id, Model model) {
+        //ModelAndView mav = new ModelAndView("admin_pages/edit_user");
         User euser = service.get(id);
-        mav.addObject("user", euser);
-        return mav;
+        model.addAttribute("user", euser);
+        return "/admin_pages/edit_user";
     }
 
     // akcja usuwania danych dla wskazanego id użytkownika
@@ -147,5 +160,11 @@ public class AppController {
     @RequestMapping("/logout")
     public String logout() {
         return "/login_pages/login_form";
+    }
+
+    @RequestMapping("/profile")
+    public String viewUserProfile(@AuthenticationPrincipal CustomUserDetails user, Model model) {
+        model.addAttribute("user", user);
+        return "/user_pages/user_profile";
     }
 }

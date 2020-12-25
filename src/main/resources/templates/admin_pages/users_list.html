@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="utf-8"/>
     <title>Users List</title>
@@ -11,34 +12,36 @@
 </head>
 <body>
 <div th:insert="/fragments/menu :: myMenu"></div>
-<div class="container">
-    <table>
-        <thead>
-        <tr>
-            <th>User ID</th>
-            <th>First name</th>
-            <th>Last Name</th>
-            <th>E-mail</th>
-            <th>Password</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
+<div class="container text-center">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>E-mail</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
 
-        <tr th:each="user : ${listUsers}">
-            <td th:text="${user.id}">User ID</td>
-            <td th:text="${user.first_name}">First name</td>
-            <td th:text="${user.last_name}">Last name</td>
-            <td th:text="${user.email}">E-mail</td>
-            <td th:text="${user.password}">Password</td>
-            <td>
-                <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
-                &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            <tr th:each="user : ${listUsers}">
+                <td th:text="${user.id}">User ID</td>
+                <td th:text="${user.first_name}">First name</td>
+                <td th:text="${user.last_name}">Last name</td>
+                <td th:text="${user.email}">E-mail</td>
+                <td th:text="${user.password}">Password</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>
