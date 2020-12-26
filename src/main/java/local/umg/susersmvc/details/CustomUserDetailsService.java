@@ -1,4 +1,4 @@
-package local.umg.susersmvc;
+package local.umg.susersmvc.details;
 
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.repository.UserRepository;

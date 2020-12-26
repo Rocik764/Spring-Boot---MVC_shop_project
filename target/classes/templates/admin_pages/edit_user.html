@@ -6,7 +6,8 @@
     <meta charset="utf-8" />
     <title>Edit User</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
@@ -14,54 +15,94 @@
 <div th:insert="/fragments/menu :: myMenu"></div>
 <div class="container text-center">
     <h1>Edit user with ID: <th:block th:text="*{id}"></th:block></h1>
-    <form action="#" th:action="@{/editUser}" th:object="${user}" method="post">
-        <div class="form-group row">
-            <label for="inputID" class="col-sm-2 col-form-label">ID</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputID" th:field="*{id}" readonly="readonly">
+    <form th:action="@{/admin/editMail}" th:object="${user}" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail">Zapisz</button>
             </div>
+            <input type="text" name="email" class="form-control" th:value="*{email}" aria-label="" aria-describedby="basic-addon1" required>
+            <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
         </div>
-        <div class="form-group row">
-            <label for="inputFirstName" class="col-sm-2 col-form-label">Imię</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">
+    </form>
+    <form th:action="@{/admin/editFirstName}" th:object="${user}" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName">Zapisz</button>
             </div>
+            <input type="text" name="first_name" class="form-control" th:value="*{first_name}" aria-label="" aria-describedby="basic-addon1" required>
+            <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
         </div>
-        <div class="form-group row">
-            <label for="inputLastName" class="col-sm-2 col-form-label">Nazwisko</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">
+    </form>
+    <form th:action="@{/admin/editLastName}" th:object="${user}" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName">Zapisz</button>
             </div>
+            <input type="text" name="last_name" class="form-control" th:value="*{last_name}" aria-label="" aria-describedby="basic-addon1" required>
+            <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
         </div>
-        <div class="form-group row">
-            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" th:field="*{email}">
+    </form>
+    <form th:action="@{/admin/editPassword}" th:object="${user}" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword">Zapisz</button>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword" th:field="*{password}">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-2">Admin</div>
-            <div class="col-sm-8">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        is administrator
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-lg">
-                <button type="submit" class="btn btn-primary">Zapisz</button>
-            </div>
+            <input type="password" name="password" class="form-control" th:value="*{id}" aria-label="" aria-describedby="basic-addon1" required>
+            <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
         </div>
     </form>
 </div>
+
+<!--<div class="container text-center">-->
+<!--    <h1>Edit user with ID: <th:block th:text="*{id}"></th:block></h1>-->
+<!--    <form action="#" th:action="@{/editUser}" th:object="${user}" method="post">-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputID" class="col-sm-2 col-form-label">ID</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" class="form-control" id="inputID" th:field="*{id}" readonly="readonly">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputFirstName" class="col-sm-2 col-form-label">Imię</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputLastName" class="col-sm-2 col-form-label">Nazwisko</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="email" class="form-control" id="inputEmail" th:field="*{email}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>-->
+<!--            <div class="col-sm-10">-->
+<!--                <input type="text" class="form-control" id="inputPassword" th:field="*{password}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <div class="col-sm-2">Admin</div>-->
+<!--            <div class="col-sm-8">-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" id="gridCheck1">-->
+<!--                    <label class="form-check-label" for="gridCheck1">-->
+<!--                        is administrator-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--            <div class="col-lg">-->
+<!--                <button type="submit" class="btn btn-primary">Zapisz</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
 </body>
 </html>

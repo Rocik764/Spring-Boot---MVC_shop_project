@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Registration Success</title>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" th:href="@{/style.css}"/>
+	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" th:href="@{/css/style2.css}"/>
 	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
@@ -12,7 +13,7 @@
 <div th:insert="/fragments/menu :: myMenu"></div>
 	<div class="container text-center">
 		<h3>Założono nowe konto.</h3>
-		<h4><a th:href="@{/login}">Naciśnij aby się zalogować</a></h4>
+		<h4><a th:href="@{/app/login}">Naciśnij aby się zalogować</a></h4>
 	</div>
 </body>
 </html>

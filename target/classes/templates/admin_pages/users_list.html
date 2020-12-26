@@ -6,7 +6,8 @@
     <meta charset="utf-8"/>
     <title>Users List</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
@@ -34,9 +35,9 @@
                 <td th:text="${user.email}">E-mail</td>
                 <td th:text="${user.password}">Password</td>
                 <td>
-                    <a th:href="@{'/edit/' + ${user.id}}">Edit</a>
+                    <a th:href="@{'/admin/edit/' + ${user.id}}">Edit</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete/' + ${user.id}}">Delete</a>
+                    <a th:href="@{'/admin/delete/' + ${user.id}}">Delete</a>
                 </td>
             </tr>
             </tbody>

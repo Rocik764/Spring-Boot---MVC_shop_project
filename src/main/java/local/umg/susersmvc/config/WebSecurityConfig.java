@@ -1,5 +1,6 @@
-package local.umg.susersmvc;
+package local.umg.susersmvc.config;
 
+import local.umg.susersmvc.details.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,13 +12,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import javax.sql.DataSource;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	private DataSource dataSource;
 
 	@Bean
 	public UserDetailsService userDetailsService() {
@@ -46,30 +43,30 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/listUsers").hasAnyAuthority("ADMIN")
-				.antMatchers("/new").hasAnyAuthority("ADMIN")
-				.antMatchers("/edit/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/delete/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/listUsers").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin/listUsers").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin/new").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin/edit/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/admin/delete/**").hasAnyAuthority("ADMIN")
 				.antMatchers("/wlasne").hasAnyAuthority("USER", "ADMIN")
-				.antMatchers("/profile").authenticated()
-				.antMatchers("/contact").permitAll()
-				.antMatchers("/register").permitAll()
-				.antMatchers("/schronisko").permitAll()
-				.antMatchers("/show_products").permitAll()
+				.antMatchers("/app/profile").authenticated()
+				.antMatchers("/app/contact").permitAll()
+				.antMatchers("/app/register").permitAll()
+				.antMatchers("/app/schronisko").permitAll()
+				.antMatchers("/app/show_products").permitAll()
 				.and()
 				.formLogin()
-					.loginPage("/login")
+					.loginPage("/app/login")
 					.usernameParameter("email")
 					.passwordParameter("password")
-					.defaultSuccessUrl("/")
+					.defaultSuccessUrl("/app/")
 					.permitAll()
 				.and()
 				.logout()
 					.clearAuthentication(true)
-					.logoutSuccessUrl("/")
+					.logoutSuccessUrl("/app/")
 					.deleteCookies("JSESSIONID")
 					.invalidateHttpSession(true)
+					.logoutSuccessUrl("/app/login")
 					.permitAll();
 	}
 

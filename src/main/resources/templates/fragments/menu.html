@@ -4,21 +4,20 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <body>
 <div th:fragment="myMenu">
-    <div class="container-fluid">
+
         <div class="row">
             <div class="col-12 col-md-2">
-                <p><img th:src="@{img/phone-call.png}" alt="phone"/> 58 577 625 825</p>
+                <p><img th:src="@{/img/phone-call.png}" alt="phone"/> 58 577 625 825</p>
             </div>
             <div class="col-12 col-md-2">
-                <p><img th:src="@{img/email.png}" alt="email"/> zoologiczny@gmail.com</p>
+                <p><img th:src="@{/img/email.png}" alt="email"/> zoologiczny@gmail.com</p>
             </div>
             <div class="col-12 col-md-8 text-right">
 
             </div>
         </div>
-    </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-head">
-        <a class="navbar-brand" href="/"><img th:src="@{img/fox_logo.png}" width="50" height="50" alt="logo"/> Zoologiczny.pl</a>
+        <a class="navbar-brand" th:href="@{/app/}"><img th:src="@{/img/fox_logo.png}" width="50" height="50" alt="logo"/> Zoologiczny.pl</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,10 +28,10 @@
             </form>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" th:href="@{/app/}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/schronisko}">Schronisko</a>
+                    <a class="nav-link" th:href="@{/product/listProducts}">Schronisko</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -40,38 +39,38 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <div class="dropdown-header">Dla psa</div>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=pies-karma'}">Karma</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=pies-zabawki'}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=pies-akcesoria'}">Akcesoria</a>
+                        <a class="dropdown-item" th:href="@{'/product/category/2'}">Karma</a>
+                        <a class="dropdown-item" th:href="@{'/product/category/1'}">Zabawki</a>
+                        <a class="dropdown-item" th:href="@{'/product/category/3'}">Akcesoria</a>
                         <div class="dropdown-header">Dla kota</div>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=kot-karma'}">Karma</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=kot-zabawki'}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=kot-akcesoria'}">Akcesoria</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=kot-karma'}">Karma</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=kot-zabawki'}">Zabawki</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=kot-akcesoria'}">Akcesoria</a>
                         <div class="dropdown-header">Dla ryb</div>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=ryby-karma'}">Karma</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=ryby-zabawki'}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{'/show_products?kategoria=ryby-akcesoria'}">Akcesoria</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=ryby-karma'}">Karma</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=ryby-zabawki'}">Zabawki</a>
+                        <a class="dropdown-item" th:href="@{'/app/show_products?kategoria=ryby-akcesoria'}">Akcesoria</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/contact}">Kontakt</a>
+                    <a class="nav-link" th:href="@{/app/contact}">Kontakt</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" th:href="@{/profile}" role="button">
+                    <a class="nav-link dropdown-toggle" th:href="@{/app/profile}" role="button">
                         Konto
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{/listUsers}" sec:authorize="hasAnyAuthority('ADMIN')">Administracja</a>
+                        <a class="dropdown-item" th:href="@{/admin/listUsers}" sec:authorize="hasAnyAuthority('ADMIN')">Administracja</a>
                         <div class="dropdown-divider" sec:authorize="hasAnyAuthority('ADMIN')"></div>
 
-                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/login}">Zaloguj</a>
+                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/login}">Zaloguj</a>
                         <div class="dropdown-divider" sec:authorize="!isAuthenticated()"></div>
 
-                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/register}">Zajerestruj</a>
+                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/register}">Zajerestruj</a>
 
-                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/}">Koszyk</a>
+                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/}">Koszyk</a>
                         <div class="dropdown-divider" sec:authorize="isAuthenticated()"></div>
-                        <form class="dropdown-item" sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+                        <form class="dropdown-item" sec:authorize="isAuthenticated()" th:action="@{/app/logout}" method="post">
                             <input type="submit" value="Wyloguj"/>
                         </form>
 <!--                        <a class="dropdown-item" id="Logout" th:href="@{/logout}" sec:authorize="hasAnyAuthority('ADMIN', 'USER')">Wyloguj</a>-->

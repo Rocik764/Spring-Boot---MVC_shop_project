@@ -1,17 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Registration Success</title>
+    <meta charset="UTF-8">
+    <title>Show products</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div th:insert="/fragments/menu :: myMenu"></div>
 <div class="container text-center">
-    <h1>Produkty: <th:block th:text="*{kategoria}"></th:block></h1>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID produktu</th>
+                <th>Nazwa</th>
+                <th>Opis</th>
+                <th>Ilość</th>
+                <th>Cena</th>
+                <th sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="product : ${listProducts}">
+                <td th:text="${product.id}">ID produktu</td>
+                <td th:text="${product.name}">Nazwa</td>
+                <td th:text="${product.description}">Opis</td>
+                <td th:text="${product.quantity}">Ilość</td>
+                <td th:text="${product.price}">Cena</td>
+                <td>
+                    <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/editProduct/' + ${product.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/deleteProduct/' + ${product.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 </html>

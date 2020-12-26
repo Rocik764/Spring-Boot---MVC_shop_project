@@ -1,4 +1,4 @@
-package local.umg.susersmvc;
+package local.umg.susersmvc.details;
 
 import local.umg.susersmvc.model.Role;
 import local.umg.susersmvc.model.User;
@@ -67,5 +67,9 @@ public class CustomUserDetails implements UserDetails {
 
 	public String getLastName() {
 		return user.getLast_name();
+	}
+
+	public Long getId() {
+		return user.getId();
 	}
 }

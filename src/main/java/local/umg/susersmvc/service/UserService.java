@@ -5,6 +5,7 @@ import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
@@ -37,11 +38,35 @@ public class UserService {
         repository.save(user);
     }
 
+    public void editUser(User user) {
+
+    }
+
     public User get(Long id) {
         return repository.findById(id).get();
     }
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    @Transactional
+    public void editMail(String email, Long id) {
+        repository.updateEmail(email, id);
+    }
+
+    @Transactional
+    public void editFirstName(String first_name, Long id) {
+        repository.updateFirstName(first_name, id);
+    }
+
+    @Transactional
+    public void editLastName(String last_name, Long id) {
+        repository.updateLastName(last_name, id);
+    }
+
+    @Transactional
+    public void editPassword(String password, Long id) {
+        repository.updatePassword(password, id);
     }
 }

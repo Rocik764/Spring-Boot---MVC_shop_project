@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:insert="/fragments/menu :: myMenu"></div>
+<div class="container text-center">
+    <h1>Edit product with ID: <th:block th:text="*{id}"></th:block></h1>
+    <form action="#" th:action="@{/product/saveProduct}" th:object="${product}" method="post">
+        <div class="form-group row">
+            <label for="inputID" class="col-sm-2 col-form-label">ID</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputID" th:field="*{id}" readonly="readonly">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Nazwa</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" th:field="*{name}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputDescription" class="col-sm-2 col-form-label">Opis</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputDescription" th:field="*{description}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputQuantity" class="col-sm-2 col-form-label">Ilość</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputQuantity" th:field="*{quantity}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputNumber" class="col-sm-2 col-form-label">Cena</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputNumber" th:field="*{price}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg">
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -35,3 +35,9 @@ h1 {
 .test {
     margin-right: 70px;
 }
+
+.editProfileBtn {
+    border: none;
+    padding: 0;
+    background: none;
+}
