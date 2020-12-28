@@ -27,14 +27,19 @@ public class AdminController {
         return "/admin_pages/users_list";
     }
 
-    // akcja zapisu danych
+    @RequestMapping("/new")
+    public String showNewFormUser(Model model) {
+        User nuser = new User();
+        model.addAttribute("user", nuser);
+        return "/admin_pages/new_user";
+    }
+
     @RequestMapping(value = "/editUser", method = RequestMethod.POST)
     public String editUser(@ModelAttribute("user") User user, Model model) {
         service.editUser(user);
         return "redirect:/admin/listUsers";
     }
 
-    // akcja edycji danych dla wskazanego id użytkownika
     @RequestMapping("/edit/{id}")
     public String showEditFormUser(@PathVariable(name = "id") Long id, Model model) {
         //ModelAndView mav = new ModelAndView("admin_pages/edit_user");
@@ -43,7 +48,6 @@ public class AdminController {
         return "/admin_pages/edit_user";
     }
 
-    // akcja usuwania danych dla wskazanego id użytkownika
     @RequestMapping("/delete/{id}")
     public String deleteUser(@PathVariable(name = "id") Long id) {
         service.delete(id);
@@ -93,7 +97,6 @@ public class AdminController {
         return "redirect:/admin/listUsers";
     }
 
-    // akcja zapisu danych
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("user") User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="utf-8" />
+    <title>New Product</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <h1>Dodaj nową kategorię</h1>
+                        <form action="#" th:action="@{/product/saveCategory}" th:object="${category}" method="post">
+                            <div class="form-group row">
+                                <label for="inputCategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <div class="col-12">
+                                    <input type="text" class="form-control text-center" id="inputCategory" th:field="*{name}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg text-center">
+                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <h1>Dodaj nową podkategorię</h1>
+                        <form action="#" th:action="@{/product/saveSubcategory}" th:object="${subcategory}" method="post">
+                            <div class="form-group row">
+                                <label for="inputSubcategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <div class="col-12">
+                                    <input type="text" class="form-control text-center" id="inputSubcategory" th:field="*{name}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg text-center">
+                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

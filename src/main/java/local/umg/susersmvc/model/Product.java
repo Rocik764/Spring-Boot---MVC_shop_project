@@ -19,6 +19,14 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "producent_id")
+    private Producent producent;
+
+    @ManyToOne
+    @JoinColumn(name = "subcategory_id")
+    private Subcategory subcategory;
+
     public Product(Long id, String name, String description, Integer quantity, Double price) {
         this.id = id;
         this.name = name;
@@ -66,5 +74,29 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Producent getProducent() {
+        return producent;
+    }
+
+    public void setProducent(Producent producent) {
+        this.producent = producent;
+    }
+
+    public Subcategory getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(Subcategory subcategory) {
+        this.subcategory = subcategory;
     }
 }

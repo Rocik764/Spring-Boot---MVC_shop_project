@@ -10,42 +10,57 @@
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
 </head>
 <body>
-<div th:insert="/fragments/menu :: myMenu"></div>
-<div class="container text-center">
-    <h1>Create New User</h1>
-    <form action="#" th:action="@{/admin/save}" th:object="${user}" method="post">
-        <div class="form-group row">
-            <label for="inputFirstName" class="col-sm-2 col-form-label">Imię</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">
-            </div>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+
+            <h1>Stwórz nowego użytkownika (test)</h1>
+            <form action="#" th:action="@{/admin/save}" th:object="${user}" method="post">
+                <div class="form-group row">
+                    <label for="inputFirstName" class="col-sm col-form-label  text-center font-weight-bold">Imię</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputLastName" class="col-sm col-form-label text-center font-weight-bold">Nazwisko</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm col-form-label text-center font-weight-bold">Email</label>
+                    <div class="col-sm-11">
+                        <input type="email" class="form-control" id="inputEmail" th:field="*{email}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm col-form-label text-center font-weight-bold">Hasło</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputPassword" th:field="*{password}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg text-center">
+                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group row">
-            <label for="inputLastName" class="col-sm-2 col-form-label">Nazwisko</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail" th:field="*{email}">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword" th:field="*{password}">
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-lg">
-                <button type="submit" class="btn btn-primary">Zapisz</button>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 </body>
 </html>

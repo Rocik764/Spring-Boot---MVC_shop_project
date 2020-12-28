@@ -10,47 +10,61 @@
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
 </head>
 <body>
-<div th:insert="/fragments/menu :: myMenu"></div>
-<div class="container text-center">
-    <h3>Profil:</h3>
-    <form th:action="@{/users/editMail}" method="post">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail" disabled>Zapisz</button>
-                <button class="btn btn-outline-secondary" type="button" id="btnEditMail"><span>Edytuj</span></button>
-            </div>
-            <input type="text" name="email" class="form-control" th:value="${user.getUsername()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+
+            <h3>Profil:</h3>
+            <form th:action="@{/users/editMail}" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail" disabled>Zapisz</button>
+                        <button class="btn btn-outline-secondary" type="button" id="btnEditMail"><span>Edytuj</span></button>
+                    </div>
+                    <input type="text" name="email" class="form-control" th:value="${user.getUsername()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                </div>
+            </form>
+            <form th:action="@{/users/editFirstName}" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName" disabled>Zapisz</button>
+                        <button class="btn btn-outline-secondary" type="button" id="btnEditFirstName"><span>Edytuj</span></button>
+                    </div>
+                    <input type="text" name="first_name" class="form-control" th:value="${user.getName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                </div>
+            </form>
+            <form th:action="@{/users/editLastName}" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName" disabled>Zapisz</button>
+                        <button class="btn btn-outline-secondary" type="button" id="btnEditLastName"><span>Edytuj</span></button>
+                    </div>
+                    <input type="text" name="last_name" class="form-control" th:value="${user.getLastName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                </div>
+            </form>
+            <form th:action="@{/users/editPassword}" method="post">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword" disabled>Zapisz</button>
+                        <button class="btn btn-outline-secondary" type="button" id="btnEditPassword"><span>Edytuj</span></button>
+                    </div>
+                    <input type="password" name="password" class="form-control" th:value="${user.getPassword()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                </div>
+            </form>
         </div>
-    </form>
-    <form th:action="@{/users/editFirstName}" method="post">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName" disabled>Zapisz</button>
-                <button class="btn btn-outline-secondary" type="button" id="btnEditFirstName"><span>Edytuj</span></button>
-            </div>
-            <input type="text" name="first_name" class="form-control" th:value="${user.getName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
-        </div>
-    </form>
-    <form th:action="@{/users/editLastName}" method="post">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName" disabled>Zapisz</button>
-                <button class="btn btn-outline-secondary" type="button" id="btnEditLastName"><span>Edytuj</span></button>
-            </div>
-            <input type="text" name="last_name" class="form-control" th:value="${user.getLastName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
-        </div>
-    </form>
-    <form th:action="@{/users/editPassword}" method="post">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword" disabled>Zapisz</button>
-                <button class="btn btn-outline-secondary" type="button" id="btnEditPassword"><span>Edytuj</span></button>
-            </div>
-            <input type="password" name="password" class="form-control" th:value="${user.getPassword()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script>

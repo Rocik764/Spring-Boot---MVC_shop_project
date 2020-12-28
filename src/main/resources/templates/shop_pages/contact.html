@@ -8,12 +8,66 @@
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
     <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
 </head>
 <body>
-<div th:insert="/fragments/menu :: myMenu"></div>
-<div class="container text-center">
-    <h1>Kontakt</h1>
-</div>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
 
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <h2>Kontakt</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h4>Obsługa sklepu internetowego</h4>
+                        <div class="line"></div>
+                        <p><b>E-mail:</b> zoologiczny@mail.com<br/>
+                            <b>Telefon:</b> 58 100 100 100</p>
+                        <p>Godziny pracy:</p>
+                        <div class="line"></div>
+                        <p><b>poniedziałek - piątek:</b> 08:00 - 21:00<br/>
+                            <b>sobota - niedziela:</b> 08:00 - 19:00</p>
+                    </div>
+                    <div class="col">
+                        <h4>Schronisko</h4>
+                        <div class="line"></div>
+                        <p><b>E-mail:</b> zoologiczny_schronisko@mail.com<br/>
+                            <b>Telefon:</b> 58 112 132 153</p>
+                        <p>Godziny pracy:</p>
+                        <div class="line"></div>
+                        <p><b>poniedziałek - piątek:</b> 08:00 - 20:00<br/>
+                            <b>sobota - niedziela:</b> 08:00 - 19:00</p>
+                    </div>
+                    <div class="col">
+                        <h4>Adresy</h4>
+                        <div class="line"></div>
+                        <p><b>Sklep:</b></p>
+                        <div class="line"></div>
+                        <p>80-000 Gdańsk<br/>
+                            ul. Jakaśtam 25</p>
+                        <p><b>Schronisko:</b></p>
+                        <div class="line"></div>
+                        <p>80-000 Gdańsk<br/>
+                            ul. Jakaśtam 30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
