@@ -13,23 +13,20 @@
         <li class="active" sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Zarządzanie</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
+                <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
                     <a th:href="@{/product/listProducts}">Edytuj produkty</a>
                 </li>
-                <li>
+                <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
                     <a th:href="@{/product/new}">Dodaj produkty</a>
                 </li>
-                <li>
+                <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
                     <a th:href="@{/product/newCategory}">Dodaj kategorie</a>
                 </li>
-                <li>
+                <li sec:authorize="hasAnyAuthority('ADMIN')">
                     <a th:href="@{/admin/new}">Dodaj użytowników</a>
                 </li>
-                <li>
+                <li sec:authorize="hasAnyAuthority('ADMIN')">
                     <a th:href="@{/admin/listUsers}">Edytuj użytowników</a>
-                </li>
-                <li>
-                    <a th:href="@{/admin/new}">Dodaj użytowników</a>
                 </li>
             </ul>
         </li>
@@ -39,33 +36,6 @@
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <a th:href="@{/product/page/1}">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
                 </li>
             </ul>
         </li>

@@ -25,78 +25,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Producent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProducentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/SubcategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/CategoriesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ProducentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/background1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_category_subcategory.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/animated.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu_collapse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/sidebar_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/sidebar_script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/users_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/users_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/login_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/register_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/schronisko.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/schronisko.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/wlasne.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AppController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/sidebar_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/sidebar_script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/users_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/users_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/side_menu.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/login_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/register_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/signup_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/schronisko.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/schronisko.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/partners.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_pages/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_pages/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/wlasne.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zoologiczny.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zoologiczny.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -141,9 +118,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/shop_pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../PSI/Projekt/projekt/zoologiczny" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -176,19 +154,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SusersmvcApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/susersmvc/templates/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -209,6 +174,9 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="" />
@@ -238,7 +206,22 @@
       <workItem from="1608987385124" duration="30756000" />
       <workItem from="1609026092748" duration="180000" />
       <workItem from="1609069406666" duration="22537000" />
-      <workItem from="1609160938176" duration="29208000" />
+      <workItem from="1609160938176" duration="29387000" />
+      <workItem from="1609242121496" duration="3023000" />
+      <workItem from="1609254775982" duration="428000" />
+      <workItem from="1609258664982" duration="9358000" />
+      <workItem from="1609321870506" duration="6784000" />
+      <workItem from="1609362637402" duration="53000" />
+      <workItem from="1609363404407" duration="600000" />
+      <workItem from="1609414119110" duration="638000" />
+      <workItem from="1609495186777" duration="22000" />
+      <workItem from="1609499567344" duration="266000" />
+      <workItem from="1609679617702" duration="2725000" />
+      <workItem from="1609747901486" duration="199000" />
+      <workItem from="1609750013818" duration="4597000" />
+      <workItem from="1609762966846" duration="1301000" />
+      <workItem from="1609876727480" duration="7932000" />
+      <workItem from="1609936182340" duration="18965000" />
     </task>
     <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
       <created>1608112313606</created>
@@ -294,75 +277,83 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608051236078" />
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1609180462182">
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1609945834375">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609180462182" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609945834375" />
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609179482156">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609179482156" />
-    <state x="-1180" y="280" key="FileChooserDialogImpl" timestamp="1608979741351">
-      <screen x="-1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1608979741351" />
-    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608976411713" />
-    <state width="1877" height="171" key="GridCell.Tab.0.bottom" timestamp="1609192969342">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1609750510879">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.0.center" timestamp="1609192969342">
+    <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609258684555" />
+    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609750510879" />
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.0.left" timestamp="1609192969341">
+    <state width="1877" height="339" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center" timestamp="1609961934298">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969341" />
-    <state width="1877" height="171" key="GridCell.Tab.0.right" timestamp="1609192969342">
+    <state width="1877" height="339" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934298" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left" timestamp="1609961934298">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.1.bottom" timestamp="1609192969342">
+    <state width="1877" height="339" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751509" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934298" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.1.center" timestamp="1609192969342">
+    <state width="1877" height="339" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.1.left" timestamp="1609192969342">
+    <state width="1877" height="339" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="252" key="GridCell.Tab.1.center" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="171" key="GridCell.Tab.1.right" timestamp="1609192969342">
+    <state width="1877" height="339" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="252" key="GridCell.Tab.1.left" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="171" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609192969342" />
-    <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1609190077430">
+    <state width="1877" height="339" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="252" key="GridCell.Tab.1.right" timestamp="1609961934299">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609190077430" />
-    <state width="1877" height="352" key="GridCell.Tab.2.center" timestamp="1609190077430">
+    <state width="1877" height="339" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
+    <state width="1877" height="252" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609961934299" />
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1609193436582">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609190077430" />
-    <state width="1877" height="352" key="GridCell.Tab.2.left" timestamp="1609190077430">
+    <state width="1877" height="352" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609193436582" />
+    <state width="1877" height="352" key="GridCell.Tab.2.center" timestamp="1609193436582">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609190077430" />
-    <state width="1877" height="352" key="GridCell.Tab.2.right" timestamp="1609190077430">
+    <state width="1877" height="352" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609193436582" />
+    <state width="1877" height="352" key="GridCell.Tab.2.left" timestamp="1609193436582">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="352" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609190077430" />
+    <state width="1877" height="352" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609193436582" />
+    <state width="1877" height="352" key="GridCell.Tab.2.right" timestamp="1609193436582">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="352" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609193436582" />
     <state x="440" y="99" key="SettingsEditor" timestamp="1608760891611">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760891611" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1609026124263">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1609193422390">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609026124263" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609193422390" />
     <state x="729" y="350" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1608847490915">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -375,10 +366,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="702" y="424" key="git4idea.ui.GitStashDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760472689" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1609001930665">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1609882472279">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609001930665" />
+    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609882472279" />
     <state x="752" y="384" key="scopes" timestamp="1608756116366">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -387,7 +378,7 @@
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo parentTag="java.lang.Long" memberName="value" />
+        <PinnedItemInfo />
       </pinned-members>
     </pin-to-top-manager>
   </component>

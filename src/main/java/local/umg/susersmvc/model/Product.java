@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "produkt", schema = "zoologiczny")
+@Table(name = "product", schema = "zoologiczny")
 public class Product {
 
     @Id
@@ -14,6 +14,7 @@ public class Product {
     private String description;
     private Integer quantity;
     private Double price;
+    private byte[] image;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -74,6 +75,14 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public Category getCategory() {

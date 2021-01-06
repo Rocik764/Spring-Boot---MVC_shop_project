@@ -29,7 +29,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>ID produktu</th>
+                        <th>Image</th>
                         <th>Nazwa</th>
                         <th>Opis</th>
                         <th>Ilość</th>
@@ -40,21 +40,21 @@
                     </tr>
                     </thead>
                     <tbody>
-
-                    <tr th:each="product : ${listProducts}">
-                        <td th:text="${product.id}">ID produktu</td>
-                        <td th:text="${product.name}">Nazwa</td>
-                        <td th:text="${product.description}">Opis</td>
-                        <td th:text="${product.quantity}">Ilość</td>
-                        <td th:text="${product.price}">Cena</td>
-                        <td th:text="${product.category.getName()}">Kategoria</td>
-                        <td th:text="${product.subcategory.getName()}">Podkategoria</td>
-                        <td sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')">
-                            <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/editProduct/' + ${product.id}}">Edit</a>
-                            &nbsp;&nbsp;&nbsp;
-                            <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/deleteProduct/' + ${product.id}}">Delete</a>
-                        </td>
-                    </tr>
+                            <tr th:each="product : ${listProducts}">
+    <!--                        <td th:text="${product.id}">ID produktu</td>-->
+                            <td><img alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="width: 100px; height: 100px;"></td>
+                            <td th:text="${product.name}">Nazwa</td>
+                            <td th:text="${product.description}">Opis</td>
+                            <td th:text="${product.quantity}">Ilość</td>
+                            <td th:text="${product.price}">Cena</td>
+                            <td th:text="${product.category.getName()}">Kategoria</td>
+                            <td th:text="${product.subcategory.getName()}">Podkategoria</td>
+                            <td sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')">
+                                <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/editProduct/' + ${product.id}}">Edit</a>
+                                &nbsp;&nbsp;&nbsp;
+                                <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/deleteProduct/' + ${product.id}}">Delete</a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

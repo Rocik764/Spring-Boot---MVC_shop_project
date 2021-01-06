@@ -9,8 +9,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.print.attribute.standard.PrinterURI;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @Controller
@@ -26,8 +30,8 @@ public class ProductsController {
     @Autowired
     private ProducentService producentService;
 
-    @RequestMapping("/listProducts")
-    public String viewListProducts(Model model) {
+    @GetMapping("/listProducts")
+    public String viewListProducts(Model model) throws UnsupportedEncodingException {
         List<Product> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
         return "shop_pages/show_products";
@@ -44,12 +48,13 @@ public class ProductsController {
 
     @RequestMapping("/new")
     public String showNewFormProduct(Model model) {
-        Product newProduct = new Product();
+        System.out.println("Controller: new");
+        //Product newProduct = new Product();
         List<Category> listCategory = categoriesService.listAllCategory();
         List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
         List<Producent> listProducent = producentService.listAll();
 
-        model.addAttribute("product", newProduct);
+        //model.addAttribute("product", newProduct);
         model.addAttribute("listCategory", listCategory);
         model.addAttribute("listSubcategory", listSubcategory);
         model.addAttribute("listProducent", listProducent);
@@ -67,8 +72,33 @@ public class ProductsController {
     }
 
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") Product product) {
-        service.save(product);
+    public String saveProduct(
+            @RequestParam("name") String name,
+            @RequestParam("description") String description,
+            @RequestParam("quantity") int quantity,
+            @RequestParam("price") double price,
+            @RequestParam("category") Category category,
+            @RequestParam("subcategory") Subcategory subcategory,
+            @RequestParam("producent") Producent producent,
+            @RequestParam("image") MultipartFile file) {
+        System.out.println("Controller: saveProduct");
+        service.save(name, description, quantity, price, category, subcategory, producent, file);
+        return "redirect:/product/listProducts";
+    }
+
+    @RequestMapping(value = "/updateProduct", method = RequestMethod.POST)
+    public String updateProduct(
+            @RequestParam("id") Long id,
+            @RequestParam("name") String name,
+            @RequestParam("description") String description,
+            @RequestParam("quantity") int quantity,
+            @RequestParam("price") double price,
+            @RequestParam("category") Category category,
+            @RequestParam("subcategory") Subcategory subcategory,
+            @RequestParam("producent") Producent producent,
+            @RequestParam("image") MultipartFile file) {
+        System.out.println("Controller: saveProduct");
+        service.update(id, name, description, quantity, price, category, subcategory, producent, file);
         return "redirect:/product/listProducts";
     }
 
@@ -84,9 +114,23 @@ public class ProductsController {
         return "redirect:/product/listProducts";
     }
 
+    @RequestMapping("/display/{id}")
+    void showImage(@PathVariable(name = "id") Long id, HttpServletResponse response) throws ServletException, IOException {
+        Product product = service.get(id);
+        response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
+        response.getOutputStream().write(product.getImage());
+        response.getOutputStream().close();
+    }
+
     @RequestMapping("/editProduct/{id}")
     public String showEditFormProduct(@PathVariable(name = "id") Long id, Model model) {
         Product product = service.get(id);
+        List<Category> listCategory = categoriesService.listAllCategory();
+        List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
+        List<Producent> listProducent = producentService.listAll();
+        model.addAttribute("listCategory", listCategory);
+        model.addAttribute("listSubcategory", listSubcategory);
+        model.addAttribute("listProducent", listProducent);
         model.addAttribute("product", product);
         return "/admin_pages/edit_product";
     }

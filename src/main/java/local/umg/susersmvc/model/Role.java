@@ -3,7 +3,7 @@ package local.umg.susersmvc.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "roles")
+@Table(name = "roles_spring")
 public class Role {
 
 	@Id

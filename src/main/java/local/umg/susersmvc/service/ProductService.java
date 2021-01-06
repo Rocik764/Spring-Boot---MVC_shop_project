@@ -1,13 +1,19 @@
 package local.umg.susersmvc.service;
 
+import local.umg.susersmvc.model.Category;
+import local.umg.susersmvc.model.Producent;
 import local.umg.susersmvc.model.Product;
+import local.umg.susersmvc.model.Subcategory;
 import local.umg.susersmvc.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -20,7 +26,44 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public void save(Product product) {
+    public void save(String name, String description, int quantity, double price, Category category, Subcategory subcategory, Producent producent, MultipartFile file) {
+        System.out.println("Service: save");
+        Product product = new Product();
+        product.setName(name);
+        product.setDescription(description);
+        product.setQuantity(quantity);
+        product.setPrice(price);
+        product.setCategory(category);
+        product.setSubcategory(subcategory);
+        product.setProducent(producent);
+
+        try {
+            product.setImage(file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        repository.save(product);
+    }
+
+    public void update(Long id, String name, String description, int quantity, double price, Category category, Subcategory subcategory, Producent producent, MultipartFile file) {
+        System.out.println("Service: update");
+        Product product = new Product();
+        product.setId(id);
+        product.setName(name);
+        product.setDescription(description);
+        product.setQuantity(quantity);
+        product.setPrice(price);
+        product.setCategory(category);
+        product.setSubcategory(subcategory);
+        product.setProducent(producent);
+
+        try {
+            product.setImage(file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         repository.save(product);
     }
 
