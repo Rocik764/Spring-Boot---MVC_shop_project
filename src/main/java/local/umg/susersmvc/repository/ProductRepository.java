@@ -3,6 +3,7 @@ package local.umg.susersmvc.repository;
 import local.umg.susersmvc.model.Product;
 import local.umg.susersmvc.model.User;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -16,4 +17,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT c FROM Product c WHERE c.category.id = :id AND c.subcategory.id = :ids")
     public List<Product> findByCategorySubcategory(Long id, Long ids);
+
+    @Query("SELECT c FROM Product c WHERE c.category.id = :id AND c.subcategory.id = :ids")
+    public Page<Product> findByCategorySubcategoryPaginated(Long id, Long ids, Pageable pageable);
 }

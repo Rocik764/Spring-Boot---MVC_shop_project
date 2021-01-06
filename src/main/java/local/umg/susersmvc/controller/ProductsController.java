@@ -37,13 +37,32 @@ public class ProductsController {
         return "shop_pages/show_products";
     }
 
-    @RequestMapping("/category/{Idc}/subcategory/{Idsc}")
-    public String viewListProductsByCategory(@PathVariable String Idc, @PathVariable String Idsc, Model model) {
+    @RequestMapping("/category/{Idc}/subcategory/{Idsc}/page/{pageNo}")
+    public String viewListProductsByCategory(@PathVariable String Idc, @PathVariable String Idsc, @PathVariable(name = "pageNo") int pageNo, Model model) {
         Long id = Long.parseLong(Idc);
         Long ids = Long.parseLong(Idsc);
-        List<Product> listProducts = service.listByCategorySubcategory(id, ids);
-        model.addAttribute("listProducts", listProducts);
-        return "shop_pages/show_products";
+        if(pageNo <= 0) pageNo = 1;
+        int pageSize = 8;
+        Page<Product> page = service.listByCategorySubcategoryPaginated(id, ids, pageNo, pageSize);
+        List<Product> productList = page.getContent();
+        model.addAttribute("currentPage", pageNo);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("productList", productList);
+        return "/shop_pages/show_product";
+    }
+
+    @RequestMapping("/page/{pageNo}")
+    public String deleteProduct(@PathVariable(name = "pageNo") int pageNo, Model model) {
+        if(pageNo <= 0) pageNo = 1;
+        int pageSize = 8;
+        Page<Product> page = service.findPaginated(pageNo, pageSize);
+        List<Product> productList = page.getContent();
+        model.addAttribute("currentPage", pageNo);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("productList", productList);
+        return "/shop_pages/show_product";
     }
 
     @RequestMapping("/new")
@@ -139,18 +158,5 @@ public class ProductsController {
     public String deleteProduct(@PathVariable(name = "id") Long id) {
         service.delete(id);
         return "redirect:/listProducts";
-    }
-
-    @RequestMapping("/page/{pageNo}")
-    public String deleteProduct(@PathVariable(name = "pageNo") int pageNo, Model model) {
-        if(pageNo <= 0) pageNo = 1;
-        int pageSize = 6;
-        Page<Product> page = service.findPaginated(pageNo, pageSize);
-        List<Product> productList = page.getContent();
-        model.addAttribute("currentPage", pageNo);
-        model.addAttribute("totalPages", page.getTotalPages());
-        model.addAttribute("totalItems", page.getTotalElements());
-        model.addAttribute("productList", productList);
-        return "/shop_pages/show_product";
     }
 }

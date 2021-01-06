@@ -83,6 +83,11 @@ public class ProductService {
         return repository.findByCategorySubcategory(id, ids);
     }
 
+    public Page<Product> listByCategorySubcategoryPaginated(Long id, Long ids, int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        return repository.findByCategorySubcategoryPaginated(id, ids, pageable);
+    }
+
     public Page<Product> findPaginated(int pageNo, int pageSize) {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
         return repository.findAll(pageable);
