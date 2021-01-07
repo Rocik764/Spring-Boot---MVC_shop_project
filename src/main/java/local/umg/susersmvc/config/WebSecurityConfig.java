@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/product/deleteProduct/**").hasAnyAuthority("ADMIN", "EMPLOYEE")
 				.antMatchers("/product/newCategory").hasAnyAuthority("ADMIN", "EMPLOYEE")
 				.antMatchers("/product/newProducent").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/app/profile").authenticated()
+				.antMatchers("/app/profile", "/cart/showCart").authenticated()
 				.antMatchers("/app/contact").permitAll()
 				.antMatchers("/app/register").permitAll()
 				.antMatchers("/app/schronisko").permitAll()

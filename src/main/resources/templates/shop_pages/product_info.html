@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8" />
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <span th:object="${product}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h2>[[${product.name}]]</h2>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="img-fluid card-img-top" alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="height: 500px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="small text-white mb-0">
+                                Nazwa: [[${product.name}]]<br/>
+                                Opis: [[${product.description}]]<br/>
+                                Ilość: [[${product.quantity}]]<br/>
+                                Cena: [[${product.price}]]<br/>
+                                Kategoria: [[${product.category.getName()}]]<br/>
+                                Podkategoria: [[${product.subcategory.getName()}]]
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -21,9 +21,6 @@ import java.util.List;
 public class AppController {
 
     @Autowired
-    private UserService service;
-
-    @Autowired
     private ProducentService producentService;
 
     //  akcje kontrolera aplikacji

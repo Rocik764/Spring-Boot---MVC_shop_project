@@ -154,6 +154,13 @@ public class ProductsController {
         return "/admin_pages/edit_product";
     }
 
+    @RequestMapping("/productInfo/{id}")
+    public String showProductInfo(@PathVariable(name = "id") Long id, Model model) {
+        Product product = service.get(id);
+        model.addAttribute("product", product);
+        return "/shop_pages/product_info";
+    }
+
     @RequestMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable(name = "id") Long id) {
         service.delete(id);

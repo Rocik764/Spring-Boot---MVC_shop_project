@@ -58,7 +58,7 @@
 
                         <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/register}">Zajerestruj</a>
 
-                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/}">Koszyk</a>
+                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/cart/showCart}">Koszyk</a>
                         <div class="dropdown-divider" sec:authorize="isAuthenticated()"></div>
                         <form class="dropdown-item" sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
                             <input type="submit" value="Wyloguj"/>

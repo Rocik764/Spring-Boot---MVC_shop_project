@@ -1,9 +1,12 @@
 package local.umg.susersmvc.service;
 
+import local.umg.susersmvc.details.CustomUserDetails;
 import local.umg.susersmvc.model.Role;
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -68,5 +71,9 @@ public class UserService {
     @Transactional
     public void editPassword(String password, Long id) {
         repository.updatePassword(password, id);
+    }
+
+    public User getCustomerByEmail(String email) {
+        return repository.findByEmail(email);
     }
 }
