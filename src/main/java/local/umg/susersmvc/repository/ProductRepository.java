@@ -1,7 +1,6 @@
 package local.umg.susersmvc.repository;
 
 import local.umg.susersmvc.model.Product;
-import local.umg.susersmvc.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

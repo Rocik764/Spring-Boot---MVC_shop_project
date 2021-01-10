@@ -51,4 +51,9 @@ public class CartItem {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    @Transient
+    public double getSubtotal() {
+        return this.product.getPrice() * amount;
+    }
 }
