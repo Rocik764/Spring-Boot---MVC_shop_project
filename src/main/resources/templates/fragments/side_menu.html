@@ -31,13 +31,37 @@
             </ul>
         </li>
         <li>
-            <a href="#">Nowości</a>
             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Filtry</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
+                <form th:action="@{/product/startSideMenuFiltering}" method="POST">
+                    <li>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="filterWord" placeholder="Czego szukasz?">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label for="price-from">Cena od</label>
+                            <input type="number" step="0.01" class="form-control" id="price-from" name="filterPriceFrom" min="0" value="0">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            <label for="price-to">Cena do</label>
+                            <input type="number" step="0.01" class="form-control" id="price-to" name="filterPriceTo" min="0">
+                        </div>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn-secondary">Szukaj</button>
+                    </li>
+                </form>
                 <li>
-                    <a th:href="@{/product/page/1}">Page 1</a>
+                    <a th:href="@{/product/filtering}">Więcej filtrów</a>
                 </li>
             </ul>
+        </li>
+        <li>
+            <a th:href="@{/product/page/1}">Page 1</a>
         </li>
         <li>
             <a th:href="@{/app/contact}">Kontakt</a>

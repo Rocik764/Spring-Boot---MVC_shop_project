@@ -1,7 +1,6 @@
 package local.umg.susersmvc.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "product", schema = "zoologiczny")

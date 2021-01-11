@@ -89,6 +89,10 @@ a, a:hover, a:focus {
     background: #6d7fcc;
 }
 
+#sidebar form {
+    padding: 10px 20px 10px 20px;
+}
+
 
 a[data-toggle="collapse"] {
     position: relative;

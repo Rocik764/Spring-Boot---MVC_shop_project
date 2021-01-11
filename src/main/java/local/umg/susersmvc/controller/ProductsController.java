@@ -166,4 +166,53 @@ public class ProductsController {
         service.delete(id);
         return "redirect:/listProducts";
     }
+
+    @RequestMapping("/filtering")
+    public String showFilteringForm(Model model) {
+        List<Category> listCategory = categoriesService.listAllCategory();
+        List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
+        List<Producent> listProducent = producentService.listAll();
+        model.addAttribute("listCategory", listCategory);
+        model.addAttribute("listSubcategory", listSubcategory);
+        model.addAttribute("listProducent", listProducent);
+        return "/shop_pages/filtering";
+    }
+
+    @RequestMapping(value = "/startSideMenuFiltering", method = RequestMethod.POST)
+    public String startSideMenuFiltering(
+            @RequestParam("filterWord") String filterWord,
+            @RequestParam("filterPriceFrom") String filterPriceFrom,
+            @RequestParam("filterPriceTo") String filterPriceTo,
+            Model model) {
+
+        int pageSize = 8, pageNo = 1;
+        Page<Product> page = service.listBySideFilters(filterWord, filterPriceFrom, filterPriceTo, pageNo, pageSize);
+        List<Product> productList = page.getContent();
+        model.addAttribute("currentPage", pageNo);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("productList", productList);
+        return "/shop_pages/show_product";
+    }
+
+    @RequestMapping(value = "/startFiltering", method = RequestMethod.POST)
+    public String startFiltering(
+            @RequestParam("filterWord") String filterWord,
+            @RequestParam("filterPriceFrom") String filterPriceFrom,
+            @RequestParam("filterPriceTo") String filterPriceTo,
+            @RequestParam("category") String cId,
+            @RequestParam("subcategory") String sId,
+            @RequestParam("producent") String pId,
+            Model model) {
+
+        int pageSize = 8, pageNo = 1;
+        System.out.println("1: |" + filterWord + "|\nFrom: " + filterPriceFrom + "\nTo: " + filterPriceTo + "cId: " + cId + " sId: " + sId + " pId: " + pId);
+        Page<Product> page = service.listByFilters(filterWord, filterPriceFrom, filterPriceTo, cId, sId, pId, pageNo, pageSize);
+        List<Product> productList = page.getContent();
+        model.addAttribute("currentPage", pageNo);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("productList", productList);
+        return "/shop_pages/show_product";
+    }
 }

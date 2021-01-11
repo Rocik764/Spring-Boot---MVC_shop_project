@@ -25,37 +25,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/restController/ShoppingCartRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/removeFromCart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/add_to_cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/amount_control.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/shopping_cart_update_total.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/.idea/fragments.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/amount_control.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/standard_modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/filtering.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/CartItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/CartItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProducentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProducentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ShoppingCartServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ShoppingCartServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/product_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/product_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/shopping_cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/CartItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/repository/CartItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/repository/CartItemRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ShoppingCartServices.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ShoppingCartServices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/product_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/product_info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_pages/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_pages/shopping_cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zoologiczny.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zoologiczny.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/SubcategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/SubcategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/side_menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +96,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../PSI/Projekt/projekt/zoologiczny" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/shop_pages" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -121,12 +106,12 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\fragments" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\js" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\user_pages" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\shop_pages" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\img" />
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\css" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\fragments" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\shop_pages" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\admin_pages" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="local.umg.susersmvc.controller" />
@@ -135,26 +120,15 @@
       <recent name="local.umg.susersmvc" />
       <recent name="local.umg.susersmvc.model" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\img" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\css" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\fragments" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\shop_pages" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\admin_pages" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\fragments" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\js" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\user_pages" />
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SusersmvcApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/susersmvc/templates/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -227,7 +201,10 @@
       <workItem from="1610107543852" duration="19526000" />
       <workItem from="1610188173076" duration="1114000" />
       <workItem from="1610197666620" duration="4190000" />
-      <workItem from="1610278694607" duration="15335000" />
+      <workItem from="1610278694607" duration="15781000" />
+      <workItem from="1610312536044" duration="1767000" />
+      <workItem from="1610353005252" duration="5646000" />
+      <workItem from="1610383978519" duration="14846000" />
     </task>
     <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
       <created>1608112313606</created>
@@ -291,79 +268,83 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609179482156" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610209813322">
+    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610358345459">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609258684555" />
-    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610209813322" />
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom" timestamp="1610295302928">
+    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610358345459" />
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.0.center" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.0.center" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.0.left" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.0.left" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751509" />
-    <state width="1877" height="230" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.0.right" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.0.right" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.1.bottom" timestamp="1610399307152">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307152" />
+    <state width="1877" height="351" key="GridCell.Tab.1.center" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.1.left" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right" timestamp="1610295302928">
+    <state width="1877" height="351" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="351" key="GridCell.Tab.1.right" timestamp="1610399307151">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="230" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295302928" />
-    <state width="1877" height="247" key="GridCell.Tab.2.bottom" timestamp="1610290043575">
+    <state width="1877" height="351" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399307151" />
+    <state width="1877" height="247" key="GridCell.Tab.2.bottom" timestamp="1610399125314">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610290043575" />
-    <state width="1877" height="247" key="GridCell.Tab.2.center" timestamp="1610290043575">
+    <state width="1877" height="247" key="GridCell.Tab.2.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399125314" />
+    <state width="1877" height="247" key="GridCell.Tab.2.center" timestamp="1610399125314">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610290043575" />
-    <state width="1877" height="247" key="GridCell.Tab.2.left" timestamp="1610290043575">
+    <state width="1877" height="247" key="GridCell.Tab.2.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399125314" />
+    <state width="1877" height="247" key="GridCell.Tab.2.left" timestamp="1610399125314">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610290043575" />
-    <state width="1877" height="247" key="GridCell.Tab.2.right" timestamp="1610290043575">
+    <state width="1877" height="247" key="GridCell.Tab.2.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399125314" />
+    <state width="1877" height="247" key="GridCell.Tab.2.right" timestamp="1610399125314">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="247" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610290043575" />
+    <state width="1877" height="247" key="GridCell.Tab.2.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610399125314" />
     <state x="440" y="99" key="SettingsEditor" timestamp="1608760891611">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760891611" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1610050965631">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1610295999565">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610050965631" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610295999565" />
     <state x="729" y="350" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1608847490915">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="729" y="350" key="com.intellij.testIntegration.createTest.CreateTestDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608847490915" />
+    <state x="1029" y="325" key="extract.method.dialog" timestamp="1610401225372">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1029" y="325" key="extract.method.dialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610401225372" />
     <state x="761" y="431" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1608761915863">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -372,10 +353,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="702" y="424" key="git4idea.ui.GitStashDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760472689" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1609882472279">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1610398475259">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1609882472279" />
+    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610398475259" />
     <state x="752" y="384" key="scopes" timestamp="1608756116366">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
