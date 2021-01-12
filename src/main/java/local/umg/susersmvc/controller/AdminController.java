@@ -1,7 +1,11 @@
 package local.umg.susersmvc.controller;
 
 import local.umg.susersmvc.details.CustomUserDetails;
+import local.umg.susersmvc.model.OrderDetails;
+import local.umg.susersmvc.model.Orders;
 import local.umg.susersmvc.model.User;
+import local.umg.susersmvc.service.OrdersDetailsService;
+import local.umg.susersmvc.service.OrdersService;
 import local.umg.susersmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -18,6 +22,12 @@ public class AdminController {
 
     @Autowired
     private UserService service;
+
+    @Autowired
+    private OrdersService ordersService;
+
+//    @Autowired
+//    private OrdersDetailsService ordersDetailsService;
 
     @RequestMapping("/listUsers")
     public String viewListUsers(Model model) {
@@ -106,4 +116,24 @@ public class AdminController {
 
         return "redirect:/admin/listUsers";
     }
+
+    @RequestMapping("/showOrders")
+    public String showOrdersList(Model model) {
+        List<Orders> orders = ordersService.listAll();
+        model.addAttribute("orders", orders);
+
+        return "/admin_pages/orders_list";
+    }
+
+//    @RequestMapping("/showOrdersDetails/{uId}")
+//    public @ResponseBody List<OrderDetails> showOrdersDetailsList(@PathVariable(name = "uId") Long uId) {
+//        System.out.println("showOrdersDetailsList");
+//        List<OrderDetails> orderDetails = ordersDetailsService.findAllByUserId(uId);
+//        //model.addAttribute("orderDetails", orderDetails);
+//        //model.addAttribute("test", "test");
+//        for (OrderDetails value : orderDetails) {
+//            System.out.println(value.toString());
+//        }
+//        return orderDetails;
+//    }
 }

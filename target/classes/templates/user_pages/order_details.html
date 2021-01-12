@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+
+                <span th:object="${order}">
+                <form th:action="@{/cart/orderProducts}"  method="POST">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2>Dostawa i płatność</h2>
+                            <div>
+                                <h4>Sposób dostawy</h4>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="kurier" required>Kurier - InPost, UPS, FedEx, DTS lub Poczta Polska (9,99zł)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="osobiście" required>Odbiór osobisty (bezpłatnie)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="paczkomat" required>Paczkomaty 24/7 (bezpłatnie)
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Metoda płatności</h4>
+                                    <div class="form-check">
+                                    <label class="form-check-label active">
+                                    <input type="radio" class="form-check-input" name="payment"  th:field="*{payment}" value="blik" required>BLIK (bezpłatnie)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przelew" required>Przelew gotówkowy (bezpłatnie)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przy odbiorze" required>Przy odbiorze
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="karta płatnicza" required>Karta płatnicza online
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="dotpay" required>Szybki przelew DotPay (9,74 zł)
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>Dane odbiorcy</h4>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="address" placeholder="Ulica i numer" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="code" placeholder="Kod pocztowy" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="city" placeholder="Miejscowość" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="phone" th:field="*{phone}" placeholder="Telefon" required>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="invoice" class="form-check-input" value="">Chcę otrzymać fakturę
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox" value="scheckbox" />Chcę dodać komentarz do zamówienia
+                                    </label>
+                                </div>
+                                <div class="form-group" id="otherFieldDiv">
+                                    <input id="comment" class="form-control" name="comment" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div>
+                                <span class="h3">Podsumowanie:</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="h2" id="totalPrice">[[${totalPrice}]]</span>
+                                <input type="hidden" name="totalPrice" th:value="${totalPrice}">
+                            </div>
+                            <div>
+                                <span>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input id="regulations" type="checkbox" class="form-check-input" required>Akceptuje regulamin
+                                        </label>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="mt-2">
+                                <a href="#"><button class="btn btn-danger p-3 mt-2">Płacę</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="/fragments/standard_modal :: standardModal"></div>
+<script type="text/javascript">
+    $(function () {
+        $('input[name="comment"]').hide();
+
+        //show it when the checkbox is clicked
+        $('input[name="checkbox"]').on('click', function () {
+            if ($(this).prop('checked')) {
+                $('input[name="comment"]').fadeIn();
+            } else {
+                $('input[name="comment"]').hide();
+            }
+        });
+    });
+</script>
+</body>
+</html>

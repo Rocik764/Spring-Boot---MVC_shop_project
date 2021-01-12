@@ -31,7 +31,7 @@
             <div class="container">
                 <p>Koszyk użytkownika: [[${user.getEmail()}]]</p>
                 <div class="row m-1">
-                    <div class="col-md-8">
+                    <div class="col-lg-8">
                         <th:block th:each="item, status : ${cartItems}">
                             <div class="row border rounded" th:with="product = ${item.product}" th:id="'row' + ${status.count}">
                                 <div class="col-lg-1">
@@ -64,7 +64,7 @@
                             <div class="row m-1">&nbsp;</div>
                         </th:block>
                     </div>
-                    <div class="col-md-4" th:unless="${#lists.isEmpty(cartItems)}">
+                    <div class="col-lg-4" th:unless="${#lists.isEmpty(cartItems)}">
                         <div>
                             <span class="h3">Podsumowanie:</span>
                         </div>
@@ -72,7 +72,7 @@
                             <span class="h2" id="totalAmount"></span>
                         </div>
                         <div class="mt-2">
-                            <button class="btn btn-danger p-3 mt-2">Zakup</button>
+                            <a href="/cart/showOrderDetails"><button class="btn btn-danger p-3 mt-2">Zakup</button></a>
                         </div>
                     </div>
                 </div>
