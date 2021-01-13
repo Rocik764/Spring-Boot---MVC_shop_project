@@ -78,7 +78,7 @@ public class ShoppingCartController {
         if(invoice == null) invc = false;
         User user = getUser(loggedUser);
         ordersService.orderProducts(user, delivery, payment, address, code, city, phone, invc, comment, totalPrice);
-        return "redirect:/app/";
+        return "redirect:/cart/showCart";
     }
 
     private User getUser(CustomUserDetails loggedUser) {

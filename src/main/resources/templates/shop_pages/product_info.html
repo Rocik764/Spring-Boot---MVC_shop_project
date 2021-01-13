@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <title>Edit Product</title>
+    <title>Informacje o produkcie</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -46,21 +45,12 @@
                                 Nazwa: [[${product.name}]]<br/>
                                 Opis: [[${product.description}]]<br/>
                                 Ilość: [[${product.quantity}]]<br/>
-                                Cena: [[${product.price}]]<br/>
-                                Kategoria: [[${product.category.getName()}]]<br/>
-                                Podkategoria: [[${product.subcategory.getName()}]]
+                                Cena: [[${product.price}]]
                             </p>
                         </div>
                         <div class="col-md-2">
                             <div>
                                 <div th:replace="/fragments/amount_control :: amount_control(${1}, ${product.id})"></div>
-                            </div>
-                            <div>
-                                <span>x</span>
-                                <span>$[[${product.price}]]</span>
-                            </div>
-                            <div>
-                                <span>=</span><span class="h4">[Subtotal]</span>
                             </div>
                             <div class="mt-2">
                                 <button class="btn btn-primary" id="buttonAddToCart">Dodaj do koszyka</button>

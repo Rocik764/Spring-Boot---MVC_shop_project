@@ -4,7 +4,6 @@ import local.umg.susersmvc.details.CustomUserDetails;
 import local.umg.susersmvc.model.Producent;
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.service.ProducentService;
-import local.umg.susersmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

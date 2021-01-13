@@ -1,15 +1,11 @@
 package local.umg.susersmvc.controller;
 
-import local.umg.susersmvc.details.CustomUserDetails;
-import local.umg.susersmvc.model.OrderDetails;
 import local.umg.susersmvc.model.Orders;
 import local.umg.susersmvc.model.Role;
 import local.umg.susersmvc.model.User;
-import local.umg.susersmvc.service.OrdersDetailsService;
 import local.umg.susersmvc.service.OrdersService;
 import local.umg.susersmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +15,6 @@ import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("admin")

@@ -3,7 +3,7 @@ package local.umg.susersmvc.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orders_details", schema = "zoologiczny")
+@Table(name = "orders_details", schema = "zoologiczny_spring")
 public class OrderDetails {
 
     @Id

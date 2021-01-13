@@ -51,17 +51,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 				.antMatchers(
 						"/product/newCategory",
+						"/product/listProducts",
 						"/product/newProducent",
 						"/product/deleteProduct/**",
 						"/product/editProduct/**",
 						"/product/new",
-						"/cart/showOrderDetails",
 						"/ordersRest/showOrdersDetails/{uId}").hasAnyAuthority("ADMIN", "EMPLOYEE")
 
 				.antMatchers(
 						"/app/profile",
 						"/cart/showCart",
-						"/cart/orderProducts").authenticated()
+						"/cart/orderProducts",
+						"/cart/showOrderDetails").authenticated()
 
 				.antMatchers(
 						"/app/contact",

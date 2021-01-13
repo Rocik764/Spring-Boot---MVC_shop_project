@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "producent", schema = "zoologiczny")
+@Table(name = "producent", schema = "zoologiczny_spring")
 public class Producent {
 
     @Id

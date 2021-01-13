@@ -1,0 +1,132 @@
+body, html {
+    height: 100%;
+    background: rgba(0, 0, 0, .65) url('../img/background1.jpeg') no-repeat center center fixed;
+    background-blend-mode: darken;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 20px;
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+    display: block;
+}
+
+.navbar {
+    min-height: 57px;
+}
+
+.bg-head {
+    background: #008080;
+}
+
+.navbar li:hover > a {
+    color:#FFFFFF;
+    background-color:#1D8B94;
+    border-color:rgba(0,0,0,.6);
+}
+
+.test {
+    margin-right: 70px;
+}
+
+.editProfileBtn {
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 10px 0;
+}
+
+.products {
+    margin: 10px 100px 10px 100px;
+    border-style: solid;
+}
+
+.box-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.box-area li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 20s linear infinite;
+    bottom: -150px;
+}
+.box-area li:nth-child(1) {
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+.box-area li:nth-child(2) {
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay: 1.5s;
+    animation-duration: 10s;
+}
+.box-area li:nth-child(3) {
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 5.5s;
+}
+.box-area li:nth-child(4) {
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3.5s;
+}
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.table {
+    color: #FFFFFF;
+}
+
+.productItem:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="unnamed" />
+      <artifact name="zoologiczny:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -25,22 +25,112 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Rezerwacje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/zoologiczny_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/SusersmvcApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/SusersmvcApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/config/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/restController/OrdersDetailsRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/restController/OrdersDetailsRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/OrderDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/OrderDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Orders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Producent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Producent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/edit_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_category_subcategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_category_subcategory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/orders_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/orders_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/users_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/users_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/login_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/register_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login_pages/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login_pages/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/filtering.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/filtering.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/product_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/product_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/schronisko.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/schronisko.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/show_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/show_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/order_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/order_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/shopping_cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ROOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/SusersmvcApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/SusersmvcApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/restController/OrdersDetailsRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/restController/OrdersDetailsRestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ShoppingCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ShoppingCartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/OrderDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/OrderDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Producent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Producent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/edit_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_category_subcategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_category_subcategory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/orders_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/orders_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/users_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/users_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/login_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/login_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/register_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/register_success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login_pages/signup_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login_pages/signup_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/filtering.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/filtering.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/product_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/product_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/schronisko.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/schronisko.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shop_pages/show_products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_pages/order_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_pages/order_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_pages/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_pages/shopping_cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user_pages/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user_pages/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-local.umg.susersmvc.SusersmvcApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-local.umg.susersmvc.SusersmvcApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/local.umg.susersmvc.SusersmvcApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/local.umg.susersmvc.SusersmvcApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT.war.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/AppController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/SusersmvcApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/SusersmvcApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/edit_user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/new_user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/users_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/wlasne.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zoologiczny.iml" beforeDir="false" afterPath="$PROJECT_DIR$/zoologiczny.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +148,9 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +186,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/error" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../susersmvc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -107,11 +197,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\admin_pages" />
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\img" />
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\static\css" />
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\fragments" />
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\shop_pages" />
-      <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\admin_pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\error" />
@@ -121,9 +211,9 @@
       <recent name="C:\Users\oem\Desktop\university\sem5\PAW\Projekt\Projekt\src\main\resources\templates\shop_pages" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="local.umg.susersmvc.model" />
       <recent name="local.umg.susersmvc.restController" />
       <recent name="local.umg.susersmvc.service" />
-      <recent name="local.umg.susersmvc.model" />
       <recent name="local.umg.susersmvc.controller" />
       <recent name="local.umg.susersmvc.repository" />
     </key>
@@ -222,7 +312,9 @@
       <workItem from="1610353005252" duration="5646000" />
       <workItem from="1610383978519" duration="15513000" />
       <workItem from="1610444653070" duration="40044000" />
-      <workItem from="1610530661092" duration="12643000" />
+      <workItem from="1610530661092" duration="12698000" />
+      <workItem from="1610549069989" duration="10346000" />
+      <workItem from="1610566465289" duration="5554000" />
     </task>
     <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
       <created>1608112313606</created>
@@ -286,51 +378,51 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610447042857" />
-    <state x="740" y="280" key="FileChooserDialogImpl" timestamp="1610536561968">
+    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl" timestamp="1610550448711">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609258684555" />
-    <state x="740" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610536561968" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom" timestamp="1610546300723">
+    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610550448711" />
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom" timestamp="1610561057636">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center" timestamp="1610546300723">
+    <state width="1877" height="208" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057636" />
+    <state width="1877" height="208" key="GridCell.Tab.0.center" timestamp="1610561057636">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left" timestamp="1610546300723">
+    <state width="1877" height="208" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057636" />
+    <state width="1877" height="208" key="GridCell.Tab.0.left" timestamp="1610561057636">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751509" />
-    <state width="1877" height="317" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right" timestamp="1610546300723">
+    <state width="1877" height="208" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057636" />
+    <state width="1877" height="208" key="GridCell.Tab.0.right" timestamp="1610561057636">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.1.bottom" timestamp="1610546300723">
+    <state width="1877" height="208" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057636" />
+    <state width="1877" height="278" key="GridCell.Tab.1.bottom" timestamp="1610561057633">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.1.center" timestamp="1610546300723">
+    <state width="1877" height="278" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057633" />
+    <state width="1877" height="278" key="GridCell.Tab.1.center" timestamp="1610561057633">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.1.left" timestamp="1610546300723">
+    <state width="1877" height="278" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057633" />
+    <state width="1877" height="278" key="GridCell.Tab.1.left" timestamp="1610561057633">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
-    <state width="1877" height="317" key="GridCell.Tab.1.right" timestamp="1610546300723">
+    <state width="1877" height="278" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057633" />
+    <state width="1877" height="278" key="GridCell.Tab.1.right" timestamp="1610561057633">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="339" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1609751751510" />
-    <state width="1877" height="317" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610546300723" />
+    <state width="1877" height="278" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610561057633" />
     <state width="1877" height="247" key="GridCell.Tab.2.bottom" timestamp="1610402295028">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

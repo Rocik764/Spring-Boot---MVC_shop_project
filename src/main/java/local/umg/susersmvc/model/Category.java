@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "category", schema = "zoologiczny")
+@Table(name = "category", schema = "zoologiczny_spring")
 public class Category {
 
     @Id

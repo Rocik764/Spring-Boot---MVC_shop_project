@@ -5,9 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user_spring")
+@Table(name = "user", schema = "zoologiczny_spring")
 @NamedNativeQuery(name = "User.findAllByLastNameNativeSQL",
-        query = "SELECT * FROM zoologiczny.user_spring ORDER BY last_name, first_name",
+        query = "SELECT * FROM zoologiczny_spring.user ORDER BY last_name, first_name",
         resultClass = User.class)
 public class User {
 
@@ -36,7 +36,7 @@ public class User {
 
     @ManyToMany
     @JoinTable(
-                name = "users_roles_spring",
+                name = "users_roles",
                 joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
                 inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "role_id"))
     private Set<Role> roles = new HashSet<>();

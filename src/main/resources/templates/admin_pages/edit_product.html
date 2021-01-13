@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Edit Product</title>
+    <title>Edytuj produkt</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -26,9 +25,9 @@
     <div id="content">
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
-
-            <h1>Edytuj produkt z ID: <th:block th:text="*{id}"></th:block></h1>
-            <span th:object="${product}">
+            <div class="container">
+                <h1>Edytuj produkt z ID: <th:block th:text="*{id}"></th:block></h1>
+                <span th:object="${product}">
                 <form th:action="@{/product/updateProduct}"  method="POST" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label for="inputID" class="col-sm col-form-label text-center font-weight-bold">ID</label>
@@ -97,6 +96,7 @@
                     </div>
                 </form>
             </span>
+            </div>
         </div>
     </div>
 </div>

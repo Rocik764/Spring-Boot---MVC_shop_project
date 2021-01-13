@@ -34,7 +34,7 @@ public class ProductsController {
     public String viewListProducts(Model model) throws UnsupportedEncodingException {
         List<Product> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
-        return "shop_pages/show_products";
+        return "admin_pages/show_products";
     }
 
     @RequestMapping("/category/{Idc}/subcategory/{Idsc}/page/{pageNo}")
