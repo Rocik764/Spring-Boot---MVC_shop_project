@@ -3,7 +3,9 @@ package local.umg.susersmvc.service;
 import local.umg.susersmvc.details.CustomUserDetails;
 import local.umg.susersmvc.model.Role;
 import local.umg.susersmvc.model.User;
+import local.umg.susersmvc.repository.RoleRepository;
 import local.umg.susersmvc.repository.UserRepository;
+import org.hibernate.Criteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,10 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class UserService {
@@ -24,6 +23,9 @@ public class UserService {
 
     @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     public List<User> listAll() {
         return repository.findAllByLastNameNativeSQL();
@@ -75,5 +77,16 @@ public class UserService {
 
     public User getCustomerByEmail(String email) {
         return repository.findByEmail(email);
+    }
+
+    public void editRoles(Collection<String> roles, Long uId) {
+        Set<Role> role = roleRepository.getAllByNameIn(roles);
+        User user = repository.findById(uId).get();
+        for (Role r : role) {
+            System.out.println(r.getId() + " " + r.getName());
+        }
+
+        user.setRoles(role);
+        repository.save(user);
     }
 }

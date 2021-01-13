@@ -43,20 +43,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/admin/listUsers").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin/new").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin/edit/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/admin/delete/**").hasAnyAuthority("ADMIN")
-				.antMatchers("/product/new").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/product/editProduct/**").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/product/deleteProduct/**").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/product/newCategory").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/product/newProducent").hasAnyAuthority("ADMIN", "EMPLOYEE")
-				.antMatchers("/app/profile", "/cart/showCart").authenticated()
-				.antMatchers("/app/contact").permitAll()
-				.antMatchers("/app/register").permitAll()
-				.antMatchers("/app/schronisko").permitAll()
-				.antMatchers("/app/show_products").permitAll()
+				.antMatchers(
+						"/admin/listUsers",
+						"/admin/delete/**",
+						"/admin/edit/**",
+						"/admin/new").hasAnyAuthority("ADMIN")
+
+				.antMatchers(
+						"/product/newCategory",
+						"/product/newProducent",
+						"/product/deleteProduct/**",
+						"/product/editProduct/**",
+						"/product/new",
+						"/cart/showOrderDetails",
+						"/ordersRest/showOrdersDetails/{uId}").hasAnyAuthority("ADMIN", "EMPLOYEE")
+
+				.antMatchers(
+						"/app/profile",
+						"/cart/showCart",
+						"/cart/orderProducts").authenticated()
+
+				.antMatchers(
+						"/app/contact",
+						"/app/register",
+						"/app/schronisko",
+						"/app/show_products").permitAll()
+
 				.and()
 				.formLogin()
 					.loginPage("/app/login")

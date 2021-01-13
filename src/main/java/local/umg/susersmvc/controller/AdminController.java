@@ -3,6 +3,7 @@ package local.umg.susersmvc.controller;
 import local.umg.susersmvc.details.CustomUserDetails;
 import local.umg.susersmvc.model.OrderDetails;
 import local.umg.susersmvc.model.Orders;
+import local.umg.susersmvc.model.Role;
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.service.OrdersDetailsService;
 import local.umg.susersmvc.service.OrdersService;
@@ -14,7 +15,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("admin")
@@ -26,8 +31,8 @@ public class AdminController {
     @Autowired
     private OrdersService ordersService;
 
-//    @Autowired
-//    private OrdersDetailsService ordersDetailsService;
+    @Autowired
+    private EntityManager entityManager;
 
     @RequestMapping("/listUsers")
     public String viewListUsers(Model model) {
@@ -54,6 +59,8 @@ public class AdminController {
     public String showEditFormUser(@PathVariable(name = "id") Long id, Model model) {
         //ModelAndView mav = new ModelAndView("admin_pages/edit_user");
         User euser = service.get(id);
+        List<Role> roles = entityManager.createQuery("SELECT a FROM Role a", Role.class).getResultList();
+        model.addAttribute("roles", roles);
         model.addAttribute("user", euser);
         return "/admin_pages/edit_user";
     }
@@ -107,6 +114,17 @@ public class AdminController {
         return "redirect:/admin/listUsers";
     }
 
+    @RequestMapping(value = "/editRoles/{uId}", method = RequestMethod.POST)
+    public String editUserRoles(@RequestParam("role")String[] roles, @PathVariable(value = "uId") Long uId) {
+        Collection<String> roleCollection = new ArrayList<>();
+        for (String role : roles) {
+            System.out.println(role);
+            roleCollection.add(role);
+        }
+        service.editRoles(roleCollection, uId);
+        return "redirect:/admin/listUsers";
+    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("user") User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -124,16 +142,4 @@ public class AdminController {
 
         return "/admin_pages/orders_list";
     }
-
-//    @RequestMapping("/showOrdersDetails/{uId}")
-//    public @ResponseBody List<OrderDetails> showOrdersDetailsList(@PathVariable(name = "uId") Long uId) {
-//        System.out.println("showOrdersDetailsList");
-//        List<OrderDetails> orderDetails = ordersDetailsService.findAllByUserId(uId);
-//        //model.addAttribute("orderDetails", orderDetails);
-//        //model.addAttribute("test", "test");
-//        for (OrderDetails value : orderDetails) {
-//            System.out.println(value.toString());
-//        }
-//        return orderDetails;
-//    }
 }

@@ -26,44 +26,59 @@
     <div id="content">
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
-
-            <h1>Edit user with ID: <th:block th:text="*{id}"></th:block></h1>
-            <form th:action="@{/admin/editMail}" th:object="${user}" method="post">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail">Zapisz</button>
+            <div class="container">
+                <h1>Edytuj użytkownika z ID: <th:block th:text="*{id}"></th:block></h1>
+                <form th:action="@{/admin/editMail}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveMail">Zapisz</button>
+                        </div>
+                        <input type="text" name="email" class="form-control" th:value="*{email}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
                     </div>
-                    <input type="text" name="email" class="form-control" th:value="*{email}" aria-label="" aria-describedby="basic-addon1" required>
-                    <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
-                </div>
-            </form>
-            <form th:action="@{/admin/editFirstName}" th:object="${user}" method="post">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName">Zapisz</button>
+                </form>
+                <form th:action="@{/admin/editFirstName}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveFirstName">Zapisz</button>
+                        </div>
+                        <input type="text" name="first_name" class="form-control" th:value="*{first_name}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
                     </div>
-                    <input type="text" name="first_name" class="form-control" th:value="*{first_name}" aria-label="" aria-describedby="basic-addon1" required>
-                    <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
-                </div>
-            </form>
-            <form th:action="@{/admin/editLastName}" th:object="${user}" method="post">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName">Zapisz</button>
+                </form>
+                <form th:action="@{/admin/editLastName}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveLastName">Zapisz</button>
+                        </div>
+                        <input type="text" name="last_name" class="form-control" th:value="*{last_name}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
                     </div>
-                    <input type="text" name="last_name" class="form-control" th:value="*{last_name}" aria-label="" aria-describedby="basic-addon1" required>
-                    <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
-                </div>
-            </form>
-            <form th:action="@{/admin/editPassword}" th:object="${user}" method="post">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword">Zapisz</button>
+                </form>
+                <form th:action="@{/admin/editPassword}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSavePassword">Zapisz</button>
+                        </div>
+                        <input type="password" name="password" class="form-control" th:value="*{id}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
                     </div>
-                    <input type="password" name="password" class="form-control" th:value="*{id}" aria-label="" aria-describedby="basic-addon1" required>
-                    <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
-                </div>
-            </form>
+                </form>
+                    <label class="form-check-label" for="roles-form">
+                    Role użytkownika:
+                        <form id="roles-form" th:action="@{'/admin/editRoles/' + ${user.id}}" method="post">
+                            <div class="form-check" th:each="role : ${roles}">
+                                <input class="form-check-input" type="checkbox" th:value="${role.name}" name="role" id="role" th:checked="${#lists.contains(user.getRoles(), role)}">
+                                <label class="form-check-label" for="role">
+                                    [[${role.getName()}]]
+                                </label>
+                            </div>
+                            <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveRoles">Zapisz</button>
+                            </div>
+                        </form>
+                    </label>
+            </div>
         </div>
     </div>
 </div>
