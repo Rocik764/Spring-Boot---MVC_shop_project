@@ -7,6 +7,7 @@ import local.umg.susersmvc.model.Subcategory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -33,4 +34,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "AND c.subcategory.id IN :sId " +
             "AND c.producent.id IN :pId")
     public Page<Product> findWithFilteringPaginated(String filterWord, double filterPriceFrom, double filterPriceTo, Set<Long> cId, Set<Long> sId, Set<Long> pId, Pageable pageable);
+
+    @Modifying
+    @Query("UPDATE Product c SET c.quantity = ?2 WHERE c.id = ?1")
+    public void updateQuantity(Long pId, Integer quantity);
 }

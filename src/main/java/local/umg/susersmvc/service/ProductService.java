@@ -15,6 +15,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
@@ -78,6 +79,11 @@ public class ProductService {
         }
 
         repository.save(product);
+    }
+
+    @Transactional
+    public void updateQuantity(Long pId, Integer quantity) {
+        repository.updateQuantity(pId, quantity);
     }
 
     public Product get(Long id) {

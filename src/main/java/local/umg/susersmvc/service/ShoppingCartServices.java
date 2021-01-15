@@ -60,4 +60,8 @@ public class ShoppingCartServices {
     public void deleteByUser(User user) {
         cartItemRepository.deleteByUser(user.getId());
     }
+
+    public Integer getQuantity(Long pId, User user) {
+        return cartItemRepository.getQuantity(pId, user.getId());
+    }
 }
