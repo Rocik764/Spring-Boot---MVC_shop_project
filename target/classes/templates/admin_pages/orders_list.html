@@ -27,47 +27,46 @@
     <div id="content">
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Użytkownik</th>
+                            <th>Zakupiono</th>
+                            <th>Zrealizowano</th>
+                            <th>Adres</th>
+                            <th>Faktura</th>
+                            <th>Telefon</th>
+                            <th>Dostawa</th>
+                            <th>Płatność</th>
+                            <th>Zapłacono</th>
+                            <th>Komentarz</th>
+                            <th>Akcje</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Użytkownik</th>
-                        <th>Zakupiono</th>
-                        <th>Zrealizowano</th>
-                        <th>Adres</th>
-                        <th>Faktura</th>
-                        <th>Telefon</th>
-                        <th>Dostawa</th>
-                        <th>Płatność</th>
-                        <th>Zapłacono</th>
-                        <th>Komentarz</th>
-                        <th>Akcje</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <tr th:each="order : ${orders}" style="cursor: pointer" th:onclick="'javascript:showDetails(\'' + ${order.user.getId()} + '\');'">
-                        <td th:text="${order.id}">ID</td>
-                        <td th:text="${order.user.getEmail()}">Użytkownik</td>
-                        <td th:text="${order.purchase_date}">Zakupiono</td>
-                        <td th:text="${order.is_completed}">Zrealizowano</td>
-                        <td th:text="${order.address}">Adres</td>
-                        <td th:text="${order.invoice}">Faktura</td>
-                        <td th:text="${order.phone}">Telefon</td>
-                        <td th:text="${order.delivery}">Dostawa</td>
-                        <td th:text="${order.payment}">Płatność</td>
-                        <td th:text="${order.total_price}">Zapłacono</td>
-                        <td th:text="${order.comment}">Komentarz</td>
-                        <td>
-                            <a th:href="@{'/admin/editOrder/' + ${order.id}}">Edytuj</a>
-                            &nbsp;&nbsp;&nbsp;
-                            <a th:href="@{'/admin/completeOrder/' + ${order.id}}">Zrealizuj</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tr th:each="order : ${orders}" style="cursor: pointer" th:onclick="showDetails([[${order.user.getId()}]],[[${order.purchase_date}]])">
+                            <td th:text="${order.id}">ID</td>
+                            <td th:text="${order.user.getEmail()}">Użytkownik</td>
+                            <td th:text="${order.purchase_date}">Zakupiono</td>
+                            <td th:text="${order.is_completed}">Zrealizowano</td>
+                            <td th:text="${order.address}">Adres</td>
+                            <td th:text="${order.invoice}">Faktura</td>
+                            <td th:text="${order.phone}">Telefon</td>
+                            <td th:text="${order.delivery}">Dostawa</td>
+                            <td th:text="${order.payment}">Płatność</td>
+                            <td th:text="${order.total_price}">Zapłacono</td>
+                            <td th:text="${order.comment}">Komentarz</td>
+                            <td>
+                                <a th:href="@{'/admin/completeOrder/' + ${order.id}}"><span th:utext="${order.is_completed} == FALSE ? 'Zrealizuj' : 'Cofnij realizację'"></span></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -75,8 +74,8 @@
 <div th:replace="/fragments/order_details_modal :: orderDetailsModal"></div>
 <script>
 
-    function showDetails(value) {
-        let url = "/ordersRest/showOrdersDetails/" + value;
+    function showDetails(value, date) {
+        let url = "/ordersRest/showOrdersDetails/" + value + "/" + date;
         showDetailsModal(url)
     }
 

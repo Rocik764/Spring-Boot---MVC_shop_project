@@ -23,7 +23,9 @@ public class UsersController {
     @Autowired
     private UserService service;
 
-    // akcja zapisu danych
+    /**
+     * Method to save new user from registration form
+     */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("user") User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -34,6 +36,9 @@ public class UsersController {
         return "/login_pages/register_success";
     }
 
+    /**
+     * Method for logged-in user to edit his own mail
+     */
     @RequestMapping(value = "/editMail", method = RequestMethod.POST)
     public String editUserMail(Authentication authentication, @RequestParam("email") String email) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -44,6 +49,9 @@ public class UsersController {
         return "redirect:/app/profile";
     }
 
+    /**
+     * Method for logged-in user to edit his own first name
+     */
     @RequestMapping(value = "/editFirstName", method = RequestMethod.POST)
     public String editUserFirstName(Authentication authentication, @RequestParam("first_name") String first_name) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -54,6 +62,9 @@ public class UsersController {
         return "redirect:/app/profile";
     }
 
+    /**
+     * Method for logged-in user to edit his own last name
+     */
     @RequestMapping(value = "/editLastName", method = RequestMethod.POST)
     public String editUserLastName(Authentication authentication, @RequestParam("last_name") String last_name) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -64,6 +75,9 @@ public class UsersController {
         return "redirect:/app/profile";
     }
 
+    /**
+     * Method for logged-in user to edit his own password
+     */
     @RequestMapping(value = "/editPassword", method = RequestMethod.POST)
     public String editUserPassword(Authentication authentication, @RequestParam("password") String password) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();

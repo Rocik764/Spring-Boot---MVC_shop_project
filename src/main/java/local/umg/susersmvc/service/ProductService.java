@@ -103,12 +103,12 @@ public class ProductService {
     }
 
     public Page<Product> listByCategorySubcategoryPaginated(Long id, Long ids, int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
         return repository.findByCategorySubcategoryPaginated(id, ids, pageable);
     }
 
     public Page<Product> findPaginated(int pageNo, int pageSize) {
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
         return repository.findAll(pageable);
     }
 
@@ -124,8 +124,9 @@ public class ProductService {
         } catch (NumberFormatException e) {
             to = Double.MAX_VALUE;
         }
+        System.out.println("WORD: \"" + filterWord + "\"" + "\nFROM: " + from + "\nTO: " + to);
 
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
         return repository.findWithSideFilteringPaginated(filterWord, from, to, pageable);
     }
 
@@ -162,7 +163,7 @@ public class ProductService {
         }
 
         System.out.println("listByFilters");
-        Pageable pageable = PageRequest.of(pageNo - 1, pageSize);
+        Pageable pageable = PageRequest.of(pageNo, pageSize);
         return repository.findWithFilteringPaginated(filterWord, from, to, category, subcategory, producent, pageable);
     }
 }

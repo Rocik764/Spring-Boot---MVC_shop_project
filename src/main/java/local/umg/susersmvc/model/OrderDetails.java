@@ -1,6 +1,7 @@
 package local.umg.susersmvc.model;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "orders_details", schema = "zoologiczny_spring")
@@ -19,6 +20,7 @@ public class OrderDetails {
     private User user;
 
     private int amount;
+    private Date purchase;
 
     public Integer getId() {
         return id;
@@ -50,6 +52,14 @@ public class OrderDetails {
 
     public void setAmount(int amount) {
         this.amount = amount;
+    }
+
+    public Date getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(Date purchase) {
+        this.purchase = purchase;
     }
 
     @Override

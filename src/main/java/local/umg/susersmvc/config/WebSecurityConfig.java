@@ -56,13 +56,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/product/deleteProduct/**",
 						"/product/editProduct/**",
 						"/product/new",
-						"/ordersRest/showOrdersDetails/{uId}").hasAnyAuthority("ADMIN", "EMPLOYEE")
+						"/ordersRest/showOrdersDetails/{uId}",
+						"/admin/showOrders").hasAnyAuthority("ADMIN", "EMPLOYEE")
 
 				.antMatchers(
 						"/app/profile",
 						"/cart/showCart",
 						"/cart/orderProducts",
-						"/cart/showOrderDetails").authenticated()
+						"/cart/showOrderDetails",
+						"/app/orders").authenticated()
 
 				.antMatchers(
 						"/app/contact",

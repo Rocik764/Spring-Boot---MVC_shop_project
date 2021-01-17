@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title>Szczegóły zamówienia</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <h2>Zamówienia użytkownika </h2>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Zakupiono</th>
+                        <th scope="col">Adres</th>
+                        <th scope="col">Faktura</th>
+                        <th scope="col">Telefon</th>
+                        <th scope="col">Dostawa</th>
+                        <th scope="col">Płatność</th>
+                        <th scope="col">Zapłacono</th>
+                        <th scope="col">Komentarz</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="order, index : ${orders}" th:style="${order.is_completed} == FALSE ? 'background: red' : 'background: green'">
+                        <td>[[${index.count}]]</td>
+                        <td th:text="${order.purchase_date}">Zakupiono</td>
+                        <td th:text="${order.address}">Adres</td>
+                        <td th:text="${order.invoice}">Faktura</td>
+                        <td th:text="${order.phone}">Telefon</td>
+                        <td th:text="${order.delivery}">Dostawa</td>
+                        <td th:text="${order.payment}">Płatność</td>
+                        <td th:text="${order.total_price}">Zapłacono</td>
+                        <td th:text="${order.comment}">Komentarz</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="/fragments/standard_modal :: standardModal"></div>
+</body>
+</html>

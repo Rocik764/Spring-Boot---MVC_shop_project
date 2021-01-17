@@ -25,7 +25,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT c FROM Product c WHERE c.category.id = :id AND c.subcategory.id = :ids")
     public Page<Product> findByCategorySubcategoryPaginated(Long id, Long ids, Pageable pageable);
 
-    @Query("SELECT c FROM Product c WHERE c.name LIKE %:filterWord% AND c.price BETWEEN :filterPriceFrom AND :filterPriceTo")
+    @Query("SELECT c FROM Product c WHERE c.name LIKE %?1% AND c.price > ?2 AND c.price < ?3")
     public Page<Product> findWithSideFilteringPaginated(String filterWord, double filterPriceFrom, double filterPriceTo, Pageable pageable);
 
     @Query("SELECT c FROM Product c WHERE c.name LIKE %:filterWord% " +

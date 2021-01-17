@@ -57,25 +57,31 @@
                         </div>
                     </div>
                 </div>
-                <div th:if = "${totalPages > 1}">
-                    <div class = "row">
-                        <div class = "col-12 col-md-4">
-                            Total Rows: [[${totalItems}]]
-                        </div>
-                        <div class = "col-12 col-md-4">
-                        <span th:each="i: ${#numbers.sequence(1, totalPages)}">
-                            <a th:if="${currentPage != i}" th:href="@{'/product/page/' + ${i}}">[[${i}]]</a>
-                            <span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
-                        </span>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <a th:if="${currentPage < totalPages}" th:href="@{'/product/page/' + ${currentPage + 1}}">Next</a>
-                            <span th:unless="${currentPage < totalPages}">Next</span>
-                            <a th:if="${currentPage != 0}" th:href="@{'/product/page/' + ${currentPage - 1}}">Previous</a>
-                            <span th:unless="${currentPage != 0}">Previous</span>
-                            <a th:if="${currentPage < totalPages}" th:href="@{'/product/page/' + ${totalPages}}">Last</a>
-                            <span th:unless="${currentPage < totalPages}">Last</span>
-                        </div>
+                <div th:replace="/fragments/pagination :: pagination(URLparameter=${url})"></div>
+<!--                <div th:if = "${totalPages > 1}">-->
+<!--                    <div class = "row">-->
+<!--                        <div class = "col-12 col-md-4">-->
+<!--                            Total Rows: [[${totalItems}]]-->
+<!--                        </div>-->
+<!--                        <div class = "col-12 col-md-4">-->
+<!--                        <span th:each="i: ${#numbers.sequence(1, totalPages)}">-->
+<!--                            <a th:if="${currentPage != i}" th:href="@{'/product/page/' + ${i}}">[[${i}]]</a>-->
+<!--                            <span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;-->
+<!--                        </span>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 col-md-4">-->
+<!--                            <a th:if="${currentPage < totalPages}" th:href="@{'/product/page/' + ${currentPage + 1}}">Next</a>-->
+<!--                            <span th:unless="${currentPage < totalPages}">Next</span>-->
+<!--                            <a th:if="${currentPage != 0}" th:href="@{'/product/page/' + ${currentPage - 1}}">Previous</a>-->
+<!--                            <span th:unless="${currentPage != 0}">Previous</span>-->
+<!--                            <a th:if="${currentPage < totalPages}" th:href="@{'/product/page/' + ${totalPages}}">Last</a>-->
+<!--                            <span th:unless="${currentPage < totalPages}">Last</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div th:if="${#lists.isEmpty(productList)}" class="row">
+                    <div class="col">
+                        <h2>Nie znaleziono produktów.</h2>
                     </div>
                 </div>
             </div>

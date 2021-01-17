@@ -30,6 +30,10 @@ public class ShoppingCartRestController {
     @Autowired
     private ProductService productService;
 
+    /**
+     * Method used in AJAX to add product to logged-in user's cart and show modal dialog with information
+     * if post succeed or not
+     */
     @PostMapping("/add/{pid}/{amount}")
     @ResponseBody
     public String addProductToCart(@PathVariable("pid") Long productId,
@@ -51,6 +55,10 @@ public class ShoppingCartRestController {
         return addedAmount + " produkt(ów) zostało dodanych do Twojego koszyka.";
     }
 
+    /**
+     * Method used in AJAX to update product's amount in logged-in user's cart and show modal dialog with information
+     * if post succeed or not
+     */
     @PostMapping("/update/{pid}/{amount}")
     @ResponseBody
     public String updateAmount(@PathVariable("pid") Long productId,
@@ -82,6 +90,10 @@ public class ShoppingCartRestController {
         return String.valueOf(subtotal);
     }
 
+    /**
+     * Method used in AJAX to remove product from logged-in user's cart and show modal dialog with information
+     * if post succeed or not
+     */
     @PostMapping("/remove/{pid}/{amount}")
     @ResponseBody
     public String removeProduct(@PathVariable("pid") Long productId,

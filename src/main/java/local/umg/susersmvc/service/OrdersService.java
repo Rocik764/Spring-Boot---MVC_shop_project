@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.transaction.Transactional;
 import java.sql.Date;
 import java.util.List;
 
@@ -27,13 +28,14 @@ public class OrdersService {
         return ordersRepository.findAll();
     }
 
+    public List<Orders> listByUser(User user) {
+        return ordersRepository.findByUserId(user.getId());
+    }
+
     public void orderProducts(User user, String delivery, String payment, String address, String code, String city, String phone, boolean invoice, String comment, double totalPrice) {
         Orders order = new Orders();
         String fullAddress = address + " " + code + " " + city;
         Date date = new Date(System.currentTimeMillis());
-
-        copyCartToDetails(user);
-        removeCartItems(user);
 
         order.setUser(user);
         order.setPurchase_date(date);
@@ -46,10 +48,13 @@ public class OrdersService {
         order.setPayment(payment);
         order.setTotal_price(totalPrice);
 
+        copyCartToDetails(user, date);
+        removeCartItems(user);
+
         ordersRepository.save(order);
     }
 
-    private void copyCartToDetails(User user) {
+    private void copyCartToDetails(User user, Date date) {
         List<CartItem> cartItemList = cartServices.listCartItems(user);
 
         for (CartItem item : cartItemList) {
@@ -58,6 +63,7 @@ public class OrdersService {
             orderDetails.setProduct(item.getProduct());
             orderDetails.setUser(item.getUser());
             orderDetails.setAmount(item.getAmount());
+            orderDetails.setPurchase(date);
             System.out.println(orderDetails.toString());
             orderDetailsRepository.save(orderDetails);
         }
@@ -65,5 +71,12 @@ public class OrdersService {
 
     private void removeCartItems(User user) {
         cartServices.deleteByUser(user);
+    }
+
+    @Transactional
+    public void completeOrder(Integer id) {
+        Orders order = ordersRepository.findById(id).get();
+        if(order.isIs_completed()) ordersRepository.completeOrder(id, false);
+        else ordersRepository.completeOrder(id, true);
     }
 }

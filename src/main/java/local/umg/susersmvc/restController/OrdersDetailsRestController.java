@@ -5,6 +5,7 @@ import local.umg.susersmvc.service.OrdersDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,10 +16,13 @@ public class OrdersDetailsRestController {
     @Autowired
     private OrdersDetailsService ordersDetailsService;
 
-    @GetMapping(value = "/showOrdersDetails/{uId}")
-    public String addProductToCart(@PathVariable(name = "uId") Long uId) {
+    /**
+     * Method used in AJAX to show modal dialog with detailed order's information
+     */
+    @GetMapping(value = "/showOrdersDetails/{uId}/{date}")
+    public String addProductToCart(@PathVariable(name = "uId") Long uId, @PathVariable(name = "date") Date date) {
         System.out.println("showOrdersDetailsListRest");
-        List<OrderDetails> orderDetails = ordersDetailsService.findAllByUserId(uId);
+        List<OrderDetails> orderDetails = ordersDetailsService.findAllByUserIdAndDate(uId, date);
         String listString = orderDetails.stream().map(Object::toString)
                 .collect(Collectors.joining(""));
         return listString;

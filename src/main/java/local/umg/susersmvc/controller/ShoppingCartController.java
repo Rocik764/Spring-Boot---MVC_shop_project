@@ -33,6 +33,9 @@ public class ShoppingCartController {
     @Autowired
     private OrdersService ordersService;
 
+    /**
+     * Method to show logged-in user's shopping cart page
+     */
     @GetMapping("/showCart")
     public String showShoppingCart(@AuthenticationPrincipal CustomUserDetails loggedUser, Model model) {
         if(loggedUser == null) return "redirect:/app/login";
@@ -43,6 +46,9 @@ public class ShoppingCartController {
         return "/user_pages/shopping_cart";
     }
 
+    /**
+     * Method to show page with form to submit order.
+     */
     @GetMapping("/showOrderDetails")
     public String showOrderDetails(@AuthenticationPrincipal CustomUserDetails loggedUser, Model model) {
         if(loggedUser == null) return "redirect:/app/login";
@@ -60,6 +66,9 @@ public class ShoppingCartController {
         return "/user_pages/order_details";
     }
 
+    /**
+     * Method to submit orders from logged-in user's shopping cart
+     */
     @RequestMapping(value = "/orderProducts", method = RequestMethod.POST)
     public String orderProducts(@AuthenticationPrincipal CustomUserDetails loggedUser,
                                 @RequestParam("delivery") String delivery,
@@ -81,6 +90,9 @@ public class ShoppingCartController {
         return "redirect:/cart/showCart";
     }
 
+    /**
+     * Method to get currently logged in user
+     */
     private User getUser(CustomUserDetails loggedUser) {
         Authentication authentication = new UsernamePasswordAuthenticationToken(loggedUser, loggedUser.getPassword(), loggedUser.getAuthorities());
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
