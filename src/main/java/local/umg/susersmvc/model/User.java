@@ -1,5 +1,7 @@
 package local.umg.susersmvc.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

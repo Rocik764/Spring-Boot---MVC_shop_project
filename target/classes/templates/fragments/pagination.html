@@ -8,8 +8,9 @@
     <!-- Pagination -->
     <div class="pagination" th:with="baseUrl=${URLparameter}">
         <span th:if="${pager.indexOutOfBounds()}">
-            Strona wykracza poza granicę. Wróć do strony <a class="pageLink"
-                                                 th:href="@{${baseUrl}(page=1)}">pierwszej</a>.
+            <div class="alert alert-danger" role="alert">
+					Nie znaleziono produktów, <a th:href="@{/product/filtering}" class="alert-link">naciśnij aby przejść do strony z filtrami</a>.
+            </div>
         </span>
 
         <span th:unless="${pager.indexOutOfBounds()}">

@@ -4,6 +4,7 @@ import local.umg.susersmvc.details.CustomUserDetails;
 import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -15,10 +16,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("users")
 public class UsersController {
+
+    private final String success = "Zapisano zmiany.";
+    private final String error = "Użytkownik o podanym mailu już istnieje.";
 
     @Autowired
     private UserService service;
@@ -27,11 +32,17 @@ public class UsersController {
      * Method to save new user from registration form
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveUser(@ModelAttribute("user") User user) {
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String encodedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encodedPassword);
-        service.save(user);
+    public String saveUser(@ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
+        try {
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodedPassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encodedPassword);
+            service.save(user);
+        } catch (DataIntegrityViolationException e) {
+            redirectAttributes.addFlashAttribute("error", error);
+            return "redirect:/app/register";
+        }
+
 
         return "/login_pages/register_success";
     }
@@ -40,11 +51,16 @@ public class UsersController {
      * Method for logged-in user to edit his own mail
      */
     @RequestMapping(value = "/editMail", method = RequestMethod.POST)
-    public String editUserMail(Authentication authentication, @RequestParam("email") String email) {
+    public String editUserMail(Authentication authentication, @RequestParam("email") String email, RedirectAttributes redirectAttributes) {
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
         Long id = userDetails.getId();
         System.out.println(email + " : " + id);
-        service.editMail(email, id);
+        try {
+            service.editMail(email, id);
+            redirectAttributes.addFlashAttribute("success", success);
+        } catch (DataIntegrityViolationException e) {
+            redirectAttributes.addFlashAttribute("error", error);
+        }
 
         return "redirect:/app/profile";
     }

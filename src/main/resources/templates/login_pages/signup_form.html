@@ -24,45 +24,47 @@
 	<div id="content">
 		<div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
 		<div id="content-main">
+			<div class="container">
+				<h1>Zarejestruj się</h1>
+				<form th:action="@{/users/save}" th:object="${user}"
+					  method="post" style="max-width: 600px; margin: 0 auto;">
+					<div class="m-3">
+						<div class="form-group row">
+							<label class="col-sm col-form-label text-center font-weight-bold">E-mail: </label>
+							<div class="col-8">
+								<input type="email" th:field="*{email}" class="form-control" required />
+							</div>
+						</div>
 
-			<h1>Zarejestruj się</h1>
-			<form th:action="@{/users/save}" th:object="${user}"
-				  method="post" style="max-width: 600px; margin: 0 auto;">
-				<div class="m-3">
-					<div class="form-group row">
-						<label class="col-sm col-form-label text-center font-weight-bold">E-mail: </label>
-						<div class="col-8">
-							<input type="email" th:field="*{email}" class="form-control" required />
+						<div class="form-group row">
+							<label class="col-sm col-form-label text-center font-weight-bold">Hasło: </label>
+							<div class="col-8">
+								<input type="password" th:field="*{password}" class="form-control" required minlength="6" maxlength="10"/>
+							</div>
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<label class="col-sm col-form-label text-center font-weight-bold">Hasło: </label>
-						<div class="col-8">
-							<input type="password" th:field="*{password}" class="form-control" required minlength="6" maxlength="10"/>
+						<div class="form-group row">
+							<label class="col-sm col-form-label text-center font-weight-bold">Imię: </label>
+							<div class="col-8">
+								<input type="text" th:field="*{first_name}" class="form-control" required minlength="2" maxlength="20"/>
+							</div>
 						</div>
-					</div>
 
-					<div class="form-group row">
-						<label class="col-sm col-form-label text-center font-weight-bold">Imię: </label>
-						<div class="col-8">
-							<input type="text" th:field="*{first_name}" class="form-control" required minlength="2" maxlength="20"/>
+						<div class="form-group row">
+							<label class="col-sm col-form-label text-center font-weight-bold">Nazwisko: </label>
+							<div class="col-8">
+								<input type="text" th:field="*{last_name}" class="form-control" required minlength="2" maxlength="20" />
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-lg text-center">
+								<button type="submit" class="btn btn-primary">Załóż konto</button>
+							</div>
 						</div>
 					</div>
-
-					<div class="form-group row">
-						<label class="col-sm col-form-label text-center font-weight-bold">Nazwisko: </label>
-						<div class="col-8">
-							<input type="text" th:field="*{last_name}" class="form-control" required minlength="2" maxlength="20" />
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-lg text-center">
-							<button type="submit" class="btn btn-primary">Załóż konto</button>
-						</div>
-					</div>
-				</div>
-			</form>
+				</form>
+				<div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+			</div>
 		</div>
 	</div>
 </div>

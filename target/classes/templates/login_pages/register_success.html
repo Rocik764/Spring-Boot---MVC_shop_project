@@ -24,9 +24,11 @@
 	<div id="content">
 		<div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
 		<div id="content-main">
-
-			<h3>Założono nowe konto.</h3>
-			<h4><a th:href="@{/app/login}">Naciśnij aby się zalogować</a></h4>
+			<div class="container">
+				<div class="alert alert-success" role="alert">
+					Założono nowe konto, <a th:href="@{/app/login}" class="alert-link">naciśnij aby się zalogować</a>.
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

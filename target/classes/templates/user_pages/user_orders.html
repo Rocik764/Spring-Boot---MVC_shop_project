@@ -28,7 +28,7 @@
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
             <div class="container">
-                <h2>Zamówienia użytkownika </h2>
+                <h2>Zamówienia użytkownika [[${#authentication.getPrincipal().getName()}]]</h2>
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -52,7 +52,7 @@
                         <td th:text="${order.phone}">Telefon</td>
                         <td th:text="${order.delivery}">Dostawa</td>
                         <td th:text="${order.payment}">Płatność</td>
-                        <td th:text="${order.total_price}">Zapłacono</td>
+                        <td th:text="${order.total_price} + ' zł'">Zapłacono</td>
                         <td th:text="${order.comment}">Komentarz</td>
                     </tr>
                     </tbody>

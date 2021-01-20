@@ -6,15 +6,19 @@ import local.umg.susersmvc.service.CategoriesService;
 import local.umg.susersmvc.service.ProducentService;
 import local.umg.susersmvc.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -90,14 +94,7 @@ public class ProductsController {
     public String showNewFormProduct(Model model) {
         System.out.println("Controller: new");
         //Product newProduct = new Product();
-        List<Category> listCategory = categoriesService.listAllCategory();
-        List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
-        List<Producent> listProducent = producentService.listAll();
-
-        //model.addAttribute("product", newProduct);
-        model.addAttribute("listCategory", listCategory);
-        model.addAttribute("listSubcategory", listSubcategory);
-        model.addAttribute("listProducent", listProducent);
+        getCategoryList(model);
 
         return "/admin_pages/new_product";
     }
@@ -148,6 +145,7 @@ public class ProductsController {
             @RequestParam("image") MultipartFile file) {
         System.out.println("Controller: saveProduct");
         service.update(id, name, description, quantity, price, category, subcategory, producent, file);
+
         return "redirect:/product/listProducts";
     }
 
@@ -155,18 +153,29 @@ public class ProductsController {
      * Post method to save new category
      */
     @RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
-    public String saveCategory(@ModelAttribute("category") Category category) {
-        categoriesService.saveCategory(category);
-        return "redirect:/product/listProducts";
+    public String saveCategory(@ModelAttribute("category") Category category, RedirectAttributes redirectAttributes) {
+        try {
+            categoriesService.saveCategory(category);
+            redirectAttributes.addFlashAttribute("success", "Zapisano nową kategorię.");
+        } catch (DataIntegrityViolationException e) {
+            redirectAttributes.addFlashAttribute("error", "Ta kategoria już istnieje.");
+        }
+
+        return "redirect:/product/newCategory";
     }
 
     /**
      * Post method to save new subcategory
      */
     @RequestMapping(value = "/saveSubcategory", method = RequestMethod.POST)
-    public String saveSubcategory(@ModelAttribute("subcategory") Subcategory subcategory) {
-        categoriesService.saveSubcategory(subcategory);
-        return "redirect:/product/listProducts";
+    public String saveSubcategory(@ModelAttribute("subcategory") Subcategory subcategory, RedirectAttributes redirectAttributes) {
+        try {
+            categoriesService.saveSubcategory(subcategory);
+            redirectAttributes.addFlashAttribute("success", "Zapisano nową podkategorię.");
+        } catch (DataIntegrityViolationException e) {
+            redirectAttributes.addFlashAttribute("error", "Ta podkategoria już istnieje.");
+        }
+        return "redirect:/product/newCategory";
     }
 
     /**
@@ -186,13 +195,9 @@ public class ProductsController {
     @RequestMapping("/editProduct/{id}")
     public String showEditFormProduct(@PathVariable(name = "id") Long id, Model model) {
         Product product = service.get(id);
-        List<Category> listCategory = categoriesService.listAllCategory();
-        List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
-        List<Producent> listProducent = producentService.listAll();
-        model.addAttribute("listCategory", listCategory);
-        model.addAttribute("listSubcategory", listSubcategory);
-        model.addAttribute("listProducent", listProducent);
+        getCategoryList(model);
         model.addAttribute("product", product);
+
         return "/admin_pages/edit_product";
     }
 
@@ -203,6 +208,7 @@ public class ProductsController {
     public String showProductInfo(@PathVariable(name = "id") Long id, Model model) {
         Product product = service.get(id);
         model.addAttribute("product", product);
+
         return "/shop_pages/product_info";
     }
 
@@ -212,6 +218,7 @@ public class ProductsController {
     @RequestMapping("/deleteProduct/{id}")
     public String deleteProduct(@PathVariable(name = "id") Long id) {
         service.delete(id);
+
         return "redirect:/listProducts";
     }
 
@@ -220,13 +227,18 @@ public class ProductsController {
      */
     @RequestMapping("/filtering")
     public String showFilteringForm(Model model) {
+        getCategoryList(model);
+
+        return "/shop_pages/filtering";
+    }
+
+    private void getCategoryList(Model model) {
         List<Category> listCategory = categoriesService.listAllCategory();
         List<Subcategory> listSubcategory = categoriesService.listAllSubcategory();
         List<Producent> listProducent = producentService.listAll();
         model.addAttribute("listCategory", listCategory);
         model.addAttribute("listSubcategory", listSubcategory);
         model.addAttribute("listProducent", listProducent);
-        return "/shop_pages/filtering";
     }
 
     /**
