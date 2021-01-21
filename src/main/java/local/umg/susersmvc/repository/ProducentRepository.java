@@ -11,4 +11,6 @@ public interface ProducentRepository extends JpaRepository<Producent, Long> {
 
     @Query("SELECT id FROM Producent")
     public Set<Long> getAllIds();
+
+    public void deleteById(Long id);
 }

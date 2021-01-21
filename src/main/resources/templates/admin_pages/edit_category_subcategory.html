@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Nowe kategorie</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h1>Kategorie</h1>
+                        <ol>
+                            <li th:each="category : ${listCategory}">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="category" class="form-control " th:value="${category.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
+                                    <div class="input-group-prepend">
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteCategory/' + ${category.id}}">Usuń</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-4">
+                        <h1>Podkategorie</h1>
+                        <ol>
+                            <li th:each="subcategory : ${listSubcategory}">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="subcategory" class="form-control " th:value="${subcategory.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
+                                    <div class="input-group-prepend">
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteSubcategory/' + ${subcategory.id}}">Usuń</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-4">
+                        <h1>Producenci</h1>
+                        <ol>
+                            <li th:each="producent : ${listProducent}">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="producent" class="form-control " th:value="${producent.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
+                                    <div class="input-group-prepend">
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteProducent/' + ${producent.id}}">Usuń</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

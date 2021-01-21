@@ -13,6 +13,7 @@ public class Category {
     private String name;
 
     @OneToMany
+    @JoinColumn(name = "id")
     private List<Product> products;
 
     public List<Product> getProducts() {

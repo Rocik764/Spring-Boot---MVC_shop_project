@@ -20,4 +20,8 @@ public class ProducentService {
     public void save(Producent producent) {
         repository.save(producent);
     }
+
+    public void deleteProducent(Long id) {
+        repository.deleteById(id);
+    }
 }

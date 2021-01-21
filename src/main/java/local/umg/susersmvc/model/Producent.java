@@ -15,6 +15,7 @@ public class Producent {
     private String phone;
 
     @OneToMany
+    @JoinColumn(name = "id")
     private List<Product> products;
 
     public Long getId() {

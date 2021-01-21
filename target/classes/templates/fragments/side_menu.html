@@ -20,6 +20,9 @@
                     <a th:href="@{/product/new}">Dodaj produkty</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
+                    <a th:href="@{/product/deleteCategories}">Usuń kategorie</a>
+                </li>
+                <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
                     <a th:href="@{/product/newCategory}">Dodaj kategorie</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN')">

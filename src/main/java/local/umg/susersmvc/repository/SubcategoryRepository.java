@@ -11,4 +11,6 @@ public interface SubcategoryRepository extends JpaRepository<Subcategory, Long> 
 
     @Query("SELECT id FROM Subcategory")
     public Set<Long> getAllIds();
+
+    public void deleteById(Long id);
 }

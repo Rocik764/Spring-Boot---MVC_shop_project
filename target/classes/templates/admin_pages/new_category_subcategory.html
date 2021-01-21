@@ -60,11 +60,42 @@
                         </form>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>Dodaj nowego producenta</h1>
+                        <form action="#" th:action="@{/product/saveProducent}" th:object="${producent}" method="post">
+                            <div class="form-group row">
+                                <label for="inputProducentName" class="col-2 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="inputProducentName" th:field="*{name}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputProducentCharacteristics" class="col-2 col-form-label text-center font-weight-bold">Charakterystyka</label>
+                                <div class="col-10">
+                                    <textarea type="text" class="form-control" id="inputProducentCharacteristics" th:field="*{characteristics}" required rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row mt-1">
+                                <label for="inputProducentPhone" class="col-2 col-form-label text-center font-weight-bold">Telefon</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="inputProducentPhone" th:field="*{phone}" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg text-center">
+                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
                 <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript" th:src="@{/js/data_mask.js}"></script>
 </body>
 </html>

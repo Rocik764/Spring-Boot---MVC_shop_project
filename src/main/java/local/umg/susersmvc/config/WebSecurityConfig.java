@@ -55,7 +55,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 						"/product/newProducent",
 						"/product/deleteProduct/**",
 						"/product/editProduct/**",
+						"/product/deleteCategory/**",
+						"/product/deleteSubcategory/**",
+						"/product/deleteProducent/**",
 						"/product/new",
+						"/product/deleteCategories",
 						"/ordersRest/showOrdersDetails/{uId}",
 						"/admin/showOrders").hasAnyAuthority("ADMIN", "EMPLOYEE")
 
