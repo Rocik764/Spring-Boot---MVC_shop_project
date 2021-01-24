@@ -149,7 +149,7 @@ public class OrderValidation {
 
     private boolean validRegulations() {
 
-        if(this.regulations.length() == 0) {
+        if(this.regulations == null) {
             errors.add("Pole regulaminu musi być zaznaczone.");
             return false;
         }

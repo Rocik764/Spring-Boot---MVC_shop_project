@@ -82,9 +82,9 @@ public class ShoppingCartController {
                                 @RequestParam(value = "phone") String phone,
                                 @RequestParam(value = "invoice", required = false) String invoice,
                                 @RequestParam(value = "comment", required = false) String comment,
-                                @RequestParam(value = "regulations", defaultValue = "") String regulations,
+                                @RequestParam(value = "regulations", required = false) String regulations,
                                 RedirectAttributes redirectAttributes) {
-
+        System.out.println(regulations);
         if(loggedUser == null) return "redirect:/app/login";
         OrderValidation orderValidation = new OrderValidation(delivery, payment, address, code, city, phone, regulations);
 

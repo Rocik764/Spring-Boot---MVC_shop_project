@@ -38,17 +38,17 @@
                                 <h4>Sposób dostawy</h4>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="kurier" required>Kurier - InPost, UPS, FedEx, DTS lub Poczta Polska
+                                    <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="kurier">Kurier - InPost, UPS, FedEx, DTS lub Poczta Polska
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="osobiście" required>Odbiór osobisty
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="osobiście">Odbiór osobisty
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="paczkomat" required>Paczkomaty 24/7
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="paczkomat">Paczkomaty 24/7
                                     </label>
                                 </div>
                             </div>
@@ -56,43 +56,43 @@
                                 <h4>Metoda płatności</h4>
                                     <div class="form-check">
                                     <label class="form-check-label active">
-                                    <input type="radio" class="form-check-input" name="payment"  th:field="*{payment}" value="blik" required>BLIK
+                                    <input type="radio" class="form-check-input" name="payment"  th:field="*{payment}" value="blik">BLIK
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przelew" required>Przelew gotówkowy
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przelew">Przelew gotówkowy
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przy odbiorze" required>Przy odbiorze
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przy odbiorze">Przy odbiorze
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="karta płatnicza" required>Karta płatnicza online
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="karta płatnicza">Karta płatnicza online
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="dotpay" required>Szybki przelew DotPay
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="dotpay">Szybki przelew DotPay
                                     </label>
                                 </div>
                             </div>
                             <div>
                                 <h4>Dane odbiorcy</h4>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="address" placeholder="Ulica i numer" required>
+                                    <input type="text" class="form-control" name="address" placeholder="Ulica i numer">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="code" placeholder="Kod pocztowy" value="__-___" data-mask="__-___" required>
+                                    <input type="text" class="form-control" name="code" placeholder="Kod pocztowy" value="__-___" data-mask="__-___">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="city" placeholder="Miejscowość" required>
+                                    <input type="text" class="form-control" name="city" placeholder="Miejscowość">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" th:field="*{phone}" placeholder="Telefon" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___" required>
+                                    <input type="text" class="form-control" name="phone" th:field="*{phone}" placeholder="Telefon" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___">
                                 </div>
                             </div>
                             <div>
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox" value="scheckbox" />Chcę dodać komentarz do zamówienia
+                                        <input type="checkbox" class="form-check-input" name="checkbox" id="checkbox" value="scheckbox"/>Chcę dodać komentarz do zamówienia
                                     </label>
                                 </div>
                                 <div class="form-group" id="otherFieldDiv">
@@ -123,7 +123,7 @@
                                 <span>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input id="regulations" type="checkbox" class="form-check-input" required>
+                                            <input id="regulations" type="checkbox" name="regulations" class="form-check-input">
                                             Akceptuje <a href="#regulationsModal" class="regulations" data-toggle="modal" data-target="#regulationsModal">regulamin</a>
                                         </label>
                                     </div>
@@ -136,6 +136,13 @@
                     </div>
                 </form>
             </span>
+                <div th:if="${errors != null and !errors.isEmpty()}" class="row">
+                    <div class="alert alert-danger">
+                        <ul th:each="error : ${errors}">
+                            <li>[[${error}]]</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
