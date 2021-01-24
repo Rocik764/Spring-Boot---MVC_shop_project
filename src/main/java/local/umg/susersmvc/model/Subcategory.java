@@ -1,6 +1,9 @@
 package local.umg.susersmvc.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -10,6 +13,10 @@ public class Subcategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @NotBlank(message = "Pole nazwa podkategorii nie może być puste")
+    @Size(min=3, max=15)
     private String name;
 
     @OneToMany

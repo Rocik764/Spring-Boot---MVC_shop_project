@@ -26,20 +26,20 @@
   <component name="ChangeListManager">
     <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ShoppingCartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/validate/OrderValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/validate/OrderValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user_pages/order_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user_pages/order_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ROOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ROOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ShoppingCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ShoppingCartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-local.umg.susersmvc.SusersmvcApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-local.umg.susersmvc.SusersmvcApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/local.umg.susersmvc.SusersmvcApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/local.umg.susersmvc.SusersmvcApplicationTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT.war.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT.war.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/controller/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/controller/ProductsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/controller/ShoppingCartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/local/umg/susersmvc/controller/ShoppingCartController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/admin_pages/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/admin_pages/edit_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/admin_pages/new_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/admin_pages/new_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user_pages/order_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/susersmvc-0.0.1-SNAPSHOT/WEB-INF/classes/templates/user_pages/order_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Producent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Producent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/model/Subcategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/validate/ProductValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/validate/ProductValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_category_subcategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/new_category_subcategory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/ProductsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Producent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Producent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/model/Subcategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/validate/ProductValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/validate/ProductValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_category_subcategory.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin_pages/new_category_subcategory.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../PSI/Projekt/projekt/zoologiczny" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../SpringBootThymeleafFormValidation" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -241,7 +241,7 @@
       <workItem from="1611344277827" duration="1135000" />
       <workItem from="1611352928808" duration="711000" />
       <workItem from="1611407931505" duration="8705000" />
-      <workItem from="1611486109543" duration="11757000" />
+      <workItem from="1611486109543" duration="18862000" />
     </task>
     <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
       <created>1608112313606</created>
@@ -297,59 +297,59 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="414" y="180" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610491033074" />
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1611493472148">
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser" timestamp="1611503406281">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611493472148" />
+    <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611503406281" />
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610447042857">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610447042857" />
-    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl" timestamp="1611488562996">
+    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl" timestamp="1611508952117">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1610716616448" />
-    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611488562996" />
-    <state width="1877" height="303" key="GridCell.Tab.0.bottom" timestamp="1611499376746">
+    <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611508952117" />
+    <state width="1877" height="250" key="GridCell.Tab.0.bottom" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195145" />
-    <state width="1877" height="303" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.0.center" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
+    <state width="1877" height="250" key="GridCell.Tab.0.center" timestamp="1611509495017">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195145" />
-    <state width="1877" height="303" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.0.left" timestamp="1611499376745">
+    <state width="1877" height="250" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495017" />
+    <state width="1877" height="250" key="GridCell.Tab.0.left" timestamp="1611509495017">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195145" />
-    <state width="1877" height="303" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376745" />
-    <state width="1877" height="303" key="GridCell.Tab.0.right" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495017" />
+    <state width="1877" height="250" key="GridCell.Tab.0.right" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195145" />
-    <state width="1877" height="303" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.1.bottom" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
+    <state width="1877" height="250" key="GridCell.Tab.1.bottom" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195146" />
-    <state width="1877" height="303" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.1.center" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
+    <state width="1877" height="250" key="GridCell.Tab.1.center" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195146" />
-    <state width="1877" height="303" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.1.left" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
+    <state width="1877" height="250" key="GridCell.Tab.1.left" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195145" />
-    <state width="1877" height="303" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
-    <state width="1877" height="303" key="GridCell.Tab.1.right" timestamp="1611499376746">
+    <state width="1877" height="250" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
+    <state width="1877" height="250" key="GridCell.Tab.1.right" timestamp="1611509495018">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="378" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611247195146" />
-    <state width="1877" height="303" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611499376746" />
+    <state width="1877" height="250" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509495018" />
     <state width="1877" height="247" key="GridCell.Tab.2.bottom" timestamp="1610838869552">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -390,10 +390,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="702" y="424" key="git4idea.ui.GitStashDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1608760472689" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1610479929055">
+    <state x="616" y="243" key="run.anything.popup" timestamp="1611509427957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1610479929055" />
+    <state x="616" y="243" key="run.anything.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611509427957" />
     <state x="752" y="384" key="scopes" timestamp="1608756116366">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

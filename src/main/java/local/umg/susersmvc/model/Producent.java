@@ -1,6 +1,10 @@
 package local.umg.susersmvc.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -10,8 +14,19 @@ public class Producent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @NotBlank(message = "Pole nazwa podkategorii nie może być puste")
+    @Size(min=3, max=100)
     private String name;
+
+    @NotNull
+    @NotBlank(message = "Pole charakterystyka nie może być puste")
+    @Size(min=20, max=10000)
     private String characteristics;
+
+    @NotBlank(message = "Pole telefon nie może być puste")
+    @Pattern(regexp = "\\+\\d{2}\\s\\d{3}\\s\\d{3}\\s\\d{3}")
     private String phone;
 
     @OneToMany

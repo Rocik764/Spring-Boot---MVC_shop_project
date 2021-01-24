@@ -1,5 +1,9 @@
 package local.umg.susersmvc.validate;
 
+import local.umg.susersmvc.model.Category;
+import local.umg.susersmvc.model.Producent;
+import local.umg.susersmvc.model.Subcategory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,15 +13,28 @@ public class ProductValidation {
     private String description;
     private String quantity;
     private String price;
+    private Category category;
+    private Subcategory subcategory;
+    private Producent producent;
+    List<Category> listCategory;
+    List<Subcategory> listSubcategory;
+    List<Producent> listProducent;
+
     private List<String> errors = new ArrayList<>();
     private int parsedQuantity;
     private double parsedPrice;
 
-    public ProductValidation(String name, String description, String quantity, String price) {
+    public ProductValidation(String name, String description, String quantity, String price, Category category, Subcategory subcategory, Producent producent, List<Category> listCategory, List<Subcategory> listSubcategory, List<Producent> listProducent) {
         this.name = name;
         this.description = description;
         this.quantity = quantity;
         this.price = price;
+        this.category = category;
+        this.subcategory = subcategory;
+        this.producent = producent;
+        this.listCategory = listCategory;
+        this.listSubcategory = listSubcategory;
+        this.listProducent = listProducent;
     }
 
     public List<String> getErrors() {
@@ -40,6 +57,9 @@ public class ProductValidation {
         if(!validDescription()) result = false;
         if(!validQuantity()) result = false;
         if(!validPrice()) result = false;
+        if(!validCategory()) result = false;
+        if(!validSubcategory()) result = false;
+        if(!validProducent()) result = false;
 
         return result;
     }
@@ -106,5 +126,38 @@ public class ProductValidation {
         }
 
         return true;
+    }
+
+    private boolean validCategory() {
+        if (!(this.category == null)) {
+            for (Category category : listCategory) {
+                if(category.getId() == this.category.getId()) return true;
+            }
+        }
+        errors.add("Nie ma takiej kategorii");
+
+        return false;
+    }
+
+    private boolean validSubcategory() {
+        if (!(this.subcategory == null)) {
+            for (Subcategory subcategory : listSubcategory) {
+                if (subcategory.getId() == this.subcategory.getId()) return true;
+            }
+        }
+        errors.add("Nie ma takiej podkategorii");
+
+        return false;
+    }
+
+    private boolean validProducent() {
+        if (!(this.producent == null)) {
+            for (Producent producent : listProducent) {
+                if (producent.getId() == this.producent.getId()) return true;
+            }
+        }
+        errors.add("Nie ma takiego producenta");
+
+        return false;
     }
 }

@@ -11,21 +11,20 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
 import java.util.Optional;
 
-@Validated
 @Controller
 @RequestMapping("product")
 public class ProductsController {
@@ -100,16 +99,16 @@ public class ProductsController {
     }
 
     /**
-     * Method to show page with 2 forms to create new category and subcategory
+     * Method to show page with 3 forms to create new category, subcategory and producent
      */
-    @RequestMapping("/newCategory")
+    @GetMapping("/newCategory")
     public String showNewCategory(Model model) {
         Category category = new Category();
         Subcategory subcategory = new Subcategory();
         Producent producent = new Producent();
-        model.addAttribute("category", category);
-        model.addAttribute("subcategory", subcategory);
-        model.addAttribute("producent", producent);
+        if(!model.containsAttribute("category")) model.addAttribute("category", category);
+        if(!model.containsAttribute("subcategory")) model.addAttribute("subcategory", subcategory);
+        if(!model.containsAttribute("producent")) model.addAttribute("producent", producent);
         return "/admin_pages/new_category_subcategory";
     }
 
@@ -121,14 +120,24 @@ public class ProductsController {
                               @RequestParam("description") String description,
                               @RequestParam("quantity") String quantity,
                               @RequestParam("price") String price,
-                              @RequestParam("category") Category category,
-                              @RequestParam("subcategory") Subcategory subcategory,
-                              @RequestParam("producent") Producent producent,
+                              @RequestParam(value = "category", required = false) Category category,
+                              @RequestParam(value = "subcategory", required = false) Subcategory subcategory,
+                              @RequestParam(value = "producent", required = false) Producent producent,
                               @RequestParam("image") MultipartFile file,
                               RedirectAttributes redirectAttributes) {
-
-        ProductValidation productValidation = new ProductValidation(name, description, quantity, price);
-        //ModelAndView modelAndView = new ModelAndView("redirect:/product/new");
+        System.out.println(category);
+        ProductValidation productValidation = new ProductValidation(
+                name,
+                description,
+                quantity,
+                price,
+                category,
+                subcategory,
+                producent,
+                categoriesService.listAllCategory(),
+                categoriesService.listAllSubcategory(),
+                producentService.listAll()
+        );
 
         if(productValidation.validate()) {
             int validQuantity = productValidation.getParsedQuantity();
@@ -152,13 +161,24 @@ public class ProductsController {
             @RequestParam("description") String description,
             @RequestParam("quantity") String quantity,
             @RequestParam("price") String price,
-            @RequestParam("category") Category category,
-            @RequestParam("subcategory") Subcategory subcategory,
-            @RequestParam("producent") Producent producent,
+            @RequestParam(value = "category", required = false) Category category,
+            @RequestParam(value = "subcategory", required = false) Subcategory subcategory,
+            @RequestParam(value = "producent", required = false) Producent producent,
             @RequestParam("image") MultipartFile file,
             RedirectAttributes redirectAttributes) {
 
-        ProductValidation productValidation = new ProductValidation(name, description, quantity, price);
+        ProductValidation productValidation = new ProductValidation(
+                name,
+                description,
+                quantity,
+                price,
+                category,
+                subcategory,
+                producent,
+                categoriesService.listAllCategory(),
+                categoriesService.listAllSubcategory(),
+                producentService.listAll()
+        );
 
         if(productValidation.validate()) {
             int validQuantity = productValidation.getParsedQuantity();
@@ -176,8 +196,16 @@ public class ProductsController {
     /**
      * Post method to save new category
      */
-    @RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
-    public String saveCategory(@ModelAttribute("category") Category category, RedirectAttributes redirectAttributes) {
+    @PostMapping(value = "/saveCategory")
+    public String saveCategory(@Valid @ModelAttribute("category") Category category,
+                               BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.category", bindingResult);
+            redirectAttributes.addFlashAttribute("category", category);
+            return "redirect:/product/newCategory";
+        }
+
         try {
             categoriesService.saveCategory(category);
             redirectAttributes.addFlashAttribute("success", "Zapisano nową kategorię.");
@@ -193,8 +221,17 @@ public class ProductsController {
     /**
      * Post method to save new subcategory
      */
-    @RequestMapping(value = "/saveSubcategory", method = RequestMethod.POST)
-    public String saveSubcategory(@ModelAttribute("subcategory") Subcategory subcategory, RedirectAttributes redirectAttributes) {
+    @PostMapping(value = "/saveSubcategory")
+    public String saveSubcategory(@Valid @ModelAttribute("subcategory") Subcategory subcategory,
+                                  BindingResult bindingResult,
+                                  RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.subcategory", bindingResult);
+            redirectAttributes.addFlashAttribute("subcategory", subcategory);
+            return "redirect:/product/newCategory";
+        }
+
         try {
             categoriesService.saveSubcategory(subcategory);
             redirectAttributes.addFlashAttribute("success", "Zapisano nową podkategorię.");
@@ -209,8 +246,18 @@ public class ProductsController {
         return "redirect:/product/newCategory";
     }
 
-    @RequestMapping(value = "/saveProducent", method = RequestMethod.POST)
-    public String saveProducent(@ModelAttribute("producent") Producent producent, RedirectAttributes redirectAttributes) {
+    @PostMapping(value = "/saveProducent")
+    public String saveProducent(@Valid @ModelAttribute("producent") Producent producent,
+                                BindingResult bindingResult,
+                                RedirectAttributes redirectAttributes
+                                ) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.producent", bindingResult);
+            redirectAttributes.addFlashAttribute("producent", producent);
+            return "redirect:/product/newCategory";
+        }
+
         try {
             producentService.save(producent);
             redirectAttributes.addFlashAttribute("success", "Zapisano nowego producenta.");

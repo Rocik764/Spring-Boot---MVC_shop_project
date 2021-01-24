@@ -33,7 +33,8 @@
                             <div class="form-group row">
                                 <label for="inputCategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
                                 <div class="col-12">
-                                    <input type="text" class="form-control text-center" id="inputCategory" th:field="*{name}" required>
+                                    <input type="text" class="form-control text-center" id="inputCategory" th:field="*{name}">
+                                    <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -49,7 +50,8 @@
                             <div class="form-group row">
                                 <label for="inputSubcategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
                                 <div class="col-12">
-                                    <input type="text" class="form-control text-center" id="inputSubcategory" th:field="*{name}" required>
+                                    <input type="text" class="form-control text-center" id="inputSubcategory" th:field="*{name}">
+                                    <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -67,19 +69,22 @@
                             <div class="form-group row">
                                 <label for="inputProducentName" class="col-2 col-form-label text-center font-weight-bold">Nazwa</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="inputProducentName" th:field="*{name}" required>
+                                    <input type="text" class="form-control" id="inputProducentName" th:field="*{name}">
+                                    <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputProducentCharacteristics" class="col-2 col-form-label text-center font-weight-bold">Charakterystyka</label>
                                 <div class="col-10">
-                                    <textarea type="text" class="form-control" id="inputProducentCharacteristics" th:field="*{characteristics}" required rows="3"></textarea>
+                                    <textarea type="text" class="form-control" id="inputProducentCharacteristics" th:field="*{characteristics}" rows="3"></textarea>
+                                    <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('characteristics')}" th:errors="*{characteristics}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row mt-1">
                                 <label for="inputProducentPhone" class="col-2 col-form-label text-center font-weight-bold">Telefon</label>
                                 <div class="col-10">
-                                    <input type="text" class="form-control" id="inputProducentPhone" th:field="*{phone}" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___" required>
+                                    <input type="text" class="form-control" id="inputProducentPhone" th:field="*{phone}" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___">
+                                    <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row">
