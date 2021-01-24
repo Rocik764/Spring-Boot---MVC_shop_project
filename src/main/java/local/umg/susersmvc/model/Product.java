@@ -1,6 +1,7 @@
 package local.umg.susersmvc.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "product", schema = "zoologiczny_spring")
@@ -9,6 +10,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotEmpty
     private String name;
     private String description;
     private Integer quantity;

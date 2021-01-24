@@ -25,8 +25,41 @@
     <div id="content">
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
-
-            <p>coś</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="alert alert-primary" role="alert">
+                            <h2>Konta</h2>
+                            <p>
+                                Admin:<br/>
+                                login: admin@mail.com<br/>
+                                hasło: 123456<br/><br/>
+                                Employee:<br/>
+                                login: employee@mail.com<br/>
+                                hasło: 123456<br/><br/>
+                                User:<br/>
+                                login: user@mail.com<br/>
+                                hasło: 123456
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="alert alert-secondary" role="alert">
+                            <h2>Co może robić itp.</h2>
+                            <p>
+                                Admin:<br/>
+                                Konto -> administracja (dodawanie użytkowników (cele testowe) / edycja użytkowników (role, hasła, nazwy itp) -> zamówienia (realizacja zamówień) itp.
+                                Menu podręczne -> Zarządzanie (produktami / użytkownikami / kategoriami)<br/><br/>
+                                Employee:<br/>
+                                Konto -> zamówienia (realizacja zamówień) itp.
+                                Menu podręczne -> Zarządzanie (produktami / kategoriami)<br/><br/>
+                                User:<br/>
+                                Menu podręczne -> Filtrowanie produktów / dodawanie do koszyka / zamawianie ich / edycja profilu itp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

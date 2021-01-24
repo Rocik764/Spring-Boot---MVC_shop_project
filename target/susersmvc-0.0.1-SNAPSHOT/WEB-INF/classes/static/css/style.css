@@ -33,7 +33,7 @@ h1 {
 }
 
 .test {
-    margin-right: 70px;
+    margin-right: 90px;
 }
 
 .editProfileBtn {
@@ -130,3 +130,12 @@ h1 {
     -ms-transform: scale(1.05);
     transform: scale(1.05);
 }
+
+a.regulations:link {
+    color: #ACC1FF;
+}
+
+a.regulations:hover {
+    color: #5C85FF;
+}
+

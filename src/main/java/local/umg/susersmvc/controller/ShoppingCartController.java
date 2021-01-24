@@ -7,6 +7,7 @@ import local.umg.susersmvc.model.User;
 import local.umg.susersmvc.service.OrdersService;
 import local.umg.susersmvc.service.ShoppingCartServices;
 import local.umg.susersmvc.service.UserService;
+import local.umg.susersmvc.validate.OrderValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -17,7 +18,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Controller
@@ -71,22 +74,36 @@ public class ShoppingCartController {
      */
     @RequestMapping(value = "/orderProducts", method = RequestMethod.POST)
     public String orderProducts(@AuthenticationPrincipal CustomUserDetails loggedUser,
-                                @RequestParam("delivery") String delivery,
-                                @RequestParam("payment") String payment,
-                                @RequestParam("address") String address,
-                                @RequestParam("code") String code,
-                                @RequestParam("city") String city,
-                                @RequestParam("phone") String phone,
+                                @RequestParam(value = "delivery", defaultValue = "") String delivery,
+                                @RequestParam(value = "payment", defaultValue = "") String payment,
+                                @RequestParam(value = "address") String address,
+                                @RequestParam(value = "code") String code,
+                                @RequestParam(value = "city") String city,
+                                @RequestParam(value = "phone") String phone,
                                 @RequestParam(value = "invoice", required = false) String invoice,
                                 @RequestParam(value = "comment", required = false) String comment,
-                                @RequestParam("totalPrice") double totalPrice,
-                                Model model) {
-        System.out.println(delivery + " " + payment + " " + address + " " + code + " " + city + " " + phone + " " + invoice + " " + comment + " " + totalPrice);
-        boolean invc = true;
+                                @RequestParam(value = "regulations", defaultValue = "") String regulations,
+                                RedirectAttributes redirectAttributes) {
+
         if(loggedUser == null) return "redirect:/app/login";
-        if(invoice == null) invc = false;
-        User user = getUser(loggedUser);
-        ordersService.orderProducts(user, delivery, payment, address, code, city, phone, invc, comment, totalPrice);
+        OrderValidation orderValidation = new OrderValidation(delivery, payment, address, code, city, phone, regulations);
+
+        if(orderValidation.validate()) {
+            boolean invc = true;
+
+            if(invoice == null) invc = false;
+            User user = getUser(loggedUser);
+
+            List<CartItem> cartItems = cartServices.listCartItems(user);
+            double totalPrice = 0;
+            for (CartItem item : cartItems) totalPrice += item.getSubtotal();
+
+            ordersService.orderProducts(user, delivery, payment, address, code, city, phone, invc, comment, totalPrice);
+        } else {
+            redirectAttributes.addFlashAttribute("errors", orderValidation.getErrors());
+            return "redirect:/cart/showOrderDetails";
+        }
+
         return "redirect:/cart/showCart";
     }
 

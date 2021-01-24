@@ -20,6 +20,9 @@
                     <a th:href="@{/product/new}">Dodaj produkty</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
+                    <a th:href="@{/product/deleteCategories}">Usuń kategorie</a>
+                </li>
+                <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
                     <a th:href="@{/product/newCategory}">Dodaj kategorie</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN')">
@@ -42,7 +45,7 @@
                     <li>
                         <div class="form-group">
                             <label for="price-from">Cena od</label>
-                            <input type="number" step="0.01" class="form-control" id="price-from" name="filterPriceFrom" min="0" value="0">
+                            <input type="number" step="0.01" class="form-control" id="price-from" name="filterPriceFrom" min="0">
                         </div>
                     </li>
                     <li>
@@ -59,9 +62,6 @@
                     <a th:href="@{/product/filtering}">Więcej filtrów</a>
                 </li>
             </ul>
-        </li>
-        <li>
-            <a th:href="@{/product/page/1}">Page 1</a>
         </li>
         <li>
             <a th:href="@{/app/contact}">Kontakt</a>

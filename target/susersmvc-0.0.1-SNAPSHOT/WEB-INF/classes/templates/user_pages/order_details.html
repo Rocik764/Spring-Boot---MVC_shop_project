@@ -38,17 +38,17 @@
                                 <h4>Sposób dostawy</h4>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="kurier" required>Kurier - InPost, UPS, FedEx, DTS lub Poczta Polska (9,99zł)
+                                    <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="kurier" required>Kurier - InPost, UPS, FedEx, DTS lub Poczta Polska
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="osobiście" required>Odbiór osobisty (bezpłatnie)
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="osobiście" required>Odbiór osobisty
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="paczkomat" required>Paczkomaty 24/7 (bezpłatnie)
+                                        <input type="radio" class="form-check-input" name="delivery" th:field="*{delivery}" value="paczkomat" required>Paczkomaty 24/7
                                     </label>
                                 </div>
                             </div>
@@ -56,12 +56,12 @@
                                 <h4>Metoda płatności</h4>
                                     <div class="form-check">
                                     <label class="form-check-label active">
-                                    <input type="radio" class="form-check-input" name="payment"  th:field="*{payment}" value="blik" required>BLIK (bezpłatnie)
+                                    <input type="radio" class="form-check-input" name="payment"  th:field="*{payment}" value="blik" required>BLIK
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przelew" required>Przelew gotówkowy (bezpłatnie)
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="przelew" required>Przelew gotówkowy
                                     </label>
                                 </div>
                                 <div class="form-check">
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="dotpay" required>Szybki przelew DotPay (9,74 zł)
+                                        <input type="radio" class="form-check-input" name="payment" th:field="*{payment}" value="dotpay" required>Szybki przelew DotPay
                                     </label>
                                 </div>
                             </div>
@@ -86,13 +86,13 @@
                                     <input type="text" class="form-control" name="address" placeholder="Ulica i numer" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="code" placeholder="Kod pocztowy" required>
+                                    <input type="text" class="form-control" name="code" placeholder="Kod pocztowy" value="__-___" data-mask="__-___" required>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="city" placeholder="Miejscowość" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="phone" th:field="*{phone}" placeholder="Telefon" required>
+                                    <input type="text" class="form-control" name="phone" th:field="*{phone}" placeholder="Telefon" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___" required>
                                 </div>
                             </div>
                             <div>
@@ -123,7 +123,8 @@
                                 <span>
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input id="regulations" type="checkbox" class="form-check-input" required>Akceptuje regulamin
+                                            <input id="regulations" type="checkbox" class="form-check-input" required>
+                                            Akceptuje <a href="#regulationsModal" class="regulations" data-toggle="modal" data-target="#regulationsModal">regulamin</a>
                                         </label>
                                     </div>
                                 </span>
@@ -140,6 +141,8 @@
     </div>
 </div>
 <div th:replace="/fragments/standard_modal :: standardModal"></div>
+<div th:replace="/fragments/regulations_modal :: regulationsModal"></div>
+<script type="text/javascript" th:src="@{/js/data_mask.js}"></script>
 <script type="text/javascript">
     $(function () {
         $('input[name="comment"]').hide();

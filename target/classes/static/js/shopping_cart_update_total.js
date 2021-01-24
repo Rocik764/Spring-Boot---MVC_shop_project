@@ -57,7 +57,7 @@ function increaseAmount(link) {
 
 function updateSubtotal(newSubtotal, productId) {
     console.log("updateSubtotal");
-    $("#subtotal" + productId).text(newSubtotal.toFixed(2))
+    $("#subtotal" + productId).text(newSubtotal)
 }
 
 function updateAmount(productId, amount, link) {

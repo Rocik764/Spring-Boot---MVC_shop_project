@@ -5,11 +5,13 @@ import local.umg.susersmvc.model.*;
 import local.umg.susersmvc.service.CategoriesService;
 import local.umg.susersmvc.service.ProducentService;
 import local.umg.susersmvc.service.ProductService;
+import local.umg.susersmvc.validate.ProductValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,10 +20,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.Optional;
 
+@Validated
 @Controller
 @RequestMapping("product")
 public class ProductsController {
@@ -113,17 +117,28 @@ public class ProductsController {
      * Post method to create new product and save it in database
      */
     @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
-    public String saveProduct(
-            @RequestParam("name") String name,
-            @RequestParam("description") String description,
-            @RequestParam("quantity") int quantity,
-            @RequestParam("price") double price,
-            @RequestParam("category") Category category,
-            @RequestParam("subcategory") Subcategory subcategory,
-            @RequestParam("producent") Producent producent,
-            @RequestParam("image") MultipartFile file) {
-        System.out.println("Controller: saveProduct");
-        service.save(name, description, quantity, price, category, subcategory, producent, file);
+    public String saveProduct(@RequestParam("name") String name,
+                              @RequestParam("description") String description,
+                              @RequestParam("quantity") String quantity,
+                              @RequestParam("price") String price,
+                              @RequestParam("category") Category category,
+                              @RequestParam("subcategory") Subcategory subcategory,
+                              @RequestParam("producent") Producent producent,
+                              @RequestParam("image") MultipartFile file,
+                              RedirectAttributes redirectAttributes) {
+
+        ProductValidation productValidation = new ProductValidation(name, description, quantity, price);
+        //ModelAndView modelAndView = new ModelAndView("redirect:/product/new");
+
+        if(productValidation.validate()) {
+            int validQuantity = productValidation.getParsedQuantity();
+            double validPrice = productValidation.getParsedPrice();
+            service.save(name, description, validQuantity, validPrice, category, subcategory, producent, file);
+        } else {
+            redirectAttributes.addFlashAttribute("errors", productValidation.getErrors());
+            return "redirect:/product/new";
+        }
+
         return "redirect:/product/listProducts";
     }
 
@@ -135,14 +150,25 @@ public class ProductsController {
             @RequestParam("id") Long id,
             @RequestParam("name") String name,
             @RequestParam("description") String description,
-            @RequestParam("quantity") int quantity,
-            @RequestParam("price") double price,
+            @RequestParam("quantity") String quantity,
+            @RequestParam("price") String price,
             @RequestParam("category") Category category,
             @RequestParam("subcategory") Subcategory subcategory,
             @RequestParam("producent") Producent producent,
-            @RequestParam("image") MultipartFile file) {
-        System.out.println("Controller: saveProduct");
-        service.update(id, name, description, quantity, price, category, subcategory, producent, file);
+            @RequestParam("image") MultipartFile file,
+            RedirectAttributes redirectAttributes) {
+
+        ProductValidation productValidation = new ProductValidation(name, description, quantity, price);
+
+        if(productValidation.validate()) {
+            int validQuantity = productValidation.getParsedQuantity();
+            double validPrice = productValidation.getParsedPrice();
+            service.update(id, name, description, validQuantity, validPrice, category, subcategory, producent, file);
+        } else {
+            redirectAttributes.addFlashAttribute("errors", productValidation.getErrors());
+            return "redirect:/product/editProduct/" + id;
+        }
+
 
         return "redirect:/product/listProducts";
     }
@@ -157,6 +183,8 @@ public class ProductsController {
             redirectAttributes.addFlashAttribute("success", "Zapisano nową kategorię.");
         } catch (DataIntegrityViolationException e) {
             redirectAttributes.addFlashAttribute("error", "Ta kategoria już istnieje.");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", e.toString());
         }
 
         return "redirect:/product/newCategory";
@@ -172,6 +200,11 @@ public class ProductsController {
             redirectAttributes.addFlashAttribute("success", "Zapisano nową podkategorię.");
         } catch (DataIntegrityViolationException e) {
             redirectAttributes.addFlashAttribute("error", "Ta podkategoria już istnieje.");
+        } catch (Exception e) {
+            StringWriter sw = new StringWriter();
+            e.printStackTrace(new PrintWriter(sw));
+            String exceptionAsString = sw.toString();
+            redirectAttributes.addFlashAttribute("error", e.toString() + "\n" + exceptionAsString);
         }
         return "redirect:/product/newCategory";
     }
@@ -183,6 +216,8 @@ public class ProductsController {
             redirectAttributes.addFlashAttribute("success", "Zapisano nowego producenta.");
         } catch (DataIntegrityViolationException e) {
             redirectAttributes.addFlashAttribute("error", "Ten producent już istnieje.");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", e.toString());
         }
         return "redirect:/product/newCategory";
     }
@@ -228,7 +263,7 @@ public class ProductsController {
     public String deleteProduct(@PathVariable(name = "id") Long id) {
         service.delete(id);
 
-        return "redirect:/listProducts";
+        return "redirect:/product/listProducts";
     }
 
     /**
