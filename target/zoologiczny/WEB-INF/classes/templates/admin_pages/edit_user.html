@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Edytuj użytkownika</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <h1>Edytuj użytkownika z ID: <th:block th:text="*{id}"></th:block></h1>
+                <form th:action="@{/admin/editMail}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveMail">Zapisz</button>
+                        </div>
+                        <input type="text" name="email" class="form-control" th:value="*{email}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
+                    </div>
+                </form>
+                <form th:action="@{/admin/editFirstName}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveFirstName">Zapisz</button>
+                        </div>
+                        <input type="text" name="first_name" class="form-control" th:value="*{first_name}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
+                    </div>
+                </form>
+                <form th:action="@{/admin/editLastName}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveLastName">Zapisz</button>
+                        </div>
+                        <input type="text" name="last_name" class="form-control" th:value="*{last_name}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
+                    </div>
+                </form>
+                <form th:action="@{/admin/editPassword}" th:object="${user}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSavePassword">Zapisz</button>
+                        </div>
+                        <input type="password" name="password" class="form-control" th:value="*{id}" aria-label="" aria-describedby="basic-addon1" required>
+                        <input type="text" name="id" class="form-control" th:value="*{id}" hidden readonly="readonly">
+                    </div>
+                </form>
+                    <label class="form-check-label" for="roles-form">
+                    Role użytkownika:
+                        <form id="roles-form" th:action="@{'/admin/editRoles/' + ${user.id}}" method="post">
+                            <div class="form-check" th:each="role : ${roles}">
+                                <input class="form-check-input" type="checkbox" th:value="${role.name}" name="role" id="role" th:checked="${#lists.contains(user.getRoles(), role)}">
+                                <label class="form-check-label" for="role">
+                                    [[${role.getName()}]]
+                                </label>
+                            </div>
+                            <div class="input-group-prepend">
+                            <button class="btn btn-outline-primary" type="submit" id="btnSaveRoles">Zapisz</button>
+                            </div>
+                        </form>
+                    </label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

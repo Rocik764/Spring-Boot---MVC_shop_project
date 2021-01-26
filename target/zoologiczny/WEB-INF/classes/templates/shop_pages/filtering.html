@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Filtry</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+            <h1>Filtrowanie</h1>
+                <form th:action="@{/product/startFiltering}" method="POST">
+                    <div class="form-group">
+                        <label for="filter-word">Wpisz wyszukiwaną frazę</label>
+                        <input type="text" class="form-control" id="filter-word" name="filterWord">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-price-from">Cena od</label>
+                        <input type="number" step="0.01" class="form-control" id="filter-price-from" name="filterPriceFrom" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="filter-price-to">Cena do</label>
+                        <input type="number" step="0.01" class="form-control" id="filter-price-to" name="filterPriceTo" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCategory">Kategoria</label>
+                        <select id="inputCategory" name="category" class="form-control">
+                            <option value="">Wszystko</option>
+                            <option th:each="category : ${listCategory}" th:value="${category.id}">[[${category.name}]]</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputProducent">Producent</label>
+                        <select id="inputProducent" name="producent" class="form-control">
+                            <option value="">Wszystko</option>
+                            <option th:each="producent : ${listProducent}" th:value="${producent.id}">[[${producent.name}]]</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSubategory">Zwierzę</label>
+                        <select id="inputSubategory" name="subcategory" class="form-control">
+                            <option value="">Wszystko</option>
+                            <option th:each="subcategory : ${listSubcategory}" th:value="${subcategory.id}">[[${subcategory.name}]]</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg text-center">
+                            <button type="submit" class="btn btn-primary">Szukaj</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

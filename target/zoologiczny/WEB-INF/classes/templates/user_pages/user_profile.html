@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Profil</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <h3>Profil:</h3>
+                <form th:action="@{/users/editMail}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail" disabled>Zapisz</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditMail"><span>Edytuj</span></button>
+                        </div>
+                        <input type="text" name="email" class="form-control" th:value="${user.getUsername()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                    </div>
+                </form>
+                <form th:action="@{/users/editFirstName}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName" disabled>Zapisz</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditFirstName"><span>Edytuj</span></button>
+                        </div>
+                        <input type="text" name="first_name" class="form-control" th:value="${user.getName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                    </div>
+                </form>
+                <form th:action="@{/users/editLastName}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName" disabled>Zapisz</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditLastName"><span>Edytuj</span></button>
+                        </div>
+                        <input type="text" name="last_name" class="form-control" th:value="${user.getLastName()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                    </div>
+                </form>
+                <form th:action="@{/users/editPassword}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword" disabled>Zapisz</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditPassword"><span>Edytuj</span></button>
+                        </div>
+                        <input type="password" name="password" class="form-control" th:value="${user.getPassword()}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" required>
+                    </div>
+                </form>
+                <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+                <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#btnEditMail').click(function() {
+            if($("#btnSaveMail").is(":disabled")) {
+                $("input[name='email']").removeAttr("readonly")
+                $("#btnSaveMail").prop("disabled", false)
+                $("#btnEditMail span").text("Anuluj")
+            } else {
+                $("input[name='email']").prop("readonly", true)
+                $("#btnSaveMail").prop("disabled", true)
+                $("#btnEditMail span").text("Edytuj")
+            }
+        })
+    })
+    $(document).ready(function() {
+        $('#btnEditFirstName').click(function() {
+            if($("#btnSaveFirstName").is(":disabled")) {
+                $("input[name='first_name']").removeAttr("readonly")
+                $("#btnSaveFirstName").prop("disabled", false)
+                $("#btnEditFirstName span").text("Anuluj")
+            } else {
+                $("input[name='first_name']").prop("readonly", true)
+                $("#btnSaveFirstName").prop("disabled", true)
+                $("#btnEditFirstName span").text("Edytuj")
+            }
+        })
+    })
+    $(document).ready(function() {
+        $('#btnEditLastName').click(function() {
+            if($("#btnSaveLastName").is(":disabled")) {
+                $("input[name='last_name']").removeAttr("readonly")
+                $("#btnSaveLastName").prop("disabled", false)
+                $("#btnEditLastName span").text("Anuluj")
+            } else {
+                $("input[name='last_name']").prop("readonly", true)
+                $("#btnSaveLastName").prop("disabled", true)
+                $("#btnEditLastName span").text("Edytuj")
+            }
+        })
+    })
+    $(document).ready(function() {
+        $('#btnEditPassword').click(function() {
+            if($("#btnSavePassword").is(":disabled")) {
+                $("input[name='password']").removeAttr("readonly")
+                $("#btnSavePassword").prop("disabled", false)
+                $("#btnEditPassword span").text("Anuluj")
+            } else {
+                $("input[name='password']").prop("readonly", true)
+                $("#btnSavePassword").prop("disabled", true)
+                $("#btnEditPassword span").text("Edytuj")
+            }
+        })
+    })
+</script>
+</body>
+</html>

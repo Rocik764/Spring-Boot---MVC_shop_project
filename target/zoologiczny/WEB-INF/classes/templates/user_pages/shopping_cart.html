@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <p>Koszyk użytkownika: [[${user.getEmail()}]]</p>
+                <div class="row m-1">
+                    <div class="col-lg-8">
+                        <th:block th:each="item, status : ${cartItems}">
+                            <div class="row border rounded" th:with="product = ${item.product}" th:id="'row' + ${status.count}">
+                                <div class="col-lg-1">
+                                    <div class="mt-2">[[${status.count}]]</div>
+                                    <div class="mt-2">
+                                        <a class="link-remove" th:rowNumber="${status.count}" th:href="@{'/cartRest/remove/' + ${product.id} + '/' + ${item.amount}}">
+                                            <img th:src="@{/img/removeFromCart.png}" alt="remove"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <img alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="height: 250px;">
+                                </div>
+                                <div class="col-lg-6">
+                                    <div>
+                                        <a th:href="@{'/product/productInfo/' + ${product.id}}"><b>[[${product.name}]]</b></a>
+                                    </div>
+                                    <div>
+                                        <div th:replace="/fragments/amount_control :: amount_control(${item.amount}, ${item.product.id})">Ilość</div>
+                                    </div>
+                                    <div>
+                                        <span>x</span>
+                                        <span>[[${product.price}]]&nbsp;zł</span>
+                                    </div>
+                                    <div>
+                                        <span>=&nbsp;</span><span class="h4 productSubtotal" th:id="'subtotal' + ${product.id}">[[${item.subtotal}]]</span><span class="h4">&nbsp;zł</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row m-1">&nbsp;</div>
+                        </th:block>
+                    </div>
+                    <div class="col-lg-4" th:unless="${#lists.isEmpty(cartItems)}">
+                        <div>
+                            <span class="h3">Podsumowanie:</span>
+                        </div>
+                        <div class="mt-2">
+                            <span class="h2" id="totalAmount"></span>
+                        </div>
+                        <div class="mt-2">
+                            <a th:href="@{/cart/showOrderDetails}"><button class="btn btn-danger p-3 mt-2">Zakup</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${#lists.isEmpty(cartItems)}">
+                    <p class="alert alert-info">Brak produktów w koszyku.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="/fragments/standard_modal :: standardModal"></div>
+<script type="text/javascript">
+    contextPath = "[[@{/}]]";
+</script>
+<script type="text/javascript" th:src="@{/js/shopping_cart_update_total.js}"></script>
+</body>
+</html>

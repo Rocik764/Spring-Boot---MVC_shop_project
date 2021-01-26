@@ -88,15 +88,6 @@ public class AppController {
     }
 
     /**
-     * Method to show page with shelter for animals
-     */
-    @RequestMapping("/schronisko")
-    public String viewSchronisko(Model model) {
-
-        return "/shop_pages/schronisko";
-    }
-
-    /**
      * Method to show page with contact info
      */
     @RequestMapping("/contact")

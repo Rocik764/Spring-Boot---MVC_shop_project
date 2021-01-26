@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+<div th:fragment="amount_control(amountValue, productId)">
+    <nav>
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link minus" href="" th:pid="${productId}" style="height: 38px;"><b>-</b></a>
+            </li>
+            <li class="page-item">
+                <input type="text" th:value="${amountValue}" class="form-control text-center"
+                onkeydown="return false;" style="max-width: 55px"
+                th:id="'amount' + ${productId}"/>
+            </li>
+            <li class="page-item">
+                <a class="page-link plus" href="" th:pid="${productId}" style="height: 38px;"><b>+</b></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

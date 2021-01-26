@@ -15,8 +15,8 @@ public class OrderValidation {
     private String phone;
     private String regulations;
     private List<String> errors = new ArrayList<>();
-    private String[] deliveryOptions = {"kurier", "osobiście", "paczkomat"};
-    private String[] paymentOptions = {"blik", "przelew", "przy odbiorze", "karta płatnicza", "dotpay"};
+    private final String[] deliveryOptions = {"kurier", "osobiście", "paczkomat"};
+    private final String[] paymentOptions = {"blik", "przelew", "przy odbiorze", "karta płatnicza", "dotpay"};
 
     public OrderValidation(String delivery, String payment, String address, String code, String city, String phone, String regulations) {
         this.delivery = delivery;

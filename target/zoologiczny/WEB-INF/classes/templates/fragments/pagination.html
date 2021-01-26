@@ -1,0 +1,40 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:fragment="pagination">
+
+    <!-- Pagination -->
+    <div class="pagination" th:with="baseUrl=${URLparameter}">
+        <span th:if="${pager.indexOutOfBounds()}">
+            <div class="alert alert-danger" role="alert">
+					Nie znaleziono produktów, <a th:href="@{/product/filtering}" class="alert-link">naciśnij aby przejść do strony z filtrami</a>.
+            </div>
+        </span>
+
+        <span th:unless="${pager.indexOutOfBounds()}">
+
+            <span th:if="${pager.hasPrevious()}">
+                <a class="pageLink"
+                   th:href="@{${baseUrl}(page=1)}">&laquo; Pierwsza</a>
+                <a class="pageLink"
+                   th:href="@{${baseUrl}(page=${pager.getPageIndex() - 1})}"> Poprzednia</a>
+            </span>
+
+            <span th:if="${pager.getTotalPages() != 1}"
+                  th:text="'Strona ' + ${pager.getPageIndex()} + ' z ' + ${pager.getTotalPages()} + '.'">
+            </span>
+
+            <span th:if="${pager.hasNext()}">
+                <a class="pageLink"
+                   th:href="@{${baseUrl}(page=${pager.getPageIndex() + 1})}">Następna</a>
+                <a class="pageLink"
+                   th:href="@{${baseUrl}(page=${pager.getTotalPages()})}">Ostatnia &raquo;</a>
+            </span>
+        </span>
+    </div>
+
+</div>
+</body>
+</html>

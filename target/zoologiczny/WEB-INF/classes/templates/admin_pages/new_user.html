@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Nowy użytkownik</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+
+            <h1>Stwórz nowego użytkownika (test)</h1>
+            <form action="#" th:action="@{/admin/save}" th:object="${user}" method="post">
+                <div class="form-group row">
+                    <label for="inputFirstName" class="col-sm col-form-label  text-center font-weight-bold">Imię</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputLastName" class="col-sm col-form-label text-center font-weight-bold">Nazwisko</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm col-form-label text-center font-weight-bold">Email</label>
+                    <div class="col-sm-11">
+                        <input type="email" class="form-control" id="inputEmail" th:field="*{email}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm col-form-label text-center font-weight-bold">Hasło</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="inputPassword" th:field="*{password}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg text-center">
+                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

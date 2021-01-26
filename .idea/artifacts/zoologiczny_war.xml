@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="susersmvc-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="zoologiczny.war">
       <element id="artifact" artifact-name="zoologiczny:war exploded" />
     </root>
   </artifact>

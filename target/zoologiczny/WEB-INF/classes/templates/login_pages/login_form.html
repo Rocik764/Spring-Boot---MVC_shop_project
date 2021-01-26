@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+
+            <h1>Zaloguj się</h1>
+            <form th:action="@{/app/login}" method="post" style="max-width: 600px; margin: 0 auto;">
+                <div class="m-3">
+                    <div th:if="${param.error}" class="alert alert-error">
+                        <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success">
+                        <p class="text-warning">You have been logged out.</p>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm col-form-label text-center font-weight-bold">E-mail: </label>
+                        <div class="col-8">
+                            <input type="email" name="email" class="form-control" required />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm col-form-label text-center font-weight-bold">Hasło: </label>
+                        <div class="col-8">
+                            <input type="password" name="password" class="form-control" required/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg text-center">
+                            <button type="submit" class="btn btn-primary">Zaloguj</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

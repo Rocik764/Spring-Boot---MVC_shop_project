@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkty</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style2.css}"/>
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 mb-4" th:each="product, iteration : ${productList}" th:if="${iteration.index < 4}">
+                        <div class="rounded shadow-sm productItem">
+                            <a th:href="@{'/product/productInfo/' + ${product.id}}">
+                                <img class="img-fluid card-img-top" alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="height: 250px;">
+                                <div class="p-4">
+                                    <p class="small text-white mb-0">
+                                        <b>[[${product.name}]]</b><br/>
+                                        Ilość: [[${product.quantity}]]<br/>
+                                        Cena: [[${product.price}]]<br/>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 mb-4" th:each="product, iteration : ${productList}" th:if="${iteration.index >= 4}">
+                        <div class="rounded shadow-sm productItem">
+                            <a th:href="@{'/product/productInfo/' + ${product.id}}">
+                                <img class="img-fluid card-img-top" alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="height: 250px;">
+                                <div class="p-4">
+                                    <p class="small text-white mb-0">
+                                        <b>[[${product.name}]]</b><br/>
+                                        Ilość: [[${product.quantity}]]<br/>
+                                        Cena: [[${product.price}]]<br/>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div th:replace="/fragments/pagination :: pagination(URLparameter=${url})"></div>
+                <div th:if="${#lists.isEmpty(productList)}" class="row">
+                    <div class="col">
+                        <h2>Nie znaleziono produktów.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

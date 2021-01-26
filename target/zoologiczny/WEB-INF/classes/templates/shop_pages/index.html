@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style2.css}" />
+    <script type="text/javascript" src="/zoologiczny/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/zoologiczny/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src="@{/js/sidebar_script.js}"></script>
+</head>
+<body>
+<div th:insert="/fragments/animated :: myAnimated"></div>
+<header>
+    <div th:insert="/fragments/menu :: myMenu"></div>
+</header>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div th:insert="/fragments/side_menu :: mySideMenu"></div>
+    </nav>
+
+    <div id="content">
+        <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
+        <div id="content-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="alert alert-primary" role="alert">
+                            <h2>Konta</h2>
+                            <p>
+                                Admin:<br/>
+                                login: admin@mail.com<br/>
+                                hasło: 123456<br/><br/>
+                                Employee:<br/>
+                                login: employee@mail.com<br/>
+                                hasło: 123456<br/><br/>
+                                User:<br/>
+                                login: user@mail.com<br/>
+                                hasło: 123456
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="alert alert-secondary" role="alert">
+                            <h2>Co może robić itp.</h2>
+                            <p>
+                                Admin:<br/>
+                                Konto -> administracja (dodawanie użytkowników (cele testowe) / edycja użytkowników (role, hasła, nazwy itp) -> zamówienia (realizacja zamówień) itp.
+                                Menu podręczne -> Zarządzanie (produktami / użytkownikami / kategoriami)<br/><br/>
+                                Employee:<br/>
+                                Konto -> zamówienia (realizacja zamówień) itp.
+                                Menu podręczne -> Zarządzanie (produktami / kategoriami)<br/><br/>
+                                User:<br/>
+                                Menu podręczne -> Filtrowanie produktów / dodawanie do koszyka / zamawianie ich / edycja profilu itp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
