@@ -2,6 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <body>
+<style>
+
+</style>
 <div th:fragment="orderDetailsModal" class="modal fade text-center" id="myDetailsModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -12,27 +15,8 @@
             <div class="modal-body">
                 <span id="modalDetailsBody">
                     <div id="resultGetAllCustomerDiv">
-                        <ul class="list-group">
-                        </ul>
+
                     </div>
-<!--                    <table class="table">-->
-<!--                        <thead>-->
-<!--                            <tr>-->
-<!--                                <th>ID</th>-->
-<!--                                <th>Produkt</th>-->
-<!--                                <th>Użytkownik</th>-->
-<!--                                <th>Ilość</th>-->
-<!--                            </tr>-->
-<!--                        </thead>-->
-<!--                        <tbody>-->
-<!--                            <tr th:each="detail : ${orderDetails}">-->
-<!--                                <td th:text="${detail.id}">ID</td>-->
-<!--                                <td th:text="${detail.product.getName()}">Produkt</td>-->
-<!--                                <td th:text="${detail.user.getFirst_name()}">Użytkownik</td>-->
-<!--                                <td th:text="${detail.amount}">Ilość</td>-->
-<!--                            </tr>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
                 </span>
             </div>
             <div class="modal-footer">

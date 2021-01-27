@@ -44,7 +44,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="order, index : ${orders}" th:style="${order.is_completed} == FALSE ? 'background: red' : 'background: green'">
+                    <tr th:each="order, index : ${orders}" th:style="${order.is_completed} == FALSE ? 'background: red' : 'background: green'" th:onclick="showDetails([[${order.purchase_date}]])">
                         <td>[[${index.count}]]</td>
                         <td th:text="${order.purchase_date}">Zakupiono</td>
                         <td th:text="${order.address}">Adres</td>
@@ -61,6 +61,49 @@
         </div>
     </div>
 </div>
-<div th:replace="/fragments/standard_modal :: standardModal"></div>
+<div th:replace="/fragments/order_details_modal :: orderDetailsModal"></div>
+<script>
+
+    function showDetails(date) {
+        let url = "/zoologiczny/ordersRest/showOrdersDetailsUser/" + date;
+        showDetailsModal(url)
+    }
+
+    function showDetailsModal(url) {
+        console.log("showDetailsModal ", url)
+        const token = $("meta[name='_csrf']").attr("content");
+        const header = $("meta[name='_csrf_header']").attr("content");
+        $.ajax({
+            contentType: "application/json",
+            type: "GET",
+            url: url,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(header, token)
+            }
+        }).done(function (response) {
+            $("#modalDetailsBody").html("<table id=\"details\"></table>")
+            $("#details").html("");
+            let tr = "<thead class=\"thead-dark\"><tr><th>Produkt</th><th>Użytkownik</th><th>Ilość</th></tr></thead><tbody>"
+            $("#details").append(tr);
+            for (let order of response) {
+                tr = "<tr><td>" + order.product.name + "</td><td>" +
+                    order.user.email + "</td><td>" + order.amount +
+                    "</td></tr>"
+                $("#details").append(tr);
+            }
+            $("#details").append("</tbody>")
+            $("#modalDetailsTitle").text("Detale produktów")
+            $("#myDetailsModal").modal()
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log("failed: ");
+            console.log(jqXHR.responseText);
+            console.log(textStatus);
+            console.log(errorThrown);
+            $("#modalDetailsTitle").text("Detale produktów")
+            $("#modalDetailsBody").html("<p>Coś poszło nie tak</p>")
+            $("#myDetailsModal").modal()
+        });
+    }
+</script>
 </body>
 </html>
