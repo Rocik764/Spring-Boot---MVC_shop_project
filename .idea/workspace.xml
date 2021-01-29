@@ -24,19 +24,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/local/umg/susersmvc/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/orders_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin_pages/orders_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/side_menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shop_pages/partners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/local/umg/susersmvc/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zoologiczny.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zoologiczny.war.original" beforeDir="false" />
-    </list>
+    <list default="true" id="622db2b1-ca79-4b04-b23a-85548211a279" name="Default Changelist" comment="Project for uni:&#10;- menu with bootstrap&#10;- working authentication with database&#10;- fixing permissions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +234,7 @@
       <workItem from="1611692655026" duration="2474000" />
       <workItem from="1611752149033" duration="7335000" />
       <workItem from="1611774697134" duration="1210000" />
-      <workItem from="1611939133382" duration="5374000" />
+      <workItem from="1611939133382" duration="5710000" />
     </task>
     <task id="LOCAL-00001" summary="First Spring Boot app. Small users database, 4 different sites:&#10;- displaying users in a table&#10;- editing / removing them&#10;- form to add new user&#10;- showing users in table with drop down menu below to sort them in different ways">
       <created>1608112313606</created>
@@ -316,26 +304,26 @@
     </state>
     <state x="-1180" y="280" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1610716616448" />
     <state x="740" y="280" width="542" height="490" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611939368918" />
-    <state width="1877" height="289" key="GridCell.Tab.0.bottom" timestamp="1611943309336">
+    <state width="1877" height="289" key="GridCell.Tab.0.bottom" timestamp="1611945131481">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="250" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611510578714" />
-    <state width="1877" height="289" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611943309336" />
-    <state width="1877" height="289" key="GridCell.Tab.0.center" timestamp="1611943309336">
+    <state width="1877" height="289" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611945131481" />
+    <state width="1877" height="289" key="GridCell.Tab.0.center" timestamp="1611945131480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="250" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611510578714" />
-    <state width="1877" height="289" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611943309336" />
-    <state width="1877" height="289" key="GridCell.Tab.0.left" timestamp="1611943309336">
+    <state width="1877" height="289" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611945131480" />
+    <state width="1877" height="289" key="GridCell.Tab.0.left" timestamp="1611945131480">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="250" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611510578714" />
-    <state width="1877" height="289" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611943309336" />
-    <state width="1877" height="289" key="GridCell.Tab.0.right" timestamp="1611943309336">
+    <state width="1877" height="289" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611945131480" />
+    <state width="1877" height="289" key="GridCell.Tab.0.right" timestamp="1611945131481">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="250" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1611510578714" />
-    <state width="1877" height="289" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611943309336" />
+    <state width="1877" height="289" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1611945131481" />
     <state width="1877" height="289" key="GridCell.Tab.1.bottom" timestamp="1611943309336">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
