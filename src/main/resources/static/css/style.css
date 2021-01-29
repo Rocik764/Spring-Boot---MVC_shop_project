@@ -18,6 +18,14 @@ h1 {
     display: block;
 }
 
+.dropdown:hover {
+    padding-bottom: 1px;
+}
+
+.dropdown-menu {
+    top: auto;
+}
+
 .navbar {
     min-height: 57px;
 }

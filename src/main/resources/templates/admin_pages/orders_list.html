@@ -48,7 +48,7 @@
                         </thead>
                         <tbody>
 
-                        <tr th:each="order : ${orders}" style="cursor: pointer" th:onclick="showDetails([[${order.user.getId()}]],[[${order.purchase_date}]])">
+                        <tr th:each="order : ${orders}" style="cursor: pointer" th:onclick="showDetails([[${order.user.getId()}]],[[${order.purchase_date}]],[[${order.id}]])">
                             <td th:text="${order.id}">ID</td>
                             <td th:text="${order.user.getEmail()}">Użytkownik</td>
                             <td th:text="${order.purchase_date}">Zakupiono</td>
@@ -74,13 +74,13 @@
 <div th:replace="/fragments/order_details_modal :: orderDetailsModal"></div>
 <script>
 
-    function showDetails(value, date) {
+    function showDetails(value, date, id) {
         let url = "/zoologiczny/ordersRest/showOrdersDetails/" + value + "/" + date;
-        showDetailsModal(url)
+        showDetailsModal(url, id)
     }
 
-    function showDetailsModal(url) {
-        console.log("showDetailsModal ", url)
+    function showDetailsModal(url, id) {
+        console.log("showDetailsModal " + url + " ID: " + id)
         const token = $("meta[name='_csrf']").attr("content");
         const header = $("meta[name='_csrf_header']").attr("content");
         $.ajax({
@@ -102,7 +102,7 @@
                 $("#details").append(tr);
             }
             $("#details").append("</tbody>")
-            $("#modalDetailsTitle").text("Detale produktów")
+            $("#modalDetailsTitle").text("Detale produktów zamówienia o ID = " + id)
             $("#myDetailsModal").modal()
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log("failed: ");

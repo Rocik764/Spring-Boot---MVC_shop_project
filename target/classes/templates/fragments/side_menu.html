@@ -19,10 +19,10 @@
                     <a th:href="@{/product/new}">Dodaj produkty</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/deleteCategories}">Usuń kategorie</a>
+                    <a th:href="@{/product/deleteCategories}">Usuń kategorie / producentów</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/newCategory}">Dodaj kategorie</a>
+                    <a th:href="@{/product/newCategory}">Dodaj kategorie / producentów</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN')">
                     <a th:href="@{/admin/new}">Dodaj użytowników</a>

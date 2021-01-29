@@ -28,8 +28,12 @@
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="min-height: 80vh">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <h1>Partnerzy</h1>
+                            <h3>Nasi partnerzy</h3>
                             <div class="line"></div>
+                            <p><strong>Dążąc do perfekcji i wciąż doskonaląc swoją ofertę, nasz sklep wybiera jako swoich partnerów najlepszych producentów żywności i akcesorii dla zwierząt na świecie.</strong><br/>
+                                Niespełna 15 lat obecności na rynku, pozwoliło nam na wypracowanie trwałych relacji z wieloma firmami zarówno w Polsce jak i za granicą.
+                                Obecnie współpracujemy zarówno z dużymi korporacjami jak i małymi przedsiębiorstwami.
+                                Zawsze staramy się dopasować ofertę pod potrzeby naszych klientów mając na uwadze wysoką jakość oferowanych produktów i usług.</p>
                         </div>
                         <div class="carousel-item" th:each="producent : ${listProducent}">
                             <h3>[[${producent.name}]]</h3>

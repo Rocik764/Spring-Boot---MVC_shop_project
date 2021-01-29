@@ -39,7 +39,7 @@ public class UsersController {
             user.setPassword(encodedPassword);
             service.save(user);
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", error);
+            redirectAttributes.addFlashAttribute("error", e.toString());
             return "redirect:/app/register";
         }
 
