@@ -32,7 +32,7 @@ frontend made with Thymeleaf templates and bootstrap.
 | --- |:-----  :| ------------- |:------------:| ------- |:-------:| ----- |:-------:| -------- |:-------:|-------------|
 |serial|integer|date|boolean|varchar(100)|boolean|varchar(17)|text|varchar(30)|varchar(30)|double precision|
 ##### orders_details
-| id  | product_id | user_id | amount | purchase |
+| id  | product_id | user_id | amount | purchase | 
 | --- |:--------  :| ------- |:------:| ---------|
 |serial|integer|integer|integer|date|
 ##### producent
