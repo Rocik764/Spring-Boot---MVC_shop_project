@@ -29,11 +29,11 @@ frontend made with Thymeleaf templates and bootstrap.
 |serial|varchar(50)|
 ##### orders
 | id  | user_id | purchase_date | is_completed | address | invoice | phone | comment | delivery | payment | total_price |
-| --- |:-----  :| ------------- |:------------:| ------- |:-------:| ----- |:-------:| -------- |:-------:|-------------|
+| --- |---------| ------------- |--------------| ------- |---------| ----- |---------| -------- |---------|-------------|
 |serial|integer|date|boolean|varchar(100)|boolean|varchar(17)|text|varchar(30)|varchar(30)|double precision|
 ##### orders_details
 | id  | product_id | user_id | amount | purchase | 
-| --- |:--------  :| ------- |:------:| ---------|
+| --- |------------| ------- |--------|----------|
 |serial|integer|integer|integer|date|
 ##### producent
 | id  | name | characteristics | phone |
