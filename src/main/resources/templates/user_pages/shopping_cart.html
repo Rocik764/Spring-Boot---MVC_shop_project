@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <title>Koszyk</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -28,7 +28,7 @@
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
             <div class="container">
-                <p>Koszyk użytkownika: [[${user.getEmail()}]]</p>
+                <p>User's cart: [[${user.getEmail()}]]</p>
                 <div class="row m-1">
                     <div class="col-lg-8">
                         <th:block th:each="item, status : ${cartItems}">
@@ -49,14 +49,14 @@
                                         <a th:href="@{'/product/productInfo/' + ${product.id}}"><b>[[${product.name}]]</b></a>
                                     </div>
                                     <div>
-                                        <div th:replace="/fragments/amount_control :: amount_control(${item.amount}, ${item.product.id})">Ilość</div>
+                                        <div th:replace="/fragments/amount_control :: amount_control(${item.amount}, ${item.product.id})">Quantity</div>
                                     </div>
                                     <div>
                                         <span>x</span>
                                         <span>[[${product.price}]]&nbsp;zł</span>
                                     </div>
                                     <div>
-                                        <span>=&nbsp;</span><span class="h4 productSubtotal" th:id="'subtotal' + ${product.id}">[[${item.subtotal}]]</span><span class="h4">&nbsp;zł</span>
+                                        <span>=&nbsp;</span><span class="h4 productSubtotal" th:id="'subtotal' + ${product.id}">[[${item.subtotal}]]</span><span class="h4">&nbsp;pln</span>
                                     </div>
                                 </div>
                             </div>
@@ -65,18 +65,18 @@
                     </div>
                     <div class="col-lg-4" th:unless="${#lists.isEmpty(cartItems)}">
                         <div>
-                            <span class="h3">Podsumowanie:</span>
+                            <span class="h3">Total:</span>
                         </div>
                         <div class="mt-2">
                             <span class="h2" id="totalAmount"></span>
                         </div>
                         <div class="mt-2">
-                            <a th:href="@{/cart/showOrderDetails}"><button class="btn btn-danger p-3 mt-2">Zakup</button></a>
+                            <a th:href="@{/cart/showOrderDetails}"><button class="btn btn-danger p-3 mt-2">Go to order</button></a>
                         </div>
                     </div>
                 </div>
                 <div th:if="${#lists.isEmpty(cartItems)}">
-                    <p class="alert alert-info">Brak produktów w koszyku.</p>
+                    <p class="alert alert-info">No products found in your cart.</p>
                 </div>
             </div>
         </div>

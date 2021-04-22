@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <title>Szczegóły zamówienia</title>
+    <title>Order's details</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -28,32 +28,32 @@
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
             <div class="container">
-                <h2>Zamówienia użytkownika [[${#authentication.getPrincipal().getName()}]]</h2>
+                <h2>[[${#authentication.getPrincipal().getName()}]]'s orders</h2>
                 <table class="table table-hover">
                     <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Zakupiono</th>
-                        <th scope="col">Adres</th>
-                        <th scope="col">Faktura</th>
-                        <th scope="col">Telefon</th>
-                        <th scope="col">Dostawa</th>
-                        <th scope="col">Płatność</th>
-                        <th scope="col">Zapłacono</th>
-                        <th scope="col">Komentarz</th>
+                        <th scope="col">Bought</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Invoice</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Delivery</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Paid</th>
+                        <th scope="col">Comment</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr th:each="order, index : ${orders}" th:style="${order.is_completed} == FALSE ? 'background: red' : 'background: green'" th:onclick="showDetails([[${order.purchase_date}]])">
                         <td>[[${index.count}]]</td>
-                        <td th:text="${order.purchase_date}">Zakupiono</td>
-                        <td th:text="${order.address}">Adres</td>
-                        <td th:text="${order.invoice}">Faktura</td>
-                        <td th:text="${order.phone}">Telefon</td>
-                        <td th:text="${order.delivery}">Dostawa</td>
-                        <td th:text="${order.payment}">Płatność</td>
-                        <td th:text="${order.total_price} + ' zł'">Zapłacono</td>
-                        <td th:text="${order.comment}">Komentarz</td>
+                        <td th:text="${order.purchase_date}">Bought</td>
+                        <td th:text="${order.address}">Address</td>
+                        <td th:text="${order.invoice}">Invoice</td>
+                        <td th:text="${order.phone}">Phone</td>
+                        <td th:text="${order.delivery}">Delivery</td>
+                        <td th:text="${order.payment}">Payment</td>
+                        <td th:text="${order.total_price} + ' zł'">Paid</td>
+                        <td th:text="${order.comment}">Comment</td>
                     </tr>
                     </tbody>
                 </table>
@@ -83,7 +83,7 @@
         }).done(function (response) {
             $("#modalDetailsBody").html("<table id=\"details\"></table>")
             $("#details").html("");
-            let tr = "<thead class=\"thead-dark\"><tr><th>Produkt</th><th>Użytkownik</th><th>Ilość</th></tr></thead><tbody>"
+            let tr = "<thead class=\"thead-dark\"><tr><th>Product</th><th>User</th><th>Quantity</th></tr></thead><tbody>"
             $("#details").append(tr);
             for (let order of response) {
                 tr = "<tr><td>" + order.product.name + "</td><td>" +
@@ -92,15 +92,15 @@
                 $("#details").append(tr);
             }
             $("#details").append("</tbody>")
-            $("#modalDetailsTitle").text("Detale produktów")
+            $("#modalDetailsTitle").text("Products details")
             $("#myDetailsModal").modal()
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log("failed: ");
             console.log(jqXHR.responseText);
             console.log(textStatus);
             console.log(errorThrown);
-            $("#modalDetailsTitle").text("Detale produktów")
-            $("#modalDetailsBody").html("<p>Coś poszło nie tak</p>")
+            $("#modalDetailsTitle").text("Products details")
+            $("#modalDetailsBody").html("<p>Something went wrong</p>")
             $("#myDetailsModal").modal()
         });
     }

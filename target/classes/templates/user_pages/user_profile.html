@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>Profil</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -25,12 +25,12 @@
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
             <div class="container">
-                <h3>Profil:</h3>
+                <h3>Profile:</h3>
                 <form th:action="@{/users/editMail}" method="post">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail" disabled>Zapisz</button>
-                            <button class="btn btn-outline-secondary" type="button" id="btnEditMail"><span>Edytuj</span></button>
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveMail" disabled>Save</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditMail"><span>Edit</span></button>
                         </div>
                         <input type="text" name="email" class="form-control" th:value="${user.getUsername()}" aria-label="" readonly="readonly" required>
                     </div>
@@ -38,8 +38,8 @@
                 <form th:action="@{/users/editFirstName}" method="post">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName" disabled>Zapisz</button>
-                            <button class="btn btn-outline-secondary" type="button" id="btnEditFirstName"><span>Edytuj</span></button>
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveFirstName" disabled>Save</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditFirstName"><span>Edit</span></button>
                         </div>
                         <input type="text" name="first_name" class="form-control" th:value="${user.getName()}" aria-label="" readonly="readonly" required>
                     </div>
@@ -47,8 +47,8 @@
                 <form th:action="@{/users/editLastName}" method="post">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName" disabled>Zapisz</button>
-                            <button class="btn btn-outline-secondary" type="button" id="btnEditLastName"><span>Edytuj</span></button>
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSaveLastName" disabled>Save</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditLastName"><span>Edit</span></button>
                         </div>
                         <input type="text" name="last_name" class="form-control" th:value="${user.getLastName()}" aria-label="" readonly="readonly" required>
                     </div>
@@ -56,8 +56,8 @@
                 <form th:action="@{/users/editPassword}" method="post">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword" disabled>Zapisz</button>
-                            <button class="btn btn-outline-secondary" type="button" id="btnEditPassword"><span>Edytuj</span></button>
+                            <button class="btn btn-outline-secondary" type="submit" id="btnSavePassword" disabled>Save</button>
+                            <button class="btn btn-outline-secondary" type="button" id="btnEditPassword"><span>Edit</span></button>
                         </div>
                         <input type="password" name="password" class="form-control" th:value="${user.getPassword()}" aria-label="" readonly="readonly" required>
                     </div>
@@ -75,11 +75,11 @@
             if($("#btnSaveMail").is(":disabled")) {
                 $("input[name='email']").removeAttr("readonly")
                 $("#btnSaveMail").prop("disabled", false)
-                $("#btnEditMail span").text("Anuluj")
+                $("#btnEditMail span").text("Cancel")
             } else {
                 $("input[name='email']").prop("readonly", true)
                 $("#btnSaveMail").prop("disabled", true)
-                $("#btnEditMail span").text("Edytuj")
+                $("#btnEditMail span").text("Edit")
             }
         })
     })
@@ -88,11 +88,11 @@
             if($("#btnSaveFirstName").is(":disabled")) {
                 $("input[name='first_name']").removeAttr("readonly")
                 $("#btnSaveFirstName").prop("disabled", false)
-                $("#btnEditFirstName span").text("Anuluj")
+                $("#btnEditFirstName span").text("Cancel")
             } else {
                 $("input[name='first_name']").prop("readonly", true)
                 $("#btnSaveFirstName").prop("disabled", true)
-                $("#btnEditFirstName span").text("Edytuj")
+                $("#btnEditFirstName span").text("Edit")
             }
         })
     })
@@ -101,11 +101,11 @@
             if($("#btnSaveLastName").is(":disabled")) {
                 $("input[name='last_name']").removeAttr("readonly")
                 $("#btnSaveLastName").prop("disabled", false)
-                $("#btnEditLastName span").text("Anuluj")
+                $("#btnEditLastName span").text("Cancel")
             } else {
                 $("input[name='last_name']").prop("readonly", true)
                 $("#btnSaveLastName").prop("disabled", true)
-                $("#btnEditLastName span").text("Edytuj")
+                $("#btnEditLastName span").text("Edit")
             }
         })
     })
@@ -114,11 +114,11 @@
             if($("#btnSavePassword").is(":disabled")) {
                 $("input[name='password']").removeAttr("readonly")
                 $("#btnSavePassword").prop("disabled", false)
-                $("#btnEditPassword span").text("Anuluj")
+                $("#btnEditPassword span").text("Cancel")
             } else {
                 $("input[name='password']").prop("readonly", true)
                 $("#btnSavePassword").prop("disabled", true)
-                $("#btnEditPassword span").text("Edytuj")
+                $("#btnEditPassword span").text("Edit")
             }
         })
     })

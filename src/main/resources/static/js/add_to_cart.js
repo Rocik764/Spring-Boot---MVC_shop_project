@@ -23,7 +23,7 @@ function addToCart() {
             xhr.setRequestHeader(header, token)
         }
     }).done(function (response) {
-        $("#modalTitle").text("Koszyk")
+        $("#modalTitle").text("Cart")
         $("#modalBody").text(response)
         $("#myModal").modal()
     }).fail(function (jqXHR, textStatus, errorThrown) {
@@ -31,8 +31,8 @@ function addToCart() {
         console.log(jqXHR.responseText);
         console.log(textStatus);
         console.log(errorThrown);
-        $("#modalTitle").text("Koszyk")
-        $("#modalBody").text("Błąd")
+        $("#modalTitle").text("Cart")
+        $("#modalBody").text("Error")
         $("#myModal").modal()
     });
 }

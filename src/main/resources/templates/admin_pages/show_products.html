@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Lista produktów</title>
+    <title>Products list</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -31,26 +31,26 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Obrazek</th>
-                        <th>Nazwa</th>
-                        <th>Opis</th>
-                        <th>Ilość</th>
-                        <th>Cena</th>
-                        <th>Kategoria</th>
-                        <th>Podkategoria</th>
-                        <th>Akcje</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Subcategory</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                             <tr th:each="product : ${listProducts}">
                             <td th:text="${product.id}">ID produktu</td>
                             <td><img alt="obrazek" th:src="@{'/product/display/' + ${product.id}}" style="width: 100px; height: 100px;"></td>
-                            <td th:text="${product.name}">Nazwa</td>
-                            <td th:text="${product.description}">Opis</td>
-                            <td th:text="${product.quantity}">Ilość</td>
-                            <td th:text="${product.price}">Cena</td>
-                            <td th:text="${product.category.getName()}">Kategoria</td>
-                            <td th:text="${product.subcategory.getName()}">Podkategoria</td>
+                            <td th:text="${product.name}">Name</td>
+                            <td th:text="${product.description}">Description</td>
+                            <td th:text="${product.quantity}">Quantity</td>
+                            <td th:text="${product.price}">Price</td>
+                            <td th:text="${product.category.getName()}">Category</td>
+                            <td th:text="${product.subcategory.getName()}">Subcategory</td>
                             <td sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')">
                                 <a sec:authorize="hasAnyAuthority('ADMIN','EMPLOYEE')" th:href="@{'/product/editProduct/' + ${product.id}}">Edit</a>
                                 &nbsp;&nbsp;&nbsp;

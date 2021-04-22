@@ -8,59 +8,59 @@
         <img th:src="@{/img/fox_logo.png}" style="transform: scaleX(-1)" width="175" height="125" alt="logo"/>
     </div>
     <ul class="list-unstyled components">
-        <li><p>Menu podręczne</p></li>
+        <li><p>Side menu</p></li>
         <li class="active" sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Zarządzanie</a>
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/listProducts}">Edytuj produkty</a>
+                    <a th:href="@{/product/listProducts}">Edit products</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/new}">Dodaj produkty</a>
+                    <a th:href="@{/product/new}">Add products</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/deleteCategories}">Usuń kategorie / producentów</a>
+                    <a th:href="@{/product/deleteCategories}">Remove categories / producents</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">
-                    <a th:href="@{/product/newCategory}">Dodaj kategorie / producentów</a>
+                    <a th:href="@{/product/newCategory}">Add categories / producents</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN')">
-                    <a th:href="@{/admin/new}">Dodaj użytowników</a>
+                    <a th:href="@{/admin/new}">Add users</a>
                 </li>
                 <li sec:authorize="hasAnyAuthority('ADMIN')">
-                    <a th:href="@{/admin/listUsers}">Edytuj użytowników</a>
+                    <a th:href="@{/admin/listUsers}">Edit users</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Filtry</a>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Search</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <form th:action="@{/product/startSideMenuFiltering}" method="GET">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="filterWord" placeholder="Czego szukasz?">
+                                <input type="text" class="form-control" name="filterWord" placeholder="What are you looking for?">
                             </div>
                             <div class="form-group">
-                                <label for="price-from">Cena od</label>
+                                <label for="price-from">Price from</label>
                                 <input type="number" step="0.01" class="form-control" id="price-from" name="filterPriceFrom" min="0">
                             </div>
                             <div class="form-group">
-                                <label for="price-to">Cena do</label>
+                                <label for="price-to">Price to</label>
                                 <input type="number" step="0.01" class="form-control" id="price-to" name="filterPriceTo" min="0">
                             </div>
-                            <button type="submit" class="btn btn-secondary">Szukaj</button>
+                            <button type="submit" class="btn btn-secondary">Search</button>
                     </form>
                 </li>
                 <li>
-                    <a th:href="@{/product/filtering}">Więcej filtrów</a>
+                    <a th:href="@{/product/filtering}">Advanced search</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a th:href="@{/app/contact}">Kontakt</a>
+            <a th:href="@{/app/contact}">Contact</a>
         </li>
         <li>
-            <a th:href="@{/app/partners}">Nasi partnerzy</a>
+            <a th:href="@{/app/partners}">Partners</a>
         </li>
     </ul>
 </div>

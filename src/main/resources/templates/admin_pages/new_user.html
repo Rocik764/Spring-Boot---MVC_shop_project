@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>Nowy użytkownik</title>
+    <title>New user</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -26,16 +26,16 @@
         <div th:insert="/fragments/side_menu_collapse :: mySideMenuCollapse"></div>
         <div id="content-main">
 
-            <h1>Stwórz nowego użytkownika (test)</h1>
+            <h1>Create new user</h1>
             <form action="#" th:action="@{/admin/save}" th:object="${user}" method="post">
                 <div class="form-group row">
-                    <label for="inputFirstName" class="col-sm col-form-label  text-center font-weight-bold">Imię</label>
+                    <label for="inputFirstName" class="col-sm col-form-label  text-center font-weight-bold">Name</label>
                     <div class="col-sm-11">
                         <input type="text" class="form-control" id="inputFirstName" th:field="*{first_name}">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputLastName" class="col-sm col-form-label text-center font-weight-bold">Nazwisko</label>
+                    <label for="inputLastName" class="col-sm col-form-label text-center font-weight-bold">Second name</label>
                     <div class="col-sm-11">
                         <input type="text" class="form-control" id="inputLastName" th:field="*{last_name}">
                     </div>
@@ -47,14 +47,14 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-sm col-form-label text-center font-weight-bold">Hasło</label>
+                    <label for="inputPassword" class="col-sm col-form-label text-center font-weight-bold">Password</label>
                     <div class="col-sm-11">
                         <input type="text" class="form-control" id="inputPassword" th:field="*{password}">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-lg text-center">
-                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div>
             </form>

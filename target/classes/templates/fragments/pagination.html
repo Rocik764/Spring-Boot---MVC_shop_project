@@ -9,7 +9,7 @@
     <div class="pagination" th:with="baseUrl=${URLparameter}">
         <span th:if="${pager.indexOutOfBounds()}">
             <div class="alert alert-danger" role="alert">
-					Nie znaleziono produktów, <a th:href="@{/product/filtering}" class="alert-link">naciśnij aby przejść do strony z filtrami</a>.
+					Products not found, <a th:href="@{/product/filtering}" class="alert-link">click to go to the filters page</a>.
             </div>
         </span>
 
@@ -17,9 +17,9 @@
 
             <span th:if="${pager.hasPrevious()}">
                 <a class="pageLink"
-                   th:href="@{${baseUrl}(page=1)}">&laquo; Pierwsza</a>
+                   th:href="@{${baseUrl}(page=1)}">&laquo; First</a>
                 <a class="pageLink"
-                   th:href="@{${baseUrl}(page=${pager.getPageIndex() - 1})}"> Poprzednia</a>
+                   th:href="@{${baseUrl}(page=${pager.getPageIndex() - 1})}"> Previous</a>
             </span>
 
             <span th:if="${pager.getTotalPages() != 1}"
@@ -28,9 +28,9 @@
 
             <span th:if="${pager.hasNext()}">
                 <a class="pageLink"
-                   th:href="@{${baseUrl}(page=${pager.getPageIndex() + 1})}">Następna</a>
+                   th:href="@{${baseUrl}(page=${pager.getPageIndex() + 1})}">Next</a>
                 <a class="pageLink"
-                   th:href="@{${baseUrl}(page=${pager.getTotalPages()})}">Ostatnia &raquo;</a>
+                   th:href="@{${baseUrl}(page=${pager.getTotalPages()})}">Last &raquo;</a>
             </span>
         </span>
     </div>

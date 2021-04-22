@@ -3,6 +3,8 @@ package local.umg.susersmvc.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,9 +18,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull
+    @Email
+    @Size(min = 2, max = 255)
     private String email;
+    @NotNull
+    @Size(min = 6, max = 255)
     private String password;
+    @NotNull
+    @Size(min = 2, max = 255)
     private String first_name;
+    @NotNull
+    @Size(min = 2, max = 255)
     private String last_name;
 
 

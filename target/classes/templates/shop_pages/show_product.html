@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Produkty</title>
+    <title>Product</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -33,8 +33,8 @@
                                 <div class="p-4">
                                     <p class="small text-white mb-0">
                                         <b>[[${product.name}]]</b><br/>
-                                        Ilość: [[${product.quantity}]]<br/>
-                                        Cena: [[${product.price}]]<br/>
+                                        Quantity: [[${product.quantity}]]<br/>
+                                        Price: [[${product.price}]]<br/>
                                     </p>
                                 </div>
                             </a>
@@ -49,8 +49,8 @@
                                 <div class="p-4">
                                     <p class="small text-white mb-0">
                                         <b>[[${product.name}]]</b><br/>
-                                        Ilość: [[${product.quantity}]]<br/>
-                                        Cena: [[${product.price}]]<br/>
+                                        Quantity: [[${product.quantity}]]<br/>
+                                        Price: [[${product.price}]]<br/>
                                     </p>
                                 </div>
                             </a>
@@ -60,7 +60,7 @@
                 <div th:replace="/fragments/pagination :: pagination(URLparameter=${url})"></div>
                 <div th:if="${#lists.isEmpty(productList)}" class="row">
                     <div class="col">
-                        <h2>Nie znaleziono produktów.</h2>
+                        <h2>No products found.</h2>
                     </div>
                 </div>
             </div>

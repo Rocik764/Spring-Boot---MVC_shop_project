@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>Usuń kategorie</title>
+    <title>Remove Categories</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -28,39 +28,39 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <h1>Kategorie</h1>
+                        <h1>Categories</h1>
                         <ol>
                             <li th:each="category : ${listCategory}">
                                 <div class="input-group mb-3">
                                     <input type="text" name="category" class="form-control " th:value="${category.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
                                     <div class="input-group-prepend">
-                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteCategory/' + ${category.id}}">Usuń</a>
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteCategory/' + ${category.id}}">Remove</a>
                                     </div>
                                 </div>
                             </li>
                         </ol>
                     </div>
                     <div class="col-lg-4">
-                        <h1>Podkategorie</h1>
+                        <h1>Subcategories</h1>
                         <ol>
                             <li th:each="subcategory : ${listSubcategory}">
                                 <div class="input-group mb-3">
                                     <input type="text" name="subcategory" class="form-control " th:value="${subcategory.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
                                     <div class="input-group-prepend">
-                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteSubcategory/' + ${subcategory.id}}">Usuń</a>
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteSubcategory/' + ${subcategory.id}}">Remove</a>
                                     </div>
                                 </div>
                             </li>
                         </ol>
                     </div>
                     <div class="col-lg-4">
-                        <h1>Producenci</h1>
+                        <h1>Producent</h1>
                         <ol>
                             <li th:each="producent : ${listProducent}">
                                 <div class="input-group mb-3">
                                     <input type="text" name="producent" class="form-control " th:value="${producent.name}" aria-label="" aria-describedby="basic-addon1" readonly="readonly" disabled>
                                     <div class="input-group-prepend">
-                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteProducent/' + ${producent.id}}">Usuń</a>
+                                        <a class="float-left btn btn-danger" th:href="@{'/product/deleteProducent/' + ${producent.id}}">Remove</a>
                                     </div>
                                 </div>
                             </li>

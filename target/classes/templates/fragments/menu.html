@@ -7,14 +7,14 @@
 
         <div class="row no-gutters" style="color: #FFFFFF;">
             <div class="col-12 col-md-2">
-                <p><img th:src="@{/img/phone-call.png}" alt="phone"/> 58 577 625 825</p>
+                <p><img th:src="@{/img/phone-call.png}" alt="phone"/> 58 123 456 789</p>
             </div>
             <div class="col-12 col-md-2">
-                <p><img th:src="@{/img/email.png}" alt="email"/> zoologiczny@gmail.com</p>
+                <p><img th:src="@{/img/email.png}" alt="email"/> mail@mail.com</p>
             </div>
         </div>
     <nav class="navbar navbar-expand-md navbar-dark bg-head">
-        <a class="navbar-brand" th:href="@{/app/}"><img th:src="@{/img/fox_logo.png}" width="50" height="50" alt="logo"/> Zoologiczny.pl</a>
+        <a class="navbar-brand" th:href="@{/app/}"><img th:src="@{/img/fox_logo.png}" width="50" height="50" alt="logo"/> Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,47 +25,47 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        Popularne kategorie
+                        Popular
                     </a>
                     <div class="dropdown-menu">
-                        <div class="dropdown-header">Dla psa</div>
-                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/1}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/1}">Karma</a>
-                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/1}">Akcesoria</a>
-                        <div class="dropdown-header">Dla kota</div>
-                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/2}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/2}">Karma</a>
-                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/2}">Akcesoria</a>
-                        <div class="dropdown-header">Dla ryb</div>
-                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/3}">Zabawki</a>
-                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/3}">Karma</a>
-                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/3}">Akcesoria</a>
+                        <div class="dropdown-header">For dog</div>
+                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/1}">Toys</a>
+                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/1}">Kibble</a>
+                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/1}">Accessories</a>
+                        <div class="dropdown-header">For cat</div>
+                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/2}">Toys</a>
+                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/2}">Kibble</a>
+                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/2}">Accessories</a>
+                        <div class="dropdown-header">For fish</div>
+                        <a class="dropdown-item" th:href="@{/product/category/1/subcategory/3}">Toys</a>
+                        <a class="dropdown-item" th:href="@{/product/category/2/subcategory/3}">Kibble</a>
+                        <a class="dropdown-item" th:href="@{/product/category/3/subcategory/3}">Accessories</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-                        Konto
+                        Account
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/profile}">Konto</a>
+                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/profile}">Account</a>
                         <div class="dropdown-divider" sec:authorize="isAuthenticated()"></div>
-                        <a class="dropdown-item" th:href="@{/admin/listUsers}" sec:authorize="hasAnyAuthority('ADMIN')">Administracja</a>
+                        <a class="dropdown-item" th:href="@{/admin/listUsers}" sec:authorize="hasAnyAuthority('ADMIN')">Administrate</a>
                         <div class="dropdown-divider" sec:authorize="hasAnyAuthority('ADMIN')"></div>
 
-                        <a class="dropdown-item" th:href="@{/admin/showOrders}" sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">Zamówienia</a>
+                        <a class="dropdown-item" th:href="@{/admin/showOrders}" sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')">Orders</a>
                         <div class="dropdown-divider" sec:authorize="hasAnyAuthority('ADMIN', 'EMPLOYEE')"></div>
 
-                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/login}">Zaloguj</a>
+                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/login}">Login</a>
                         <div class="dropdown-divider" sec:authorize="!isAuthenticated()"></div>
 
-                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/register}">Zajerestruj</a>
+                        <a class="dropdown-item" sec:authorize="!isAuthenticated()" th:href="@{/app/register}">Register</a>
 
-                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/cart/showCart}">Koszyk</a>
+                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/cart/showCart}">Cart</a>
                         <div class="dropdown-divider" sec:authorize="isAuthenticated()"></div>
-                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/orders}">Moje zamówienia</a>
+                        <a class="dropdown-item" sec:authorize="isAuthenticated()" th:href="@{/app/orders}">My orders</a>
                         <div class="dropdown-divider" sec:authorize="isAuthenticated()"></div>
                         <form class="dropdown-item" sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
-                            <input type="submit" value="Wyloguj"/>
+                            <input type="submit" value="Logout"/>
                         </form>
 <!--                        <a class="dropdown-item" id="Logout" th:href="@{/logout}" sec:authorize="hasAnyAuthority('ADMIN', 'USER')">Wyloguj</a>-->
                     </div>

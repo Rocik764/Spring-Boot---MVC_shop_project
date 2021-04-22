@@ -40,10 +40,11 @@ public class ShoppingCartRestController {
                                    @PathVariable("amount") Integer amount,
                                    @AuthenticationPrincipal CustomUserDetails loggedUser) {
         System.out.println("addProductToCart");
-        if(loggedUser == null) return "Musisz się zalogować aby dodać produkty do koszyka.";
+        if(loggedUser == null) return "In order to add products to the cart, you must be logged in.";
 
         Product product = productService.get(productId);
-        if(amount > product.getQuantity()) return "Nie możesz dodać do koszyka większej ilości niż jest na stanie.";
+        if(amount > product.getQuantity()) return "There's not enough products.";
+        if(amount <= 0) return "You cannot add zero or less than zero products to the cart.";
 
         Authentication authentication = new UsernamePasswordAuthenticationToken(loggedUser, loggedUser.getPassword(), loggedUser.getAuthorities());
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -52,7 +53,7 @@ public class ShoppingCartRestController {
         Integer addedAmount = cartServices.addProduct(productId, amount, user);
         productService.updateQuantity(product.getId(), product.getQuantity() - amount);
 
-        return addedAmount + " produkt(ów) zostało dodanych do Twojego koszyka.";
+        return addedAmount + " products have been added to your cart.";
     }
 
     /**
@@ -65,7 +66,7 @@ public class ShoppingCartRestController {
                                    @PathVariable("amount") Integer amount,
                                    @AuthenticationPrincipal CustomUserDetails loggedUser) {
         System.out.println("updateAmount: amount: " + amount);
-        if(loggedUser == null) return "Musisz się zalogować aby tego użyć.";
+        if(loggedUser == null) return "In order to use this, you must be logged in.";
 
         Product product = productService.get(productId);
         //if(amount > product.getQuantity()) return "Nie możesz dodać do koszyka większej ilości niż jest na stanie.";
@@ -80,7 +81,7 @@ public class ShoppingCartRestController {
             productService.updateQuantity(productId, product.getQuantity() + 1);
         } else {
             if(product.getQuantity() - 1 < 0) {
-                return "Nie możesz dodać do koszyka większej ilości niż jest na stanie.";
+                return "There's not enough products.";
             }
             productService.updateQuantity(productId, product.getQuantity() - 1);
         }
@@ -100,7 +101,7 @@ public class ShoppingCartRestController {
                                 @PathVariable("amount") Integer amount,
                                @AuthenticationPrincipal CustomUserDetails loggedUser) {
         System.out.println("removeProduct");
-        if(loggedUser == null) return "Musisz się zalogować aby tego użyć.";
+        if(loggedUser == null) return "In order to use this, you must be logged in.";
 
         Product product = productService.get(productId);
         productService.updateQuantity(product.getId(), product.getQuantity() + amount);
@@ -109,6 +110,6 @@ public class ShoppingCartRestController {
         Long id = userDetails.getId();
         User user = userService.get(id);
         cartServices.removeProduct(productId, user);
-        return "Produkt został usunięty z koszyka.";
+        return "Product has been removed from your cart.";
     }
 }

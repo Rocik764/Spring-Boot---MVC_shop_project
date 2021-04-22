@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>Nowe kategorie</title>
+    <title>New categories</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -28,10 +28,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-6">
-                        <h1>Dodaj nową kategorię</h1>
+                        <h1>Add new category</h1>
                         <form action="#" th:action="@{/product/saveCategory}" th:object="${category}" method="post">
                             <div class="form-group row">
-                                <label for="inputCategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <label for="inputCategory" class="col-12 col-form-label text-center font-weight-bold">Name</label>
                                 <div class="col-12">
                                     <input type="text" class="form-control text-center" id="inputCategory" th:field="*{name}">
                                     <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
@@ -39,16 +39,16 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg text-center">
-                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="col-12 col-sm-6">
-                        <h1>Dodaj nową podkategorię</h1>
+                        <h1>Add new subcategory</h1>
                         <form action="#" th:action="@{/product/saveSubcategory}" th:object="${subcategory}" method="post">
                             <div class="form-group row">
-                                <label for="inputSubcategory" class="col-12 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <label for="inputSubcategory" class="col-12 col-form-label text-center font-weight-bold">Name</label>
                                 <div class="col-12">
                                     <input type="text" class="form-control text-center" id="inputSubcategory" th:field="*{name}">
                                     <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg text-center">
-                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
                         </form>
@@ -64,24 +64,24 @@
                 </div>
                 <div class="row">
                     <div class="col text-center">
-                        <h1>Dodaj nowego producenta</h1>
+                        <h1>Add new producent</h1>
                         <form action="#" th:action="@{/product/saveProducent}" th:object="${producent}" method="post">
                             <div class="form-group row">
-                                <label for="inputProducentName" class="col-2 col-form-label text-center font-weight-bold">Nazwa</label>
+                                <label for="inputProducentName" class="col-2 col-form-label text-center font-weight-bold">Name</label>
                                 <div class="col-10">
                                     <input type="text" class="form-control" id="inputProducentName" th:field="*{name}">
                                     <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputProducentCharacteristics" class="col-2 col-form-label text-center font-weight-bold">Charakterystyka</label>
+                                <label for="inputProducentCharacteristics" class="col-2 col-form-label text-center font-weight-bold">Characteristics</label>
                                 <div class="col-10">
                                     <textarea type="text" class="form-control" id="inputProducentCharacteristics" th:field="*{characteristics}" rows="3"></textarea>
                                     <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('characteristics')}" th:errors="*{characteristics}">Error</div>
                                 </div>
                             </div>
                             <div class="form-group row mt-1">
-                                <label for="inputProducentPhone" class="col-2 col-form-label text-center font-weight-bold">Telefon</label>
+                                <label for="inputProducentPhone" class="col-2 col-form-label text-center font-weight-bold">Phone</label>
                                 <div class="col-10">
                                     <input type="text" class="form-control" id="inputProducentPhone" th:field="*{phone}" value="+__ ___ ___ ___" data-mask="+__ ___ ___ ___">
                                     <div class="alert alert-danger mt-2" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Error</div>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg text-center">
-                                    <button type="submit" class="btn btn-primary">Zapisz</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
                         </form>

@@ -12,37 +12,47 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("users")
 public class UsersController {
 
-    private final String success = "Zapisano zmiany.";
-    private final String error = "Użytkownik o podanym mailu już istnieje.";
+    private final String success = "Saved changes.";
+    private final String error = "Such user already exists.";
 
-    @Autowired
-    private UserService service;
+    private final UserService service;
+
+    public UsersController(UserService service) {
+        this.service = service;
+    }
 
     /**
      * Method to save new user from registration form
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveUser(@ModelAttribute("user") User user, RedirectAttributes redirectAttributes) {
+    public String saveUser(@Valid User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            return "/login_pages/signup_form";
+        }
+
         try {
             BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             String encodedPassword = passwordEncoder.encode(user.getPassword());
             user.setPassword(encodedPassword);
             service.save(user);
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", e.toString());
+            redirectAttributes.addFlashAttribute("error", error);
             return "redirect:/app/register";
         }
-
 
         return "/login_pages/register_success";
     }

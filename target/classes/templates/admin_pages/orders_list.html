@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <title>Lista zamówień</title>
+    <title>Orders list</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -33,35 +33,35 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Użytkownik</th>
-                            <th>Zakupiono</th>
-                            <th>Zrealizowano</th>
-                            <th>Adres</th>
-                            <th>Faktura</th>
-                            <th>Telefon</th>
-                            <th>Dostawa</th>
-                            <th>Płatność</th>
-                            <th>Zapłacono</th>
-                            <th>Komentarz</th>
-                            <th>Akcje</th>
+                            <th>User</th>
+                            <th>Bought</th>
+                            <th>Finished</th>
+                            <th>Address</th>
+                            <th>Invoice</th>
+                            <th>Phone</th>
+                            <th>Delivery</th>
+                            <th>Payment</th>
+                            <th>Paid</th>
+                            <th>Comment</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
 
                         <tr th:each="order : ${orders}" style="cursor: pointer" th:onclick="showDetails([[${order.user.getId()}]],[[${order.purchase_date}]],[[${order.id}]])">
                             <td th:text="${order.id}">ID</td>
-                            <td th:text="${order.user.getEmail()}">Użytkownik</td>
-                            <td th:text="${order.purchase_date}">Zakupiono</td>
-                            <td th:text="${order.is_completed}">Zrealizowano</td>
-                            <td th:text="${order.address}">Adres</td>
-                            <td th:text="${order.invoice}">Faktura</td>
-                            <td th:text="${order.phone}">Telefon</td>
-                            <td th:text="${order.delivery}">Dostawa</td>
-                            <td th:text="${order.payment}">Płatność</td>
-                            <td th:text="${order.total_price}">Zapłacono</td>
-                            <td th:text="${order.comment}">Komentarz</td>
+                            <td th:text="${order.user.getEmail()}">User</td>
+                            <td th:text="${order.purchase_date}">Bought</td>
+                            <td th:text="${order.is_completed}">Finished</td>
+                            <td th:text="${order.address}">Address</td>
+                            <td th:text="${order.invoice}">Invoice</td>
+                            <td th:text="${order.phone}">Phone</td>
+                            <td th:text="${order.delivery}">Delivery</td>
+                            <td th:text="${order.payment}">Payment</td>
+                            <td th:text="${order.total_price}">Paid</td>
+                            <td th:text="${order.comment}">Comment</td>
                             <td>
-                                <a th:href="@{'/admin/completeOrder/' + ${order.id}}"><span th:utext="${order.is_completed} == FALSE ? 'Zrealizuj' : 'Cofnij realizację'"></span></a>
+                                <a th:href="@{'/admin/completeOrder/' + ${order.id}}"><span th:utext="${order.is_completed} == FALSE ? 'realize' : 'Undo'"></span></a>
                             </td>
                         </tr>
                         </tbody>
@@ -93,7 +93,7 @@
         }).done(function (response) {
             $("#modalDetailsBody").html("<table id=\"details\"></table>")
             $("#details").html("");
-            let tr = "<thead class=\"thead-dark\"><tr><th>Produkt</th><th>Użytkownik</th><th>Ilość</th></tr></thead><tbody>"
+            let tr = "<thead class=\"thead-dark\"><tr><th>Product</th><th>User</th><th>Quantity</th></tr></thead><tbody>"
             $("#details").append(tr);
             for (let order of response) {
                 tr = "<tr><td>" + order.product.name + "</td><td>" +
@@ -102,15 +102,15 @@
                 $("#details").append(tr);
             }
             $("#details").append("</tbody>")
-            $("#modalDetailsTitle").text("Detale produktów zamówienia o ID = " + id)
+            $("#modalDetailsTitle").text("Order details with ID = " + id)
             $("#myDetailsModal").modal()
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log("failed: ");
             console.log(jqXHR.responseText);
             console.log(textStatus);
             console.log(errorThrown);
-            $("#modalDetailsTitle").text("Detale produktów")
-            $("#modalDetailsBody").html("<p>Coś poszło nie tak</p>")
+            $("#modalDetailsTitle").text("Order details")
+            $("#modalDetailsBody").html("<p>Something went wrong</p>")
             $("#myDetailsModal").modal()
         });
     }

@@ -20,14 +20,17 @@ import java.util.List;
 @RequestMapping("admin")
 public class AdminController {
 
-    @Autowired
-    private UserService service;
+    private final UserService service;
 
-    @Autowired
-    private OrdersService ordersService;
+    private final OrdersService ordersService;
 
-    @Autowired
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
+
+    public AdminController(UserService service, OrdersService ordersService, EntityManager entityManager) {
+        this.service = service;
+        this.ordersService = ordersService;
+        this.entityManager = entityManager;
+    }
 
     /**
      * Method to list all users

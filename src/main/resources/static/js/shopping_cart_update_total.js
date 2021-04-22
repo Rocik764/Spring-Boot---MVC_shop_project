@@ -75,7 +75,7 @@ function updateAmount(productId, amount, link) {
         }
     }).done(function (newSubtotal) {
         if(isNaN(newSubtotal)) {
-            $("#modalTitle").text("Koszyk")
+            $("#modalTitle").text("Cart")
             $("#modalBody").text(newSubtotal)
             $("#myModal").modal()
             decreaseAmount(link, true)
@@ -89,8 +89,8 @@ function updateAmount(productId, amount, link) {
         console.log(jqXHR.responseText);
         console.log(textStatus);
         console.log(errorThrown);
-        $("#modalTitle").text("Koszyk")
-        $("#modalBody").text("Coś poszło nie tak")
+        $("#modalTitle").text("Cart")
+        $("#modalBody").text("Something went wrong")
         $("#myModal").modal()
     });
 }
@@ -108,7 +108,7 @@ function removeFromCart(link) {
             xhr.setRequestHeader(header, token)
         }
     }).done(function (response) {
-        $("#modalTitle").text("Koszyk")
+        $("#modalTitle").text("Cart")
         if(response.includes("usunięty")) {
             $("#myModal").on("hide.bs.modal", function (e) {
                 let rowNumber = link.attr("rowNumber")
@@ -123,8 +123,8 @@ function removeFromCart(link) {
         console.log(jqXHR.responseText);
         console.log(textStatus);
         console.log(errorThrown);
-        $("#modalTitle").text("Koszyk")
-        $("#modalBody").text("Coś poszło nie tak")
+        $("#modalTitle").text("Cart")
+        $("#modalBody").text("Something went wrong")
         $("#myModal").modal()
     });
 }

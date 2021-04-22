@@ -27,14 +27,17 @@ import java.util.List;
 @RequestMapping("cart")
 public class ShoppingCartController {
 
-    @Autowired
-    private ShoppingCartServices cartServices;
+    private final ShoppingCartServices cartServices;
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private OrdersService ordersService;
+    private final OrdersService ordersService;
+
+    public ShoppingCartController(OrdersService ordersService, ShoppingCartServices cartServices, UserService userService) {
+        this.ordersService = ordersService;
+        this.cartServices = cartServices;
+        this.userService = userService;
+    }
 
     /**
      * Method to show logged-in user's shopping cart page

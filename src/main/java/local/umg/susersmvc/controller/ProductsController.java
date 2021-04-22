@@ -31,14 +31,17 @@ public class ProductsController {
 
     private static final int INITIAL_PAGE = 0;
 
-    @Autowired
-    private ProductService service;
+    private final ProductService service;
 
-    @Autowired
-    private CategoriesService categoriesService;
+    private final CategoriesService categoriesService;
 
-    @Autowired
-    private ProducentService producentService;
+    private final ProducentService producentService;
+
+    public ProductsController(ProductService service, CategoriesService categoriesService, ProducentService producentService) {
+        this.service = service;
+        this.categoriesService = categoriesService;
+        this.producentService = producentService;
+    }
 
     /**
      * Method to show admin page with products from database
@@ -208,9 +211,9 @@ public class ProductsController {
 
         try {
             categoriesService.saveCategory(category);
-            redirectAttributes.addFlashAttribute("success", "Zapisano nową kategorię.");
+            redirectAttributes.addFlashAttribute("success", "Saved new category.");
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Ta kategoria już istnieje.");
+            redirectAttributes.addFlashAttribute("error", "This category already exists.");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", e.toString());
         }
@@ -234,9 +237,9 @@ public class ProductsController {
 
         try {
             categoriesService.saveSubcategory(subcategory);
-            redirectAttributes.addFlashAttribute("success", "Zapisano nową podkategorię.");
+            redirectAttributes.addFlashAttribute("success", "Saved new subcategory.");
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Ta podkategoria już istnieje.");
+            redirectAttributes.addFlashAttribute("error", "This subcategory already exists.");
         } catch (Exception e) {
             StringWriter sw = new StringWriter();
             e.printStackTrace(new PrintWriter(sw));
@@ -260,9 +263,9 @@ public class ProductsController {
 
         try {
             producentService.save(producent);
-            redirectAttributes.addFlashAttribute("success", "Zapisano nowego producenta.");
+            redirectAttributes.addFlashAttribute("success", "Saved new producent.");
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Ten producent już istnieje.");
+            redirectAttributes.addFlashAttribute("error", "This producent already exists.");
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", e.toString());
         }
@@ -399,10 +402,10 @@ public class ProductsController {
         try {
             categoriesService.deleteCategory(id);
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Usunięcie tej kategorii spowoduje naruszenie ograniczenia w tabeli produktów ponieważ istnieją produkty związane z tą kategorią.");
+            redirectAttributes.addFlashAttribute("error", "" + "Removing this category will cause data integrity because there are products associated with this category.");
         } catch (Exception e) {
             System.out.println(e.toString());
-            redirectAttributes.addFlashAttribute("error", "Niepowodzenie usuwania kategorii.");
+            redirectAttributes.addFlashAttribute("error", "Error while removing category.");
         }
 
         return "redirect:/product/deleteCategories";
@@ -413,10 +416,10 @@ public class ProductsController {
         try {
             categoriesService.deleteSubcategory(id);
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Usunięcie tej podkategorii spowoduje naruszenie ograniczenia w tabeli produktów ponieważ istnieją produkty związane z tą podkategorią.");
+            redirectAttributes.addFlashAttribute("error", "Removing this subcategory will cause data integrity because there are products associated with this subcategory.");
         } catch (Exception e) {
             System.out.println(e.toString());
-            redirectAttributes.addFlashAttribute("error", "Niepowodzenie usuwania podkategorii.");
+            redirectAttributes.addFlashAttribute("error", "Error while removing subcategory.");
         }
 
         return "redirect:/product/deleteCategories";
@@ -427,10 +430,10 @@ public class ProductsController {
         try {
             producentService.deleteProducent(id);
         } catch (DataIntegrityViolationException e) {
-            redirectAttributes.addFlashAttribute("error", "Usunięcie tego producenta spowoduje naruszenie ograniczenia w tabeli produktów ponieważ istnieją produkty związane z tym producentem.");
+            redirectAttributes.addFlashAttribute("error", "Removing this producent will cause data integrity because there are products associated with this producent.");
         } catch (Exception e) {
             System.out.println(e.toString());
-            redirectAttributes.addFlashAttribute("error", "Niepowodzenie usuwania producenta.");
+            redirectAttributes.addFlashAttribute("error", "Error while removing producent.");
         }
 
         return "redirect:/product/deleteCategories";

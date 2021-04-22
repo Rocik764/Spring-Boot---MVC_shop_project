@@ -22,14 +22,17 @@ import java.util.List;
 @RequestMapping("app")
 public class AppController {
 
-    @Autowired
-    private ProducentService producentService;
+    private final ProducentService producentService;
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private OrdersService ordersService;
+    private final OrdersService ordersService;
+
+    public AppController(ProducentService producentService, UserService userService, OrdersService ordersService) {
+        this.producentService = producentService;
+        this.userService = userService;
+        this.ordersService = ordersService;
+    }
 
     /**
      * Method to display index page

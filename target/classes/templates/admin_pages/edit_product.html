@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Edytuj produkt</title>
+    <title>Edit products</title>
     <link rel="stylesheet" href="/zoologiczny/webjars/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/style2.css}"/>
@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <h1>Edytuj produkt z ID: <th:block th:text="*{id}"></th:block></h1>
+                        <h1>Edit product with ID: <th:block th:text="*{id}"></th:block></h1>
                         <span th:object="${product}">
                             <form th:action="@{/product/updateProduct}"  method="POST" enctype="multipart/form-data">
                                 <div class="form-group row">
@@ -38,31 +38,31 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputName" class="col-sm col-form-label text-center font-weight-bold">Nazwa</label>
+                                    <label for="inputName" class="col-sm col-form-label text-center font-weight-bold">Name</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="name" class="form-control" id="inputName" th:field="*{name}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputDescription" class="col-sm col-form-label text-center font-weight-bold">Opis</label>
+                                    <label for="inputDescription" class="col-sm col-form-label text-center font-weight-bold">Description</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="description" class="form-control" id="inputDescription" th:field="*{description}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputQuantity" class="col-sm col-form-label text-center font-weight-bold">Ilość</label>
+                                    <label for="inputQuantity" class="col-sm col-form-label text-center font-weight-bold">Quantity</label>
                                     <div class="col-sm-10">
                                         <input type="number" name="quantity" class="form-control" id="inputQuantity" th:field="*{quantity}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputNumber" class="col-sm col-form-label text-center font-weight-bold">Cena</label>
+                                    <label for="inputNumber" class="col-sm col-form-label text-center font-weight-bold">Price</label>
                                     <div class="col-sm-10">
                                         <input type="number" step="0.01" name="price" class="form-control" id="inputNumber" th:field="*{price}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputCategory" class="col-sm col-form-label text-center font-weight-bold">Kategoria</label>
+                                    <label for="inputCategory" class="col-sm col-form-label text-center font-weight-bold">Category</label>
                                     <div class="col-sm-10">
                                         <select id="inputCategory" name="category" class="selectpicker" th:field="*{category}">
                                             <option th:each="category : ${listCategory}" th:value="${category.id}">[[${category.name}]]</option>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputSubategory" class="col-sm col-form-label text-center font-weight-bold">Zwierzę</label>
+                                    <label for="inputSubategory" class="col-sm col-form-label text-center font-weight-bold">Subcategory</label>
                                     <div class="col-sm-10">
                                         <select id="inputSubategory" name="subcategory" class="selectpicker" th:field="*{subcategory}">
                                             <option th:each="subcategory : ${listSubcategory}" th:value="${subcategory.id}">[[${subcategory.name}]]</option>
@@ -86,14 +86,14 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm col-form-label text-center font-weight-bold" for="exampleFormControlFile1">Example file input</label>
+                                    <label class="col-sm col-form-label text-center font-weight-bold" for="exampleFormControlFile1">File input</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1" accept="image/png, image/jpeg" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-lg text-center">
-                                        <button type="submit" class="btn btn-primary">Zapisz</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
                                     </div>
                                 </div>
                             </form>
