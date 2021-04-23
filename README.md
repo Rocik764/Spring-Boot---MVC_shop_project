@@ -19,6 +19,7 @@ frontend made with Thymeleaf templates and bootstrap.
 * Java 11
 * JavaScript
 * PostgreSQL
+* HTML & CSS
 
 ## Used dependencies
 * spring-boot-starter-web
