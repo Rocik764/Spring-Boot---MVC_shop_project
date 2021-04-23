@@ -8,6 +8,7 @@
 * [Example screenshots](#example-screenshots)
 
 ## About project
+This is exactly the same project as [this](https://github.com/Rocik764/Laravel---MVC_shop_project) one, but made in Spring Boot.
 My first bigger project using Spring Boot for university. The application is basicaly an online shop where users can register, 
 search for products, add them to cart, remove if needed, order products and check their orders. Admins can
 add new products/categories etc, manage users and shop. Authentication is session based using Spring Security,
