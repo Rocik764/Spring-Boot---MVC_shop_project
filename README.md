@@ -1,10 +1,24 @@
 # Spring Boot MVC - Online shop
 
+## Table of contents
+* [About project](#about-project)
+* [Technologies](#technologies)
+* [Used dependencies](#used-dependencies)
+* [Database structure](#database-structure)
+* [Example screenshots](#example-screenshots )
+
 ## About project
 My first bigger project using Spring Boot for university. The application is basicaly an online shop where users can register, 
 search for products, add them to cart, remove if needed, order products and check their orders. Admins can
 add new products/categories etc, manage users and shop. Authentication is session based using Spring Security,
 frontend made with Thymeleaf templates and bootstrap.
+
+## Technologies
+* Spring Boot
+* Bootstrap 4
+* Java 11
+* JavaScript
+* PostgreSQL
 
 ## Used dependencies
 * spring-boot-starter-web
@@ -64,7 +78,8 @@ frontend made with Thymeleaf templates and bootstrap.
 [checking_all_orders]: ./readme_images/checking_all_orders.gif "checking all orders"
 [edit_products_and_users]: ./readme_images/edit_products_and_users.gif "editing products and users"
 
-## Example screenshots in case anyone wants to see it without downloading
+## Example screenshots 
+(in case anyone wants to see it without downloading)
 ##### Products list
 ![alt text][products_list]
 ##### Adding product to cart (need to be logged in and cannot add more than there's available or less than 1)
