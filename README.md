@@ -5,7 +5,7 @@
 * [Technologies](#technologies)
 * [Used dependencies](#used-dependencies)
 * [Database structure](#database-structure)
-* [Example screenshots](#example-screenshots )
+* [Example screenshots](#example-screenshots)
 
 ## About project
 My first bigger project using Spring Boot for university. The application is basicaly an online shop where users can register, 
